@@ -14,29 +14,17 @@ def parse_line(line: str):
     cause = None
     symptoms = []
     probability = None
-    # Clean string
     line = re.sub(' +', ' ', line)
     line = re.sub(' ,', ',', line)
     line = line.replace('“', '')
     line = line.replace('”', '')
     line = line.replace('"', '')
-    # Parse cause
-    pattern = r"([CS]\s+[\w\s]+\s+\d+)"
-    match = re.search(pattern, line)
-    if match:
-        cause = match.group(1)
-    # Parse symptoms
-    pattern = r"([CS]\s+[\w\s]+\s+\d+),\s+(.*?),\s+(\d+\.\d+)"
-    match = re.search(pattern, line)
-    if match:
-        symptoms = match.group(2)
-    # Parse probability
-    match = re.search(r"(\d+\.\d+)$", line)
-    if match:
-        probability = float(match.group(1))
-    # Check if the input was parsed correctly
-    if not (cause and symptoms and probability):
-        raise Exception('Invalid input!')
+    line = [
+        line.split(',', 1)[0],
+        line.split(',', 1)[1].rsplit(',', 1)[0],
+        line.rsplit(',', 1)[1]]
+    line = [i.strip() for i in line]
+    cause, symptoms, probability = line
     return cause, symptoms, probability
 
 
