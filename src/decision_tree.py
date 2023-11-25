@@ -35,8 +35,6 @@ class DecisionTree:
             for symptom in symptoms:
                 if not rule.startswith('C '):
                     continue
-                if symptom.startswith('NOT '):
-                    symptom = symptom[4:]
                 if symptom not in frequencies:
                     frequencies[symptom] = 0
                 frequencies[symptom] += 1
@@ -52,7 +50,6 @@ class DecisionTree:
             pq.put((ratio, symptom))
         while not pq.empty():
             ratio, symptom = pq.get()
-            DecisionTree.priorities[symptom] = -100 * ratio
             print(f'{(ratio * -100):.2f}% {symptom}')
             self.insert_node(symptom, self.root)
 
@@ -72,8 +69,54 @@ class DecisionTree:
                 return root
             root = root.next
 
-    def build_children(self):
-        pass
+    def sort_symptoms(self):
+        new_rules = []
+        priority = 0
+        keys = list(DecisionTree.symptoms.keys())
+        keys.sort(key=lambda a: (DecisionTree.symptoms[a], a))
+        for k in keys:
+            DecisionTree.priorities[k] = priority
+            priority += 1
+        for rule, symptoms, probability in DecisionTree.rules:
+            symptoms = sorted(symptoms, reverse=True, key=lambda a: DecisionTree.priorities[a])
+            new_rules.append((rule, symptoms, probability))
+        DecisionTree.rules = new_rules
+
+    def build_children(self, root: Node, visited: set = None, path: set = None):
+        if not root:
+            return
+        if not visited:
+            visited = set()
+            visited.add(root.data)
+        if not path:
+            path = set()
+            path.add(root.data)
+        for rule, symptoms, probability in DecisionTree.rules:
+            if len(path.intersection(symptoms)) != len(path):
+                continue
+            for symptom in symptoms:
+                if symptom in visited:
+                    continue
+                if symptom in path:
+                    continue
+                child = Node(symptom)
+                root.children.add(child)
+                new_path = {i for i in path}
+                new_path.add(symptom)
+                if symptom != symptoms[-1]:
+                    self.build_children(child, visited, new_path)
+                break
+        if root.next:
+            visited.add(root.next.data)
+            self.build_children(root.next, visited)
+
+    def build_tree(self):
+        root = self.root
+        visited = set()
+        while root:
+            visited.add(root.data)
+            self.build_children(root, visited)
+            root = root.next
 
     def define_causes(self):
         for rule, symptoms, probability in DecisionTree.rules:
@@ -94,15 +137,17 @@ class DecisionTree:
     def search(self, symptoms):
         node = self.get_node_by_symptoms(symptoms, self.root)
         symptoms_tmp = {i for i in symptoms if i != node.data}
-        for _ in range(len(symptoms_tmp)):
-            for child in node.children:
-                search = self.get_node_by_symptoms(symptoms_tmp, child)
-                if search:
-                    node = search
-                    symptoms_tmp.remove(node.data)
+        while symptoms_tmp:
+            children = list(node.children)
+            children.sort(reverse=True, key=lambda a: (DecisionTree.priorities[a.data], a.data))
+            for child in children:
+                if child.data in symptoms_tmp:
+                    node = child
+                    symptoms_tmp.remove(child.data)
                     break
-        result = list(node.children)
-        return result[0]
+        results = [i.data for i in node.children]
+        return results
+
 
     def display(self, root, indent=0):
         if root:
@@ -135,21 +180,25 @@ rules_expanded = [
     ('C Haachama', {'CHAMACHAMA'}, 1.0)
 ]
 
-
 tree = DecisionTree(rules=rules_expanded)
 tree._build_dict()
 tree._gen_priorities()
-tree.build_children()
-# tree.define_causes()
+tree.sort_symptoms()
+tree.build_tree()
+tree.define_causes()
 tree.display(tree.root)
 
+print('\nDecisions with accurate symptoms:')
+print('Chapéu de palha', 'Camisa vermelha', 'Sapato azul')
+print(*tree.search({'Chapéu de palha', 'Camisa vermelha', 'Sapato azul'}))
+print('Cabelo castanho', 'Camisa branca', 'Death Note')
+print(*tree.search({'Cabelo castanho', 'Camisa branca', 'Death Note'}))
+print('Olhos azuis', 'Roupa verde', 'Sapato preto')
+print(*tree.search({'Olhos azuis', 'Roupa verde', 'Sapato preto'}))
+print('Olhos azuis', 'Roupa marrom')
+print(*tree.search({'Olhos azuis', 'Roupa marrom'}))
+print('Cabelo ruivo', 'Olhos azuis', 'Roupa branca', 'Sapato marrom')
+print(*tree.search({'Cabelo ruivo', 'Olhos azuis', 'Roupa branca', 'Sapato marrom'}))
 
-# print('\nDecisions with accurate symptoms:')
-# print('Chapéu de palha', 'Camisa vermelha', 'Sapato azul')
-# print(tree.search({'Chapéu de palha', 'Camisa vermelha', 'Sapato azul'}))
-# print('Cabelo castanho', 'Camisa branca', 'Death Note')
-# print(tree.search({'Cabelo castanho', 'Camisa branca', 'Death Note'}))
-# print('Olhos azuis', 'Roupa verde', 'Sapato preto')
-# print(tree.search({'Olhos azuis', 'Roupa verde', 'Sapato preto'}))
-# print('\nDecisions with innacurate symptoms:')
-# print('(To-Do)')
+print('\nDecisions with innacurate symptoms:')
+print('(To-Do)')
