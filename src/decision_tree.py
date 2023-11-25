@@ -191,8 +191,8 @@ tree.display(tree.root)
 print('\nDecisions with accurate symptoms:')
 for rule, symptoms, probability in rules_expanded:
     print(*symptoms)
-    print('Expected:', rule)
-    print('Obtained:', *tree.search(symptoms))
+    print('Expected:', rule, probability)
+    print('Obtained:', *tree.search(symptoms), probability)
 
 print('\nDecisions with innacurate symptoms:')
 print('(To-Do)')
