@@ -1,0 +1,114 @@
+
+/*tree/ pai / */
+.container{
+  margin: 1.25rem auto;
+}
+.btn-primary {
+  background-color: orange;
+  color: white;
+  border: 0.0625rem solid black;
+  cursor: pointer;
+}
+
+.input-text {
+  outline: none;
+  border: none;
+  width: 100%;
+}
+#tree{
+  display: block
+}
+#tree, .children, .node ul {
+  list-style: none;
+}
+#tree ul{
+  display: none;
+}
+#tree .fa-plus-circle, #tree .far.fa-trash-alt{
+  position: relative;
+  float: right;
+  top: -10px;
+  right: -10px;
+  font-size: 10pt;
+  color: #4b6584;
+  margin-left: 3px;
+}
+#tree .far.fa-trash-alt,#tree .fa-plus-circle.di-bl{
+  color: red;
+}
+#tree .di-bl{
+}
+#tree .di-wl{
+  color: green;
+}
+#tree .decision-icons {
+  position: relative;
+  top: -25px !important;
+  left: 19px !important;
+  right: auto;
+  display: none;
+}
+#tree .fa-plus-circle{
+  transition: transform 0.5s;
+}
+#tree .fa-plus-circle:hover{
+  transform: rotate(230deg);
+}
+#tree .quadro-t p{
+  width: 130px;
+  display: inline-block;
+  margin-bottom: 0;
+}
+#tree ul:not(#tree){
+  padding-left: 22px;
+  border-left: 2px solid #4b6584;
+  border-bottom-left-radius: 144px 42px;
+  margin-left: 20px;
+  margin-top: -20px;
+  padding-top: 20px;
+}
+#tree li.children > .quadro-t {
+  width: 150px;
+  border: 1px solid #CCC;
+  padding: 15px;
+  margin: 20px 0px;
+  z-index: 3;
+  background-color: white;
+  cursor: pointer;
+  box-shadow: 0px 0px 5px -1px rgba(0, 0, 0, 0.4);
+  border-radius: 5px;
+}
+#tree li.children > .quadro-t.bl{
+  box-shadow: 0px 0px 2px 0px rgba(255, 0, 0, 0.6);
+}
+#tree li.children > .quadro-t.wl{
+  box-shadow: 0px 0px 2px 0px rgba(0, 255, 0, 0.6);
+}
+#tree li.children > .quadro-t:not(.pai)::before {
+  content: '';
+  display: inline-block;
+  position: absolute;
+  /*z-index: -1;*/
+  border-left: 2px solid #4b6584;
+  border-bottom: 2px solid #4b6584;
+  width: 23px;
+  height: 68px;
+  margin: -55px 0px 0px -40px;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+  border-bottom-left-radius: 25px;
+  border-top-left-radius: 3px;
+}
+#tree li.children > .quadro-t.bl::before {
+  /*border-left: 2px solid red;*/
+  border-bottom: 2px solid red !important;
+}
+#tree li.children > .quadro-t.wl::before {
+  /*border-left: 2px solid green;*/
+  border-bottom: 2px solid green !important;
+}
+#tree .children:last-child {
+  background: white;
+  margin-left: -24px;
+  padding-left: 24px;
+}
