@@ -188,6 +188,7 @@ tree.build_tree()
 tree.define_causes()
 tree.display(tree.root)
 
+
 print('\nDecisions with accurate symptoms:')
 for rule, symptoms, probability in rules_expanded:
     print(*symptoms)
