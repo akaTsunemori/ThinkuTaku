@@ -73,13 +73,16 @@ class DecisionTree:
         new_rules = []
         priority = 0
         keys = list(DecisionTree.symptoms.keys())
-        keys.sort(key=lambda a: (DecisionTree.symptoms[a], a))
+        keys.sort(key=lambda a: a, reverse=True)
+        keys.sort(key=lambda a: DecisionTree.symptoms[a])
         for k in keys:
             DecisionTree.priorities[k] = priority
             priority += 1
         for rule, symptoms, probability in DecisionTree.rules:
             symptoms = sorted(symptoms, reverse=True, key=lambda a: DecisionTree.priorities[a])
             new_rules.append((rule, symptoms, probability))
+            if rule.startswith('C '):
+                DecisionTree.priorities[rule] = -1
         DecisionTree.rules = new_rules
 
     def build_children(self, root: Node, visited: set = None, path: set = None):
