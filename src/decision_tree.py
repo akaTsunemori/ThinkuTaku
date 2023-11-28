@@ -21,18 +21,25 @@ class Node:
 
 
 class DecisionTree:
-    symptoms = dict()
-    priorities = dict()
-    rules = None
+    __frequencies = dict()
+    __priorities = dict()
+    __causes = []
+    __symptoms = []
+
 
     def __init__(self, rules) -> None:
         self.root = None
-        DecisionTree.rules = rules
+        for rule, symptoms, probability in rules:
+            if rule.startswith('C '):
+                DecisionTree.__causes.append((rule, symptoms, probability))
+                print(rule)
+            elif rule.startswith('S '):
+                DecisionTree.__symptoms.append((rule, symptoms, probability))
         self.__build_tree()
 
     def __compute_frequencies(self):
         '''
-        Builds a dict counting the frequencies of the symptoms on the DecisionTree.rules.
+        Builds a dict counting the frequencies of the symptoms on the DecisionTree.__causes.
 
         Args:
             None
@@ -41,14 +48,14 @@ class DecisionTree:
             None
         '''
         frequencies = dict()
-        for rule, symptoms, _ in DecisionTree.rules:
+        for rule, symptoms, _ in DecisionTree.__causes:
             for symptom in symptoms:
                 if not rule.startswith('C '):
                     continue
                 if symptom not in frequencies:
                     frequencies[symptom] = 0
                 frequencies[symptom] += 1
-        DecisionTree.symptoms = frequencies
+        DecisionTree.__frequencies = frequencies
 
     def __ll_insert_node(self, data, root):
         '''
@@ -72,7 +79,7 @@ class DecisionTree:
 
     def __gen_priorities(self):
         '''
-        Generate the priorities for the Decision Tree's symptoms.
+        Generates the priorities for the Decision Tree's symptoms.
 
         Args:
             None
@@ -81,7 +88,7 @@ class DecisionTree:
             None
         '''
         pq = PriorityQueue()
-        symptoms = DecisionTree.symptoms
+        symptoms = DecisionTree.__frequencies
         pool_size = len(symptoms)
         for symptom in symptoms:
             ratio = symptoms[symptom] / pool_size
@@ -94,7 +101,7 @@ class DecisionTree:
 
     def __sort_symptoms(self):
         '''
-        Sorts the symptoms of the DecisionTree by the priorities contained in DecisionTree.priorities.
+        Sorts the symptoms of the DecisionTree by the priorities contained in DecisionTree.__priorities.
 
         Args:
             None
@@ -104,18 +111,18 @@ class DecisionTree:
         '''
         new_rules = []
         priority = 0
-        keys = list(DecisionTree.symptoms.keys())
+        keys = list(DecisionTree.__frequencies.keys())
         keys.sort(key=lambda a: a, reverse=True)
-        keys.sort(key=lambda a: DecisionTree.symptoms[a])
+        keys.sort(key=lambda a: DecisionTree.__frequencies[a])
         for k in keys:
-            DecisionTree.priorities[k] = priority
+            DecisionTree.__priorities[k] = priority
             priority += 1
-        for rule, symptoms, probability in DecisionTree.rules:
-            symptoms = sorted(symptoms, reverse=True, key=lambda a: DecisionTree.priorities[a])
+        for rule, symptoms, probability in DecisionTree.__causes:
+            symptoms = sorted(symptoms, reverse=True, key=lambda a: DecisionTree.__priorities[a])
             new_rules.append((rule, symptoms, probability))
             if rule.startswith('C '):
-                DecisionTree.priorities[rule] = -1
-        DecisionTree.rules = new_rules
+                DecisionTree.__priorities[rule] = -1
+        DecisionTree.__causes = new_rules
 
     def __build_children_aux(self, root: Node, visited: set = None, path: set = None):
         '''
@@ -138,7 +145,7 @@ class DecisionTree:
         if not path:
             path = set()
             path.add(root.data)
-        for rule, symptoms, probability in DecisionTree.rules:
+        for rule, symptoms, probability in DecisionTree.__causes:
             if len(path.intersection(symptoms)) != len(path):
                 continue
             for symptom in symptoms:
@@ -193,7 +200,7 @@ class DecisionTree:
 
     def __define_causes(self):
         '''
-        Defines the closed-case causes provided by each line on the DecisionTree.rules.
+        Defines the closed-case causes provided by each line on the DecisionTree.__causes.
 
         Args:
             None
@@ -201,7 +208,7 @@ class DecisionTree:
         Returns:
             None
         '''
-        for rule, symptoms, probability in DecisionTree.rules:
+        for rule, symptoms, probability in DecisionTree.__causes:
             node = self.__get_ll_node_by_symptoms(symptoms, self.root)
             symptoms_tmp = {i for i in symptoms if i != node.data}
             while symptoms_tmp:
@@ -280,7 +287,7 @@ class DecisionTree:
         symptoms_tmp = {i for i in symptoms if i != node.data}
         while symptoms_tmp:
             children = list(node.children)
-            children.sort(reverse=True, key=lambda a: (DecisionTree.priorities[a.data], a.data))
+            children.sort(reverse=True, key=lambda a: (DecisionTree.__priorities[a.data], a.data))
             for child in children:
                 if child.data in symptoms_tmp:
                     node = child
@@ -322,7 +329,8 @@ rules_expanded = [
     ('C Nagisa Furukawa', {'Olhos azuis', 'Roupa marrom'}, 0.8),
     ('C Rei Ayanami', {'Olhos azuis', 'Roupa branca'}, 0.1),
     ('C Levi Ackerman', {'Olhos azuis', 'Roupa verde', 'Sapato preto'}, 0.2),
-    ('C Haachama', {'CHAMACHAMA'}, 1.0)
+    ('C Haachama', {'CHAMACHAMA'}, 1.0),
+    ('S Cabelo ruivo', {'Olhos azuis', 'Roupa branca'}, 0.8)
 ]
 
 tree = DecisionTree(rules=rules_expanded)
@@ -330,10 +338,12 @@ tree.display(tree.root)
 
 print('\nDecisions with accurate symptoms:')
 for rule, symptoms, probability in rules_expanded:
-    print('Symptoms:', *symptoms)
-    print('Expected:', rule, probability)
+    if not rule.startswith('C '):
+        continue
+    print('\tSymptoms:', *symptoms)
+    print('\t\tExpected:', rule)
     obtained = tree.search(symptoms)
-    print('Obtained:', *obtained, probability)
+    print('\t\tObtained:', *obtained)
     assert rule == obtained[-1]
 
 print('\nDecisions with innacurate symptoms:')
