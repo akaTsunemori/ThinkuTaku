@@ -56,6 +56,25 @@ class DecisionTree:
                 frequencies[symptom] += 1
         DecisionTree.__frequencies = frequencies
 
+    def __gen_priorities(self):
+        '''
+        Generates the priorities for the symptoms in the DecisionTree.__causes and initializes
+        the Linked List.
+
+        Args:
+            None
+
+        Returns:
+            None
+        '''
+        priority = 0
+        keys = list(DecisionTree.__frequencies.keys())
+        keys.sort(key=lambda a: a, reverse=True)
+        keys.sort(key=lambda a: DecisionTree.__frequencies[a])
+        for k in keys:
+            DecisionTree.__priorities[k] = priority
+            priority += 1
+
     def __ll_insert_node(self, data, root):
         '''
         Inserts a node on the Linked List.
@@ -68,18 +87,18 @@ class DecisionTree:
             node [Node]: the newly inserted Node.
         '''
         if self.root is None:
-            self.root = Node(data, probability = 1.0)
-            return
+            node = Node(data, probability = 1.0)
+            self.root = node
+            return node
         if root is None:
             return Node(data, probability = 1.0)
         if root.data != data:
             root.next = self.__ll_insert_node(data, root.next)
         return root
 
-    def __gen_priorities(self):
+    def __ll_initialize(self):
         '''
-        Generates the priorities for the symptoms in the DecisionTree.__causes and initializes
-        the Linked List.
+        Initializes the Linked List with the priorities contained in DecisionTree.__priorities.
 
         Args:
             None
@@ -87,19 +106,15 @@ class DecisionTree:
         Returns:
             None
         '''
+
         pq = PriorityQueue()
-        symptoms = DecisionTree.__frequencies
-        pool_size = len(symptoms)
-        for symptom in symptoms:
-            ratio = symptoms[symptom] / pool_size
-            ratio *= -1 # Convert the PQ into a Max PQ
-            pq.put((ratio, symptom))
+        for symptom in DecisionTree.__priorities:
+            pq.put((-1 * DecisionTree.__priorities[symptom], symptom))
         while not pq.empty():
-            ratio, symptom = pq.get()
-            # print(f'{(ratio * -100):.2f}% {symptom}')
+            _, symptom = pq.get()
             self.__ll_insert_node(symptom, self.root)
 
-    def __sort_symptoms(self):
+    def __causes_priorities(self):
         '''
         Sorts the symptoms in each tuple (rule, symptoms, probability) on the DecisionTree.__causes
         by the priorities contained in DecisionTree.__priorities.
@@ -111,18 +126,10 @@ class DecisionTree:
             None
         '''
         new_rules = []
-        priority = 0
-        keys = list(DecisionTree.__frequencies.keys())
-        keys.sort(key=lambda a: a, reverse=True)
-        keys.sort(key=lambda a: DecisionTree.__frequencies[a])
-        for k in keys:
-            DecisionTree.__priorities[k] = priority
-            priority += 1
         for rule, symptoms, probability in DecisionTree.__causes:
             symptoms = sorted(symptoms, reverse=True, key=lambda a: DecisionTree.__priorities[a])
             new_rules.append((rule, symptoms, probability))
-            if rule.startswith('C '):
-                DecisionTree.__priorities[rule] = -1
+            DecisionTree.__priorities[rule] = -1
         DecisionTree.__causes = new_rules
 
     def __build_children_aux(self, root: Node, visited: set = None, path: set = None):
@@ -224,11 +231,56 @@ class DecisionTree:
                     break
             node.children.add(Node(rule, probability=probability))
 
+    def __process_probabilities_aux(self, root: Node, stack: list, probability):
+        '''
+        Recursively searches a given subtree for a node with all the elements
+        present in stack and define its probability.
+
+        Args:
+            root [Node]: the root for the subtree.
+            stack [list]: a stack, where its first element is the node whose probability
+            will be defined.
+            probability [float]: the probability.
+
+        Returns:
+            None
+        '''
+        if not root:
+            return
+        if not stack:
+            return
+        if len(stack) == 1 and root.data == stack[-1]:
+            root.probability = probability
+            return
+        for child in root.children:
+            if child.data == stack[-1] and len(stack) > 1:
+                self.__process_probabilities_aux(child, stack[:-1], probability)
+            else:
+                self.__process_probabilities_aux(child, stack[:], probability)
+
     def __process_probabilities(self):
         '''
-        This function will process the rules that start with 'S ...'.
+        This function will process the rules that start with 'S ' and define the probability for
+        each rule in DecisionTree.__symptoms.
+
+        Args:
+            None
+
+        Returns:
+            None
         '''
-        pass
+        root = self.root
+        while root:
+            for rule, symptoms, probability in DecisionTree.__symptoms:
+                stack = [rule[2:]]
+                sorted_stack = [i for i in symptoms if i in DecisionTree.__priorities]
+                sorted_stack.sort(key=lambda a: a, reverse=True)
+                sorted_stack.sort(key=lambda a: DecisionTree.__priorities[a])
+                stack.extend(sorted_stack)
+                if root.data == stack[-1]:
+                    stack.pop()
+                self.__process_probabilities_aux(root, stack, probability)
+            root = root.next
 
     def __compute_probabilities_aux(self, root: Node):
         '''
@@ -268,10 +320,11 @@ class DecisionTree:
     def __build_tree(self):
         self.__compute_frequencies()
         self.__gen_priorities()
-        self.__sort_symptoms()
+        self.__ll_initialize()
+        self.__causes_priorities()
         self.__build_children()
         self.__define_causes()
-        # self.__process_probabilities()
+        self.__process_probabilities()
         self.__compute_probabilities()
 
     def search(self, symptoms):
@@ -331,7 +384,9 @@ rules_expanded = [
     ('C Rei Ayanami', {'Olhos azuis', 'Roupa branca'}, 0.1),
     ('C Levi Ackerman', {'Olhos azuis', 'Roupa verde', 'Sapato preto'}, 0.2),
     ('C Haachama', {'CHAMACHAMA'}, 1.0),
-    ('S Cabelo ruivo', {'Olhos azuis', 'Roupa branca'}, 0.8)
+    ('S Sapato marrom', {'Olhos azuis', 'Roupa branca'}, 0.5),
+    ('S Cabelo ruivo', {'Roupa branca'}, 0.9),
+    ('S Armadura azul', {'Cabelo preto'}, 0.6)
 ]
 
 tree = DecisionTree(rules=rules_expanded)
