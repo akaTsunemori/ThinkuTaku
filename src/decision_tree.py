@@ -385,8 +385,9 @@ rules_expanded = [
     ('C Levi Ackerman', {'Olhos azuis', 'Roupa verde', 'Sapato preto'}, 0.2),
     ('C Haachama', {'CHAMACHAMA'}, 1.0),
     ('S Sapato marrom', {'Olhos azuis', 'Roupa branca'}, 0.5),
-    ('S Cabelo ruivo', {'Roupa branca'}, 0.9),
-    ('S Armadura azul', {'Cabelo preto'}, 0.6)
+    ('S Cabelo ruivo', {'Roupa branca'}, 0.91),
+    ('S Armadura azul', {'Cabelo preto'}, 0.67),
+    ('S Botas brancas', {'Cabelo preto'}, 0.84)
 ]
 
 tree = DecisionTree(rules=rules_expanded)
