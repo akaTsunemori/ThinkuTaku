@@ -32,7 +32,6 @@ class DecisionTree:
         for rule, symptoms, probability in rules:
             if rule.startswith('C '):
                 DecisionTree.__causes.append((rule, symptoms, probability))
-                print(rule)
             elif rule.startswith('S '):
                 DecisionTree.__symptoms.append((rule, symptoms, probability))
         self.__build_tree()
