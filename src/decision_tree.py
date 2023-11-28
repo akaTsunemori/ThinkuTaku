@@ -309,7 +309,7 @@ class DecisionTree:
         '''
         if root:
             print('    ' * indent, end='')
-            print(f'{root.data}, {root.probability:.1f}')
+            print(f'{root.data}, {root.probability:.2f}')
             for child in root.children:
                 self.display(child, indent+1)
             self.display(root.next)
