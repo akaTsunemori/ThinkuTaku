@@ -79,7 +79,8 @@ class DecisionTree:
 
     def __gen_priorities(self):
         '''
-        Generates the priorities for the Decision Tree's symptoms.
+        Generates the priorities for the symptoms in the DecisionTree.__causes and initializes
+        the Linked List.
 
         Args:
             None
@@ -101,7 +102,8 @@ class DecisionTree:
 
     def __sort_symptoms(self):
         '''
-        Sorts the symptoms of the DecisionTree by the priorities contained in DecisionTree.__priorities.
+        Sorts the symptoms in each tuple (rule, symptoms, probability) on the DecisionTree.__causes
+        by the priorities contained in DecisionTree.__priorities.
 
         Args:
             None
