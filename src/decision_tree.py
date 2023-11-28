@@ -28,8 +28,9 @@ class DecisionTree:
     def __init__(self, rules) -> None:
         self.root = None
         DecisionTree.rules = rules
+        self.__build_tree()
 
-    def _compute_frequencies(self):
+    def __compute_frequencies(self):
         '''
         Builds a dict counting the frequencies of the symptoms on the DecisionTree.rules.
 
@@ -49,7 +50,7 @@ class DecisionTree:
                 frequencies[symptom] += 1
         DecisionTree.symptoms = frequencies
 
-    def _ll_insert_node(self, data, root):
+    def __ll_insert_node(self, data, root):
         '''
         Inserts a node on the Linked List.
 
@@ -66,10 +67,10 @@ class DecisionTree:
         if root is None:
             return Node(data, probability = 1.0)
         if root.data != data:
-            root.next = self._ll_insert_node(data, root.next)
+            root.next = self.__ll_insert_node(data, root.next)
         return root
 
-    def _gen_priorities(self):
+    def __gen_priorities(self):
         '''
         Generate the priorities for the Decision Tree's symptoms.
 
@@ -89,26 +90,9 @@ class DecisionTree:
         while not pq.empty():
             ratio, symptom = pq.get()
             # print(f'{(ratio * -100):.2f}% {symptom}')
-            self._ll_insert_node(symptom, self.root)
+            self.__ll_insert_node(symptom, self.root)
 
-    def _get_ll_node_by_symptoms(self, symptoms, root):
-        '''
-        Gets the first node on the Linked List that corresponds to any of the provided symptoms.
-
-        Args:
-            symptoms [array-like]: the array with the symptoms to be corresponded.
-            root [Node]: the root for the DecisionTree.
-
-        Returns:
-            node [Node]: the first node that corresponds to any of the provided symptoms.
-            None: if it does not find a node with the provided symptoms.
-        '''
-        while root:
-            if root.data in symptoms:
-                return root
-            root = root.next
-
-    def _sort_symptoms(self):
+    def __sort_symptoms(self):
         '''
         Sorts the symptoms of the DecisionTree by the priorities contained in DecisionTree.priorities.
 
@@ -133,7 +117,7 @@ class DecisionTree:
                 DecisionTree.priorities[rule] = -1
         DecisionTree.rules = new_rules
 
-    def __build_children(self, root: Node, visited: set = None, path: set = None):
+    def __build_children_aux(self, root: Node, visited: set = None, path: set = None):
         '''
         Recursively builds all the children for the currrent subtree.
 
@@ -167,13 +151,13 @@ class DecisionTree:
                 new_path = {i for i in path}
                 new_path.add(symptom)
                 if symptom != symptoms[-1]:
-                    self.__build_children(child, visited, new_path)
+                    self.__build_children_aux(child, visited, new_path)
                 break
         if root.next:
             visited.add(root.next.data)
-            self.__build_children(root.next, visited)
+            self.__build_children_aux(root.next, visited)
 
-    def _build_children(self):
+    def __build_children(self):
         '''
         Builds the subtree for each node on the Linked List.
 
@@ -187,10 +171,27 @@ class DecisionTree:
         visited = set()
         while root:
             visited.add(root.data)
-            self.__build_children(root, visited)
+            self.__build_children_aux(root, visited)
             root = root.next
 
-    def _define_causes(self):
+    def __get_ll_node_by_symptoms(self, symptoms, root):
+        '''
+        Gets the first node on the Linked List that corresponds to any of the provided symptoms.
+
+        Args:
+            symptoms [array-like]: the array with the symptoms to be corresponded.
+            root [Node]: the root for the DecisionTree.
+
+        Returns:
+            node [Node]: the first node that corresponds to any of the provided symptoms.
+            None: if it does not find a node with the provided symptoms.
+        '''
+        while root:
+            if root.data in symptoms:
+                return root
+            root = root.next
+
+    def __define_causes(self):
         '''
         Defines the closed-case causes provided by each line on the DecisionTree.rules.
 
@@ -201,11 +202,11 @@ class DecisionTree:
             None
         '''
         for rule, symptoms, probability in DecisionTree.rules:
-            node = self._get_ll_node_by_symptoms(symptoms, self.root)
+            node = self.__get_ll_node_by_symptoms(symptoms, self.root)
             symptoms_tmp = {i for i in symptoms if i != node.data}
             while symptoms_tmp:
                 for child in node.children:
-                    search = self._get_ll_node_by_symptoms(symptoms_tmp, child)
+                    search = self.__get_ll_node_by_symptoms(symptoms_tmp, child)
                     if not search:
                         continue
                     if len(symptoms_tmp) > 1 and not search.children:
@@ -215,13 +216,13 @@ class DecisionTree:
                     break
             node.children.add(Node(rule, probability=probability))
 
-    def process_probabilities(self):
+    def __process_probabilities(self):
         '''
         This function will process the rules that start with 'S ...'.
         '''
         pass
 
-    def __compute_probabilities(self, root: Node):
+    def __compute_probabilities_aux(self, root: Node):
         '''
         Recursively computes the probabilities for all the nodes on the tree.
 
@@ -239,9 +240,9 @@ class DecisionTree:
         for child in root.children:
             if not child.probability:
                 child.probability = random_variables_prob
-            self.__compute_probabilities(child)
+            self.__compute_probabilities_aux(child)
 
-    def _compute_probabilities(self):
+    def __compute_probabilities(self):
         '''
         Computes the probabilities for each node on the Linked List.
 
@@ -253,12 +254,21 @@ class DecisionTree:
         '''
         root = self.root
         while root:
-            self.__compute_probabilities(root)
+            self.__compute_probabilities_aux(root)
             root = root.next
 
-    def _search(self, symptoms):
+    def __build_tree(self):
+        self.__compute_frequencies()
+        self.__gen_priorities()
+        self.__sort_symptoms()
+        self.__build_children()
+        self.__define_causes()
+        # self.__process_probabilities()
+        self.__compute_probabilities()
+
+    def search(self, symptoms):
         '''
-        Searches for a cause, given all symptoms corresponding to it.
+        Searches for a cause, given ALL symptoms corresponding to it.
 
         Args:
             symptoms [array-like]: all the symptoms for the cause.
@@ -266,7 +276,7 @@ class DecisionTree:
         Returns:
             results [list]: a list containg the possible causes for that array of symptoms.
         '''
-        node = self._get_ll_node_by_symptoms(symptoms, self.root)
+        node = self.__get_ll_node_by_symptoms(symptoms, self.root)
         symptoms_tmp = {i for i in symptoms if i != node.data}
         while symptoms_tmp:
             children = list(node.children)
@@ -316,19 +326,13 @@ rules_expanded = [
 ]
 
 tree = DecisionTree(rules=rules_expanded)
-tree._compute_frequencies()
-tree._gen_priorities()
-tree._sort_symptoms()
-tree._build_children()
-tree._define_causes()
-tree._compute_probabilities()
 tree.display(tree.root)
 
 print('\nDecisions with accurate symptoms:')
 for rule, symptoms, probability in rules_expanded:
-    print(*symptoms)
+    print('Symptoms:', *symptoms)
     print('Expected:', rule, probability)
-    obtained = tree._search(symptoms)
+    obtained = tree.search(symptoms)
     print('Obtained:', *obtained, probability)
     assert rule == obtained[-1]
 
