@@ -423,31 +423,6 @@ class DecisionTree:
         self.__compute_probabilities()
         self.__normalize_probabilities()
 
-    def decide(self):
-        '''
-        Traverses the tree based on questions and answers.
-
-        (To-Do)
-        '''
-        pass
-
-    def display(self, root, indent=0):
-        '''
-        Displays the tree strucutre.
-
-        Args:
-            root [Node]: the root for the tree.
-
-        Returns:
-            None
-        '''
-        if root:
-            print('    ' * indent, end='')
-            print(f'{root.data}, {root.probability:.2f}')
-            for child in root.children:
-                self.display(child, indent+1)
-            self.display(root.next)
-
     def __to_dict_aux(self, root: Node, tree_dict: dict = None):
         '''
         Recursively traverses a subtree, storing its children and probabilities in dictionaries.
@@ -488,6 +463,31 @@ class DecisionTree:
             self.__to_dict_aux(root, tree_dict)
             root = root.next
         return tree_dict
+
+    def decide(self):
+        '''
+        Traverses the tree based on questions and answers.
+
+        (To-Do)
+        '''
+        pass
+
+    def display(self, root, indent=0):
+        '''
+        Displays the tree strucutre.
+
+        Args:
+            root [Node]: the root for the tree.
+
+        Returns:
+            None
+        '''
+        if root:
+            print('    ' * indent, end='')
+            print(f'{root.data}, {root.probability:.2f}')
+            for child in root.children:
+                self.display(child, indent+1)
+            self.display(root.next)
 
 
 rules_expanded = [
