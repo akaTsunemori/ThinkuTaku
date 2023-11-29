@@ -42,6 +42,16 @@ def parse_file(path):
         rules = []
         for line in f:
             rule, symptoms, probability = parse_line(line)
+            symptoms = symptoms.strip(')')
+            if symptoms.startswith('NOT ('):
+                symptoms = symptoms.strip('NOT (')
+                symptoms = symptoms.split(', ')
+                for symptom in symptoms:
+                    rules.append((rule, {symptom}, probability))
+                continue
+            symptoms = symptoms.strip('(')
+            symptoms = symptoms.split(', ')
+            symptoms = set(symptoms)
             rules.append((rule, symptoms, probability))
     return rules
 
