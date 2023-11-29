@@ -448,7 +448,17 @@ class DecisionTree:
                 self.display(child, indent+1)
             self.display(root.next)
 
-    def __to_dict_aux(self, root: Node, tree_dict: dict):
+    def __to_dict_aux(self, root: Node, tree_dict: dict = None):
+        '''
+        Recursively traverses a subtree, storing its children and probabilities in dictionaries.
+
+        Args:
+            root [Node]: the root for the subtree.
+            tree_dict [dict]: the dictionary to-be update with the tree structure.
+
+        Returns:
+            None
+        '''
         if not root:
             return
         root_node = (root.data, root.probability)
@@ -462,6 +472,16 @@ class DecisionTree:
             self.__to_dict_aux(child, new_dict)
 
     def to_dict(self):
+        '''
+        Gets the tree structure as a Python dictionary.
+
+        Args:
+            None
+
+        Returns:
+            tree_dict [dict]: a dictionary containing the entire tree structure, following the pattern:
+                (symptom/cause, probability): [children]
+        '''
         tree_dict = dict()
         root = self.root
         while root:
