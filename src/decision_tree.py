@@ -398,7 +398,7 @@ class DecisionTree:
 
     def __normalize_probabilities(self):
         '''
-        Normalizes the probabilities on a given subtree level so they add up to 1.0.
+        Normalizes the probabilities on all subtree levels so they add up to 1.0.
 
         Args:
             None
