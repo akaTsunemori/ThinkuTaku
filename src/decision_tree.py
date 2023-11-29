@@ -448,6 +448,27 @@ class DecisionTree:
                 self.display(child, indent+1)
             self.display(root.next)
 
+    def __to_dict_aux(self, root: Node, tree_dict: dict):
+        if not root:
+            return
+        root_node = (root.data, root.probability)
+        if root_node not in tree_dict:
+            tree_dict[root_node] = []
+        for child in root.children:
+            new_dict = dict()
+            new_node = (child.data, child.probability)
+            new_dict[new_node] = []
+            tree_dict[root_node].append(new_dict)
+            self.__to_dict_aux(child, new_dict)
+
+    def to_dict(self):
+        tree_dict = dict()
+        root = self.root
+        while root:
+            self.__to_dict_aux(root, tree_dict)
+            root = root.next
+        return tree_dict
+
 
 rules_expanded = [
     ('C Naruto Uzumaki', {'Olhos azuis', 'Roupa laranja', 'Sapato azul', 'NOT Dor'}, 0.5),
