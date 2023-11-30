@@ -16,9 +16,48 @@ class Node:
     def __str__(self) -> str:
         return self.data
 
+    def __probability__(self):
+        return self.probability
+
     def __hash__(self) -> int:
         return hash(self.data)
+    
+    def build_path(self, rule):
 
+        if len(rule[1]) == 0:
+            new_leaf = Node(rule[0], float(rule[2]))
+            self.children.add(new_leaf)
+
+        else:
+            next_step = rule[1].pop()
+
+            for child in self.children:
+                if child.data == next_step:
+                    child.build_path(rule)
+                    return
+                
+            new_child = Node(data=next_step)
+            self.children.add(new_child)
+            new_child.build_path(rule)
+    
+    def find_path(self, symptoms, depth=1):
+
+        if len(symptoms) == 0:
+
+            for child in self.children:
+                if child.probability:
+                    print(f"{child.__str__()}: {child.__probability__()/depth}\n")
+                else:
+                    child.find_path(symptoms=symptoms, depth=depth+1)
+            return
+        
+        for child in self.children:
+            if child.data in symptoms:
+                symptoms.remove(child.data)
+                child.find_path(symptoms)
+                print(child.data)
+                return
+        
 
 class DecisionTree:
     symptoms = dict()
@@ -119,7 +158,6 @@ class DecisionTree:
         while root:
             visited.add(root.data)
             self.build_children(root, visited)
-            root = root.next
 
     def define_causes(self):
         for rule, symptoms, probability in DecisionTree.rules:
@@ -164,22 +202,40 @@ class DecisionTree:
                 self.display(child, indent+1)
             self.display(root.next)
 
+    def search_character(self, symptoms, root):
+        most_commom = 0
+
+        for symptom in symptoms:
+            if symptom.startswith('NOT '):
+                symptom = symptom[4:]
+            cur_ocurrence = self.priorities[symptom]
+
+            if most_commom < cur_ocurrence:
+                most_commom = cur_ocurrence
+                most_commom_name = symptom
+        symptoms.remove(most_commom_name)
+        subTreeroot = self.get_node_by_symptoms(most_commom_name, root)
+        
+        subTreeroot.find_path(symptoms)
+
 
 rules_expanded = [
-    ('C Naruto Uzumaki', {'Olhos azuis', 'Roupa laranja', 'Sapato azul', 'NOT Dor'}, 0.5),
-    ('C Goku', {'Cabelo preto', 'Kimono laranja', 'Sapato azul'}, 0.7),
-    ('C Monkey D. Luffy', {'Chapéu de palha', 'Camisa vermelha', 'Sapato azul'}, 0.6),
-    ('C Ichigo Kurosaki', {'Cabelo laranja', 'Uniforme preto', 'Sapato marrom'}, 0.4),
+    ('C Naruto Uzumaki', {'Olhos azuis', 'Sapato azul', 'Roupa laranja', 'NOT Pain'}, 0.5),
+    ('C Goku', {'Cabelo preto', 'Sapato azul', 'Kimono laranja'}, 0.7),
+    ('C Monkey D. Luffy', {'Sapato azul', 'Chapéu de palha', 'Camisa vermelha'}, 0.6),
+    ('C Ichigo Kurosaki', {'Sapato marrom', 'Cabelo laranja', 'Uniforme preto'}, 0.4),
     ('C Saitama', {'Careca', 'Roupa amarela', 'Sem expressão facial'}, 0.3),
     ('C Gon Freecss', {'Cabelo preto', 'Colete verde', 'Shorts pretos'}, 0.5),
-    ('C Edward Elric', {'Cabelo loiro', 'Olhos azuis', 'Casaco vermelho', 'Automail'}, 0.6),
+    ('C Edward Elric', {'Olhos azuis', 'Cabelo loiro', 'Casaco vermelho', 'Automail'}, 0.6),
     ('C Sasuke Uchiha', {'Cabelo preto', 'Roupa preta', 'Sharingan'}, 0.7),
     ('C Vegeta', {'Cabelo preto', 'Armadura azul', 'Botas brancas'}, 0.6),
     ('C Light Yagami', {'Cabelo castanho', 'Camisa branca', 'Death Note'}, 0.4),
-    ('C Makise Kurisu', {'Cabelo ruivo', 'Olhos azuis', 'Roupa branca', 'Sapato marrom'}, 0.2),
+    ('C Makise Kurisu', {'Olhos azuis', 'Sapato marrom', 'Cabelo ruivo', 'Roupa branca'}, 0.2),
     ('C Nagisa Furukawa', {'Olhos azuis', 'Roupa marrom'}, 0.8),
     ('C Rei Ayanami', {'Olhos azuis', 'Roupa branca'}, 0.1),
-    ('C Levi Ackerman', {'Olhos azuis', 'Roupa verde', 'Sapato preto'}, 0.2),
+    ('C Levi Ackerman', {'Olhos azuis', 'Sapato preto', 'Roupa verde'}, 0.2),
+    ('C Franky', {'Roupa colorida', 'Sapato preto', 'Ser rei'}, 0.12),
+    ('C Aurora', {'Olhos azuis', 'Sapato azul'}, 0.92),
     ('C Haachama', {'CHAMACHAMA'}, 1.0)
 ]
 
@@ -199,3 +255,12 @@ for rule, symptoms, probability in rules_expanded:
 
 print('\nDecisions with innacurate symptoms:')
 print('(To-Do)')
+
+# print('\nDecisions with accurate symptoms:')
+# print('Chapéu de palha', 'Camisa vermelha', 'Sapato azul')
+# print(tree.search({'Chapéu de palha', 'Camisa vermelha', 'Sapato azul'}))
+# print('Cabelo castanho', 'Camisa branca', 'Death Note')
+# print(tree.search({'Cabelo castanho', 'Camisa branca', 'Death Note'}))
+# print('Olhos azuis', 'Roupa verde', 'Sapato preto')
+# print(tree.search({'Olhos azuis', 'Roupa verde', 'Sapato preto'}))
+# print('\nDecisions with innacurate symptoms:')
