@@ -1,4 +1,6 @@
+import numpy as np
 from queue import PriorityQueue
+from sklearn import preprocessing
 
 
 class Node:
@@ -231,6 +233,52 @@ class DecisionTree:
                     break
             node.children.add(Node(rule, probability=probability))
 
+    def __define_inconsistent_causes_aux(self, root: Node, path: set = None):
+        '''
+        Recursively distributes the causes throughout the subtree, already defining their
+        fractional probabilities.
+
+        Args:
+            root [Node]: the root to the subtree.
+            path [set]: this argument should not be provided as it's automatically generated.
+                It corresponds to the current traversed vertical path.
+
+        Returns:
+            None
+        '''
+        if not path:
+            path = set()
+        path.add(root.data)
+        for cause, symptoms, probability in DecisionTree.__causes:
+            if len(path.intersection(symptoms)) != len(path):
+                continue
+            if root.data in symptoms:
+                pool_size = len(symptoms)
+                probability_fraction = len(path)
+                probability_fraction = probability_fraction / pool_size
+                new_probability = probability_fraction * probability
+                root.children.add(Node(cause, probability=new_probability))
+            for child in root.children:
+                path_copy = {i for i in path}
+                self.__define_inconsistent_causes_aux(child, path_copy)
+
+
+    def __define_inconsistent_causes(self):
+        '''
+        Defines the causes when the symptoms are inconsistent, i.e. when not
+        all symptoms were provided for a cause.
+
+        Args:
+            None
+
+        Returns:
+            None
+        '''
+        root = self.root
+        while root:
+            self.__define_inconsistent_causes_aux(root)
+            root = root.next
+
     def __process_probabilities_aux(self, root: Node, stack: list, probability):
         '''
         Recursively searches a given subtree for a node with all the elements
@@ -317,6 +365,52 @@ class DecisionTree:
             self.__compute_probabilities_aux(root)
             root = root.next
 
+    def __normalize_probabilities_aux(self, root: Node):
+        '''
+        Given a node, normalize all the probabilities from its children so they sum up to 1.
+        This function also sorts the children by their probabilities.
+
+        Args:
+            root [Node]: the node whose children's probabilities will be normalized.
+
+        Returns:
+            None
+        '''
+        nodes = [i for i in root.children]
+        if not nodes:
+            return
+        if len(nodes) == 1:
+            return
+        probabilities = [i.probability for i in nodes]
+        probabilities = np.array(probabilities)
+        probabilities = probabilities.reshape(-1, 1)
+        probabilities_scaled = preprocessing.minmax_scale(probabilities, feature_range=(0.1, 0.9))
+        probabilities_scaled = probabilities_scaled.flatten()
+        total_sum = probabilities_scaled.sum()
+        for i in range(len(nodes)):
+            node = nodes[i]
+            node.probability = probabilities_scaled[i] / total_sum
+        root.children = sorted(root.children, key=lambda a: (a.data))
+        root.children = sorted(root.children, key=lambda a: (a.probability), reverse=True)
+        root.children = sorted(root.children, key=lambda a: 1 if a.data.startswith('C ') else 0)
+        for child in root.children:
+            self.__normalize_probabilities_aux(child)
+
+    def __normalize_probabilities(self):
+        '''
+        Normalizes the probabilities on all subtree levels so they add up to 1.0.
+
+        Args:
+            None
+
+        Returns:
+            None
+        '''
+        root = self.root
+        while root:
+            self.__normalize_probabilities_aux(root)
+            root = root.next
+
     def __build_tree(self):
         self.__compute_frequencies()
         self.__gen_priorities()
@@ -324,31 +418,59 @@ class DecisionTree:
         self.__causes_priorities()
         self.__build_children()
         self.__define_causes()
+        self.__define_inconsistent_causes()
         self.__process_probabilities()
         self.__compute_probabilities()
+        self.__normalize_probabilities()
 
-    def search(self, symptoms):
+    def __to_dict_aux(self, root: Node, tree_dict: dict = None):
         '''
-        Searches for a cause, given ALL symptoms corresponding to it.
+        Recursively traverses a subtree, storing its children and probabilities in dictionaries.
 
         Args:
-            symptoms [array-like]: all the symptoms for the cause.
+            root [Node]: the root for the subtree.
+            tree_dict [dict]: the dictionary to-be update with the tree structure.
 
         Returns:
-            results [list]: a list containg the possible causes for that array of symptoms.
+            None
         '''
-        node = self.__get_ll_node_by_symptoms(symptoms, self.root)
-        symptoms_tmp = {i for i in symptoms if i != node.data}
-        while symptoms_tmp:
-            children = list(node.children)
-            children.sort(reverse=True, key=lambda a: (DecisionTree.__priorities[a.data], a.data))
-            for child in children:
-                if child.data in symptoms_tmp:
-                    node = child
-                    symptoms_tmp.remove(child.data)
-                    break
-        results = [i.data for i in node.children if i.data.startswith('C ')]
-        return results
+        if not root:
+            return
+        root_node = (root.data, root.probability)
+        if root_node not in tree_dict:
+            tree_dict[root_node] = []
+        for child in root.children:
+            new_dict = dict()
+            new_node = (child.data, child.probability)
+            new_dict[new_node] = []
+            tree_dict[root_node].append(new_dict)
+            self.__to_dict_aux(child, new_dict)
+
+    def to_dict(self):
+        '''
+        Gets the tree structure as a Python dictionary.
+
+        Args:
+            None
+
+        Returns:
+            tree_dict [dict]: a dictionary containing the entire tree structure, following the pattern:
+                (symptom/cause, probability): [children]
+        '''
+        tree_dict = dict()
+        root = self.root
+        while root:
+            self.__to_dict_aux(root, tree_dict)
+            root = root.next
+        return tree_dict
+
+    def decide(self):
+        '''
+        Traverses the tree based on questions and answers.
+
+        (To-Do)
+        '''
+        pass
 
     def display(self, root, indent=0):
         '''
@@ -394,14 +516,15 @@ tree = DecisionTree(rules=rules_expanded)
 tree.display(tree.root)
 
 print('\nDecisions with accurate symptoms:')
-for rule, symptoms, probability in rules_expanded:
-    if not rule.startswith('C '):
-        continue
-    print('\tSymptoms:', *symptoms)
-    print('\t\tExpected:', rule)
-    obtained = tree.search(symptoms)
-    print('\t\tObtained:', *obtained)
-    assert rule == obtained[-1]
+print('(To-Do)')
+# for rule, symptoms, probability in rules_expanded:
+#     if not rule.startswith('C '):
+#         continue
+#     print('\tSymptoms:', *symptoms)
+#     print('\t\tExpected:', rule)
+#     obtained = tree.search(symptoms)
+#     print('\t\tObtained:', *obtained)
+#     assert rule == obtained[-1]
 
 print('\nDecisions with innacurate symptoms:')
 print('(To-Do)')
