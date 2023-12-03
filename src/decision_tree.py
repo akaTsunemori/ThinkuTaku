@@ -37,6 +37,7 @@ class DecisionTree:
             elif rule.startswith('S '):
                 DecisionTree.__symptoms.append((rule, symptoms, probability))
         self.__build_tree()
+        self.__selected_node = None
 
     def __compute_frequencies(self):
         '''
@@ -464,13 +465,46 @@ class DecisionTree:
             root = root.next
         return tree_dict
 
-    def decide(self):
+    def decide(self, decision: str = None):
         '''
         Traverses the tree based on questions and answers.
 
-        (To-Do)
+        Args:
+            decision [str | None]: the symptom selected by the user.
+                If decision is None, then this function will assume that
+                the search is at its beginning.
+
+        Returns:
+            options [tuple]: the options for the user to chose. Once the
+                user has selected "YES" for any of these options, then this
+                option becomes the next decision.
+                The options tuple is ordered by the priority of the symptoms,
+                then by the priority of the causes. Symptoms have priority over causes.
+                Each element of the tuple consists of (str, float), which is the
+                symptom and its probability.
         '''
-        pass
+        options = []
+        if not decision:
+            self.__selected_node = None
+            root = self.root
+            while root:
+                options.append((root.data, root.probability))
+                root = root.next
+        elif decision.startswith('C '):
+            return
+        elif not self.__selected_node:
+            root = self.root
+            while root and root.data != decision:
+                root = root.next
+            options = [(i.data, i.probability) for i in root.children]
+            self.__selected_node = root
+        else:
+            for child in self.__selected_node.children:
+                if child.data == decision:
+                    self.__selected_node = child
+            options = [
+                (i.data, i.probability) for i in self.__selected_node.children]
+        return tuple(options)
 
     def display(self, root, indent=0):
         '''
@@ -513,18 +547,18 @@ rules_expanded = [
 ]
 
 tree = DecisionTree(rules=rules_expanded)
+
+print('Tree structure:\n')
 tree.display(tree.root)
 
-print('\nDecisions with accurate symptoms:')
-print('(To-Do)')
-# for rule, symptoms, probability in rules_expanded:
-#     if not rule.startswith('C '):
-#         continue
-#     print('\tSymptoms:', *symptoms)
-#     print('\t\tExpected:', rule)
-#     obtained = tree.search(symptoms)
-#     print('\t\tObtained:', *obtained)
-#     assert rule == obtained[-1]
-
-print('\nDecisions with innacurate symptoms:')
-print('(To-Do)')
+print('\n\n')
+print(*tree.decide(), '\n')
+print(*tree.decide('Olhos azuis'), '\n')
+print(*tree.decide('Roupa branca'), '\n')
+print(*tree.decide('Sapato marrom'), '\n')
+print(*tree.decide('Cabelo ruivo'), '\n')
+print('\n\n')
+print(*tree.decide(), '\n')
+print(*tree.decide('Cabelo preto'), '\n')
+print(*tree.decide('Armadura azul'), '\n')
+print(*tree.decide('Botas brancas'), '\n')
