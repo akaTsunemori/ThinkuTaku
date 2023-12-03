@@ -549,29 +549,31 @@ rules_expanded = [
 
 tree = DecisionTree(rules=rules_expanded)
 
-print('Tree structure:\n')
+print('*************************')
+print('* Estrutura da árvore:  *')
+print('*************************\n')
 tree.display(tree.root)
 
-print('\n\n')
-print(*tree.decide(), '\n')
-print(*tree.decide('Olhos azuis'), '\n')
-print(*tree.decide('Roupa branca'), '\n')
-print(*tree.decide('Sapato marrom'), '\n')
-print(*tree.decide('Cabelo ruivo'), '\n')
-print('\n\n')
-print(*tree.decide(), '\n')
-print(*tree.decide('Cabelo preto'), '\n')
-print(*tree.decide('Armadura azul'), '\n')
-print(*tree.decide('Botas brancas'), '\n')
+'''
+O exemplo abaixo explica a lógica para decisão e travessia pela árvore.
 
-
-print('\n\n')
-tree.decide()
+Os outros exemplos não estão explicados, mas seguem a mesma lógica.
+'''
+print('\n')
+print('*************************')
+print('* Exemplo de decisão 1: *')
+print('*************************\n')
+print('Sintomas a partir da raiz:')
+from_root = tree.decide() # Chamar a função sem argumentos para receber as opções inciais
+for c, _ in from_root:
+    print(c)
+print('Esses são os sintomas que devemos começar perguntando, nessa ordem, ao usuário.')
+print('')
 symptom = 'Roupa laranja'
-options = tree.decide(symptom)
+options = tree.decide(symptom) # Chamar a função com o sintoma selecionado, para efetuar a travessia
 print(f'Caso personagem tenha apenas o sintoma *{symptom}*, as opções serão:')
 for c, p in options:
-    print(f'Causa: {c:<30}', f'Probabilidade: {(p*100):.2f}%')
+    print(f'Regra: {c:<30}', f'Probabilidade: {(p*100):.2f}%')
 print('')
 max_probability = max(i[1] for i in options if i[0].startswith('C '))
 decision = [i for i in options if i[0].startswith('C ') and i[1] == max_probability]
@@ -580,3 +582,27 @@ cause = cause[2:]
 probability = (decision[0][1]*100)
 print(f'E a decisão será a *causa* com maior probabilidade, ou seja:', cause)
 print(f'com a confiança de {probability:.2f}%.')
+
+'''
+Esses exemplos mostram como funciona a função de decisão, etapa por etapa.
+
+Caso o usuário responda com "Não sei", basta selecionar a causa com maior probabilidade,
+que foi a lógica usada no exemplo anterior.
+'''
+print('\n')
+print('*************************')
+print('* Exemplo de decisão 2: *')
+print('*************************\n')
+print(*tree.decide(), '\n')
+print(*tree.decide('Olhos azuis'), '\n')
+print(*tree.decide('Roupa branca'), '\n')
+print(*tree.decide('Sapato marrom'), '\n')
+print(*tree.decide('Cabelo ruivo'))
+print('\n')
+print('*************************')
+print('* Exemplo de decisão 3: *')
+print('*************************\n')
+print(*tree.decide(), '\n')
+print(*tree.decide('Cabelo preto'), '\n')
+print(*tree.decide('Armadura azul'), '\n')
+print(*tree.decide('Botas brancas'))
