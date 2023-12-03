@@ -526,6 +526,7 @@ class DecisionTree:
 
 rules_expanded = [
     ('C Naruto Uzumaki', {'Olhos azuis', 'Roupa laranja', 'Sapato azul', 'NOT Dor'}, 0.5),
+    ('C Hinata Shouyou', {'Roupa laranja', 'Sapato branco', 'NOT Olhos azuis'}, 0.6),
     ('C Goku', {'Cabelo preto', 'Kimono laranja', 'Sapato azul'}, 0.7),
     ('C Monkey D. Luffy', {'Chapéu de palha', 'Camisa vermelha', 'Sapato azul'}, 0.6),
     ('C Ichigo Kurosaki', {'Cabelo laranja', 'Uniforme preto', 'Sapato marrom'}, 0.4),
@@ -562,3 +563,20 @@ print(*tree.decide(), '\n')
 print(*tree.decide('Cabelo preto'), '\n')
 print(*tree.decide('Armadura azul'), '\n')
 print(*tree.decide('Botas brancas'), '\n')
+
+
+print('\n\n')
+tree.decide()
+symptom = 'Roupa laranja'
+options = tree.decide(symptom)
+print(f'Caso personagem tenha apenas o sintoma *{symptom}*, as opções serão:')
+for c, p in options:
+    print(f'Causa: {c:<30}', f'Probabilidade: {(p*100):.2f}%')
+print('')
+max_probability = max(i[1] for i in options if i[0].startswith('C '))
+decision = [i for i in options if i[0].startswith('C ') and i[1] == max_probability]
+cause = decision[0][0]
+cause = cause[2:]
+probability = (decision[0][1]*100)
+print(f'E a decisão será a *causa* com maior probabilidade, ou seja:', cause)
+print(f'com a confiança de {probability:.2f}%.')
