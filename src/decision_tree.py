@@ -28,7 +28,6 @@ class DecisionTree:
     __causes = []
     __symptoms = []
 
-
     def __init__(self, rules) -> None:
         self.root = None
         for rule, symptoms, probability in rules:
@@ -262,7 +261,6 @@ class DecisionTree:
             for child in root.children:
                 path_copy = {i for i in path}
                 self.__define_inconsistent_causes_aux(child, path_copy)
-
 
     def __define_inconsistent_causes(self):
         '''
