@@ -1,3 +1,19 @@
+
+document.addEventListener('DOMContentLoaded', function() {
+    fetch('/get-tree')
+        .then(response => response.json())
+        .then(data => {
+            console.log(data);
+        })
+        .catch(error => {
+            console.error('Erro ao obter nome:', error);
+        });
+});
+
+function closeAll(){
+    $('#tree ul').fadeOut(600,function() {$(this).css('display', 'none')});
+}
+
 $(function(){
     $('#tree').on("click", ".quadro-t", function() {
         $( this ).siblings().toggle( "slow" );
@@ -34,6 +50,3 @@ $(function(){
         $(this).siblings('.decision-icons').toggle("slow");
     })
 })
-function closeAll(){
-    $('#tree ul').fadeOut(600,function() {$(this).css('display', 'none')});
-}

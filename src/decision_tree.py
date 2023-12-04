@@ -2,6 +2,19 @@ import numpy as np
 from queue import PriorityQueue
 from sklearn import preprocessing
 
+def serialize_data(data):
+        if isinstance(data, (dict, list, tuple)):
+            serialized_data = {}
+            for key, value in data.items() if isinstance(data, dict) else enumerate(data):
+                serialized_key = str(key) if isinstance(key, tuple) else key
+                serialized_value = serialize_data(value)
+                if serialized_value is not None:
+                    serialized_data[serialized_key] = serialized_value
+            return serialized_data
+        elif isinstance(data, (int, float, str, bool, type(None))):
+            return data
+        else:
+            return None
 
 class Node:
     def __init__(self, data, probability = 0.0) -> None:
@@ -461,7 +474,7 @@ class DecisionTree:
         while root:
             self.__to_dict_aux(root, tree_dict)
             root = root.next
-        return tree_dict
+        return serialize_data(tree_dict)
 
     def decide(self, decision: str = None):
         '''
