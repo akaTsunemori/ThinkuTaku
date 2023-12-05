@@ -50,14 +50,14 @@ def parse_file(path):
                     rules.append((rule, {symptom}, probability))
                 continue
             symptoms = symptoms.strip('(')
-            symptoms = symptoms.split(', ')
+            symptoms = symptoms.split('; ')
             symptoms = set(symptoms)
             rules.append((rule, symptoms, probability))
     return rules
 
 
 def main():
-    rules = parse_file("static/input.txt")
+    rules = parse_file("static/input.csv")
     for rule, symptoms, probability in rules:
         print("rule:", rule)
         print("symptoms:", symptoms)
