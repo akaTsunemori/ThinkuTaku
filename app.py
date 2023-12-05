@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 from src.decision_tree import DecisionTree
 from src.input_parser import parse_file
 
@@ -15,8 +15,19 @@ tree = DecisionTree(rules=rules)
 def home():
     return render_template('home.html')
 
-@app.route('/game')
+@app.route('/game', methods=('GET', 'POST'))
 def game():
+    if request.method == "POST":
+        tree.display(tree.root)
+        next_node = request.form["next_node"]
+        children = request.form["children_node"]
+        # children = request.form["children_node"]
+        print(next_node)
+        print(children)
+        if request.form["answer"] == "no":
+            return render_template('game.html', root=next_node)
+        else:
+            return render_template('game.html', root=children)
     return render_template('game.html', tree=tree)
 
 

@@ -4,8 +4,33 @@
 <h1>Jogar aqui</h1>
 <div class="container" style="margin-top: 2rem;">
     <div class="form">
-        vamo jogar aqui
+        <p>vamo jogar aqui</p>
+        <p>Perguntar: {% print(tree.root) %}</p>
+        <p>Se não ou não sei: {% print(tree.root.next) %}</p>
+        <p>Se sim: {% print(tree.root.children[0]) %}</p>
+        <form method="post" id="myForm">
+            <input type="hidden" id="next" name="next_node" value="{{tree.decide(tree.root.next.data)}}" />
+            <input type="hidden" id="children" name="children_node" value="{{tree.decide(tree.root.children[0].data)}}" />
+            <input type="hidden" id="answer" name="answer" value="no" />
+            <button type="button" onclick="setHiddenValue('no')">Não</button>
+            <button type="button" onclick="setHiddenValue('no')">Não sei</button> 
+            <button type="button" onclick="setHiddenValue('yes')">Sim</button>
+        </form>
+        {% print(tree.decide()) %}
+        <p>.</p>
+        {% print(tree.decide(tree.root.data)) %}
+        <p>.</p>
+        {% print(tree.decide()) %}
     </div>
 </div>
-oi
+
+<script>
+    // JavaScript function to set the value of the hidden input field
+    function setHiddenValue(value) {
+      document.getElementById('answer').value = value;
+      console.log(value)
+      document.getElementById('myForm').submit(); // Submit the form after setting the value
+    }
+</script>
 {% endblock %}
+
