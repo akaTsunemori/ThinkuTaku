@@ -15,6 +15,10 @@ tree = DecisionTree(rules=rules)
 def home():
     return render_template('home.html')
 
+@app.route('/game')
+def game():
+    return render_template('game.html')
+
 
 # Run the app
 if __name__ == '__main__':
