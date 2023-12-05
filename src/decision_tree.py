@@ -382,8 +382,12 @@ class DecisionTree:
             return
         probabilities = [i.probability for i in nodes]
         probabilities = np.array(probabilities)
+        min_range = min(abs(i) for i in probabilities)
+        min_range = min(min_range, 1.0)
+        max_range = max(abs(i) for i in probabilities)
+        max_range = min(max_range, 1.0)
         probabilities = probabilities.reshape(-1, 1)
-        probabilities_scaled = preprocessing.minmax_scale(probabilities, feature_range=(0.1, 0.9))
+        probabilities_scaled = preprocessing.minmax_scale(probabilities, feature_range=(min_range, max_range))
         probabilities_scaled = probabilities_scaled.flatten()
         total_sum = probabilities_scaled.sum()
         for i in range(len(nodes)):
@@ -552,7 +556,7 @@ def main():
         ('C Rei Ayanami', {'Olhos azuis', 'Roupa branca'}, 0.1),
         ('C Levi Ackerman', {'Olhos azuis', 'Roupa verde', 'Sapato preto'}, 0.2),
         ('C Haachama', {'CHAMACHAMA'}, 1.0),
-        ('S Sapato marrom', {'Olhos azuis', 'Roupa branca'}, 0.5),
+        ('S Sapato marrom', {'Olhos azuis', 'Roupa branca'}, 0.8),
         ('S Cabelo ruivo', {'Roupa branca'}, 0.91),
         ('S Armadura azul', {'Cabelo preto'}, 0.67),
         ('S Botas brancas', {'Cabelo preto'}, 0.84)
