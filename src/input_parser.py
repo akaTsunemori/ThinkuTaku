@@ -52,6 +52,7 @@ def parse_file(path):
             symptoms = symptoms.strip('(')
             symptoms = symptoms.split('; ')
             symptoms = set(symptoms)
+            probability = float(probability)
             rules.append((rule, symptoms, probability))
     return rules
 
