@@ -8,14 +8,11 @@
   <body>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="{{ url_for('static', filename='edit_tree.js') }}"></script>
-    <ul id="tree">
-        <button onclick="closeAll()" class="btn btn-primary">Close</button>
-        <li class="children">
-            <div class="quadro-t pai">
-                <i class="fas fa-plus-circle action-button"></i>
-                <input type="text" class="input-text" value="First"/>
-            </div>
-        </li>
+    <ul>
+        <button onclick="closeAll()" class="btn btn-primary">Fechar tudo</button>
+        <div id="tree">
+
+        </div>
     </ul>
     </div>
   </body>

@@ -1,12 +1,52 @@
+function createNode(key, value, parent, previousKeys = []) {
+    const isNumericKey = !isNaN(key);
+    let keyToDisplay = key;
+
+    if (isNumericKey) {
+        Object.entries(value).forEach(([childKey, childValue]) => {
+            createNode(childKey, childValue, parent, [...previousKeys, key]);
+        });
+        return;
+    }
+
+    if (previousKeys.includes(key)) {
+        return;
+    }
+
+    const $newNode = $('<li class="children"><div class="quadro-t"><i class="far fa-trash-alt action-button"></i><i class="fas fa-plus-circle action-button"></i><input type="text" class="input-text" value="' + keyToDisplay + '"/></div></li>');
+
+    if (Object.keys(value).length > 0) {
+        const $subTree = $('<ul style="display: none;"></ul>');
+        $newNode.append($subTree);
+        Object.entries(value).forEach(([childKey, childValue]) => {
+            createNode(childKey, childValue, $subTree, [...previousKeys, key]);
+        });
+    }
+
+    parent.append($newNode);
+}
+
+function createTree(data) {
+    const $tree = $('#tree');
+    const $root = $('<li class="children"><div class="quadro-t pai"><i class="far fa-trash-alt action-button"></i><i class="fas fa-plus-circle action-button"></i><input type="text" class="input-text" value="' + "Tree" + '"/></div></li>');
+    const $subItems = $('<ul style="display: none;"></ul>');
+    $tree.append($root);
+    $root.append($subItems);
+
+    Object.entries(data).forEach(([key, value]) => {
+        createNode(key, value, $subItems);
+    });
+}
+
 
 document.addEventListener('DOMContentLoaded', function() {
     fetch('/get-tree')
         .then(response => response.json())
         .then(data => {
-            console.log(data);
+            createTree(data);
         })
         .catch(error => {
-            console.error('Erro ao obter nome:', error);
+            console.error('Erro on get tree:', error);
         });
 });
 
@@ -26,10 +66,10 @@ $(function(){
                 if($galho.css('display') == 'none'){
                     $galho.toggle("slow");
                 }
-                $novo = $galho.append("<li class='children' style='display: none'><div class='quadro-t "+"'><i class='far fa-trash-alt action-button'></i><i class='fas fa-plus-circle action-button'></i><input type='text' class='input-text' value='New'/></div></div></li>");
+                $novo = $galho.append("<li class='children' style='display: none'><div class='quadro-t "+"'><i class='far fa-trash-alt action-button'></i><i class='fas fa-plus-circle action-button'></i><input type='text' class='input-text' value='Novo'/></div></div></li>");
                 $novo.children('li:last-child').toggle('slow');
             } else {
-                $novo = $( this ).parent('.quadro-t').after("<ul><li class='children'><div class='quadro-t "+"'><i class='far fa-trash-alt action-button'></i><i class='fas fa-plus-circle action-button'></i><input type='text' class='input-text' value='New'/></div></div></li></ul>");
+                $novo = $( this ).parent('.quadro-t').after("<ul><li class='children'><div class='quadro-t "+"'><i class='far fa-trash-alt action-button'></i><i class='fas fa-plus-circle action-button'></i><input type='text' class='input-text' value='Novo'/></div></div></li></ul>");
                 $($novo).siblings('ul').toggle('slow');
             }
             $('.decision-icons').fadeOut(600,function() {$(this).css('display', 'none')});
