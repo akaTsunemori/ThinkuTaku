@@ -411,6 +411,18 @@ class DecisionTree:
             root = root.next
 
     def __build_tree(self):
+        '''
+        Builds the whole tree structure, calling every
+        function following the correct order.
+        This method should be only called by the
+        tree's constructor.
+
+        Args:
+            None
+
+        Returns:
+            None
+        '''
         self.__compute_frequencies()
         self.__gen_priorities()
         self.__ll_initialize()
@@ -520,6 +532,7 @@ class DecisionTree:
             for child in root.children:
                 self.display(child, indent+1)
             self.display(root.next)
+
 
 def main():
     rules_expanded = [
