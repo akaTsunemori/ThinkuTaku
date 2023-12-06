@@ -1,3 +1,4 @@
+import ast
 from flask import Flask, render_template, request
 from src.decision_tree import DecisionTree
 from src.input_parser import parse_file
@@ -18,17 +19,22 @@ def home():
 @app.route('/game', methods=('GET', 'POST'))
 def game():
     if request.method == "POST":
-        tree.display(tree.root)
-        next_node = request.form["next_node"]
-        children = request.form["children_node"]
-        # children = request.form["children_node"]
-        print(next_node)
-        print(children)
+        next_tuple = ast.literal_eval(request.form["next"])
         if request.form["answer"] == "no":
-            return render_template('game.html', root=next_node)
+            if next_tuple[0][0][0:2] == "C ":
+                return render_template('guess.html', decision=decision)
+            return render_template('game.html', decision=next_tuple[1:])
+        elif request.form["answer"] == "win":
+            return render_template('win.html')
+        elif request.form["answer"] == "loose":
+            return render_template('loose.html')
         else:
-            return render_template('game.html', root=children)
-    return render_template('game.html', tree=tree)
+            decision = tree.decide(next_tuple[0][0])
+            if decision[0][0][0:2] == "C ":
+                return render_template('guess.html', decision=decision)
+            return render_template('game.html', decision=decision)
+    decision = tree.decide()
+    return render_template('game.html', decision=decision)
 
 
 # Run the app
