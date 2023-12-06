@@ -239,6 +239,19 @@ ul.list {
     left: 50%;
     top: 78%;
     transform: translateX(-50%) translateY(-50%);
+    overflow: hidden;
+    white-space: nowrap;
+    width: 100%;
+    animation: reveal 6s ease-in forwards;
+}
+
+@keyframes reveal {
+    0% {
+        width: 0%;
+    }
+    100% {
+        width: 100%;
+    }
 }
 
 .options {
