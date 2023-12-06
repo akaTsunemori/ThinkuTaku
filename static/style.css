@@ -205,16 +205,16 @@ ul.list {
     position: absolute;
     left: 50%;
     bottom: 30%;
-    transform: translateX(-50%) translateY(-50%);
+    transform: translate(-50%, -50%);
     animation: bounce 2s infinite alternate;
 }
 
 @keyframes bounce {
     0% {
-        transform: translateX(-50%) translateY(0);
+        transform: translate(-50%, 0);
     }
     100% {
-        transform: translateX(-50%) translateY(-0.2rem);
+        transform: translate(-50%, 10px);
     }
 }
 
