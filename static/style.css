@@ -191,7 +191,7 @@ ul.list {
     background-repeat: no-repeat;
     background-position: center center;
     background-size: 100% auto;
-    position: fixed;
+    position: absolute;
     top: 27.5%;
     filter: brightness(40%) contrast(150%);
 }
@@ -207,14 +207,22 @@ ul.list {
     bottom: 30%;
     transform: translate(-50%, -50%);
     animation: bounce 2s infinite alternate;
+    -moz-transform: translate(-50%, -50%);
+    -moz-animation: bounce 2s infinite alternate;
+    -webkit-transform: translate(-50%, -50%);
+    -webkit-animation: bounce 2s infinite alternate;
 }
 
 @keyframes bounce {
     0% {
         transform: translate(-50%, 0);
+        -moz-transform: translate(-50%, 0);
+        -webkit-transform: translate(-50%, 0);
     }
     100% {
         transform: translate(-50%, 10px);
+        -moz-transform: translate(-50%, 10px);
+        -webkit-transform: translate(-50%, 10px);
     }
 }
 
