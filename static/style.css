@@ -73,7 +73,7 @@ body {
     font-family: 'Noto Sans', Arial, sans-serif;
     background-color: #000000;
     color: #fff;
-    background: linear-gradient(to bottom, #01010a, #010111);
+    background: linear-gradient(to bottom, #000000, #010111);
     height: 100vh;
 }
 
