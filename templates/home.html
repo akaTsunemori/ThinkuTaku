@@ -6,14 +6,16 @@
 </head>
 <body>
     {% include 'header.html' %}
-    <div class="content">
-        <h1>Welcome to PAA Projeto Final!</h1>
-        <div class="container" style="margin-top: 2rem;">
-        <div class="form">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a faucibus sem. Duis molestie sem sed enim ullamcorper, id ullamcorper lacus finibus. Duis efficitur tellus eget est tincidunt, a rutrum orci tempor. Sed ornare arcu at hendrerit varius. Morbi non libero sed leo accumsan porttitor. Morbi facilisis urna in nisi egestas elementum. Proin id eros ac lorem sodales accumsan. Donec ut rhoncus arcu. Maecenas at nulla nec arcu elementum eleifend ut eu risus. In non nisl et neque luctus gravida id consequat risus. Aenean eget efficitur risus.
-            Vivamus sollicitudin risus id justo scelerisque ultrices. Nam eget euismod mauris. In elit nisl, luctus ac tellus at, dignissim pellentesque velit. Nunc vel nisi non massa facilisis commodo. Nulla pellentesque lectus et malesuada dignissim. Donec nec quam non ex malesuada tincidunt. Mauris fringilla, felis a laoreet porta, purus sem pretium orci, nec congue nisl magna ut lorem. Fusce ut ipsum eu purus vehicula ultrices. Ut varius nibh quis odio semper, vitae bibendum leo feugiat. Aliquam erat volutpat. Quisque ut leo nisi. Nunc urna ante, dignissim congue lectus vitae, ultrices dignissim lectus. Sed ultrices ultricies diam, sed aliquam sem sagittis vitae. Nullam mollis erat quis sapien fringilla, ac pellentesque massa molestie.
-        </div>
-        </div>
+    {% include 'background.html' %}
+    <img src="{{ character }}" alt="Image" class="character">
+    <div class="character-name">Lust, a lasciva</div>
+    <div class="dialog">Está pronto para jogar?</div>
+    <div class="options">
+        <nav>
+            <ul>
+                <li><a href="/game">Vamos jogar.</a></li>
+            </ul>
+        </nav>
     </div>
 </body>
 </html>
