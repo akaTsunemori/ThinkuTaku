@@ -1,8 +1,13 @@
 from flask import Flask, render_template
 from src.decision_tree import DecisionTree, rules_expanded
+from src.input_parser import parse_file
 
-# Main app
+
+# Initialize the Flask app and the Decision Tree
 app = Flask(__name__)
+PATH = 'static/input.csv'
+rules = parse_file(path=PATH)
+tree = DecisionTree(rules=rules)
 
 # Routes
 @app.route('/')

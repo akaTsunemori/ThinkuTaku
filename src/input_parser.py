@@ -1,5 +1,5 @@
 import re
-import decision_tree
+
 
 def parse_line(line: str):
     """
@@ -25,7 +25,6 @@ def parse_line(line: str):
         line.rsplit(',', 1)[1]]
     line = [i.strip() for i in line]
     cause, symptoms, probability = line
-    symptoms = symptoms.replace("(","").replace(")","")
     return cause, symptoms, probability
 
 
@@ -43,45 +42,27 @@ def parse_file(path):
         rules = []
         for line in f:
             rule, symptoms, probability = parse_line(line)
+            symptoms = symptoms.strip(')')
+            if symptoms.startswith('NOT ('):
+                symptoms = symptoms.strip('NOT (')
+                symptoms = symptoms.split(', ')
+                for symptom in symptoms:
+                    rules.append((rule, {symptom}, probability))
+                continue
+            symptoms = symptoms.strip('(')
+            symptoms = symptoms.split('; ')
+            symptoms = set(symptoms)
+            probability = float(probability)
             rules.append((rule, symptoms, probability))
     return rules
 
 
 def main():
-    rules = parse_file("static/input.txt")
-
-    # cria a raiz da arvore
-    raiz = decision_tree.Node(is_leaf=False, name="raiz", probability=1)
-
+    rules = parse_file("static/input.csv")
     for rule, symptoms, probability in rules:
-        
-        print("----------------------------")
         print("rule:", rule)
         print("symptoms:", symptoms)
         print("probability:", probability)
-
-    # vou escrever a arvore do exemplo logo nesse arquivo pois acho que faz mais sentido,
-    # ao inves de escrever outro
-
-        symptoms = symptoms.split(",")
-        path_list = []
-        print(symptoms)
-        for sypmtom in symptoms:
-            if sypmtom[0] == "N" or sypmtom[1] == "N":
-                path_list.append(f"!{sypmtom[-1]}")
-            else:
-                path_list.append(sypmtom[-1])
-        print(path_list)
-
-    # pega os indices dos sintomas e regra
-        rule_idx = rule[-1]
-        path_list.append(rule_idx)
-        print(path_list)
-    
-    # adiciona os caminhos a raiz da arvore
-        raiz.insertNode(path_list=path_list, probability=probability, depth=1)
-
-    
 
 
 if __name__ == "__main__":
