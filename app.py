@@ -2,7 +2,6 @@ from flask import Flask, render_template
 from src.decision_tree import DecisionTree
 from src.input_parser import parse_file
 
-
 # Initialize the Flask app and the Decision Tree
 app = Flask(__name__)
 PATH = 'static/input.csv'

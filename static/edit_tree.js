@@ -13,7 +13,11 @@ function createNode(key, value, parent, previousKeys = []) {
         return;
     }
 
-    const $newNode = $('<li class="children"><div class="quadro-t"><i class="far fa-trash-alt action-button"></i><i class="fas fa-plus-circle action-button"></i><input type="text" class="input-text" value="' + keyToDisplay + '"/></div></li>');
+    let text = keyToDisplay.slice(1, -1).split(', ');
+    let percent = parseFloat(text[1]) * 100;
+    keyToDisplay = text[0].replace(/\bC\b/g, '').slice(1, -1) + ', ' + percent.toFixed(0) + '%';
+
+    const $newNode = $('<li class="children"><div class="quadro-t"><span class="node-text">' + keyToDisplay + '</span></div></li>');
 
     if (Object.keys(value).length > 0) {
         const $subTree = $('<ul style="display: none;"></ul>');
@@ -28,7 +32,7 @@ function createNode(key, value, parent, previousKeys = []) {
 
 function createTree(data) {
     const $tree = $('#tree');
-    const $root = $('<li class="children"><div class="quadro-t pai"><i class="far fa-trash-alt action-button"></i><i class="fas fa-plus-circle action-button"></i><input type="text" class="input-text" value="' + "Tree" + '"/></div></li>');
+    const $root = $('<li class="children"><div class="quadro-t pai"><span class="node-text">Tree</span></div></li>');
     const $subItems = $('<ul style="display: none;"></ul>');
     $tree.append($root);
     $root.append($subItems);
