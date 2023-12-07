@@ -3,14 +3,18 @@
   margin: 1.25rem auto;
 }
 .btn-primary {
-  background-color: #333;
+  background-color: rgba(206, 6, 6, 0.5);
   color: #fff;
   border-radius: 0.75rem;
-  padding: 0.25rem;
+  padding: 0.25rem 0.5rem;
   border: none;
   outline: none;
   cursor: pointer;
   box-shadow: none;
+}
+
+.open {
+  background:#333;
 }
 
 .node-text {
@@ -48,6 +52,7 @@
   margin-top: -1.25rem;
   padding-top: 1.25rem;
 }
+
 #tree li.children > .quadro-t {
   min-width: 8.125rem;
   width: min-content;
@@ -56,9 +61,10 @@
   z-index: 3;
   background-color: #333;
   cursor: pointer;
-  box-shadow: 0rem 0rem 0.3125rem -0.0625rem rgba(206, 6, 6, 0.4);
+  box-shadow: 0rem 0rem 0.3125rem -0.0625rem rgba(206, 6, 6, 0.5);
   border-radius: 0.75rem;
 }
+
 #tree li.children > .quadro-t:not(.pai)::before {
   content: '';
   display: inline-block;
@@ -74,6 +80,11 @@
   border-bottom-left-radius: 1.5625rem;
   border-top-left-radius: 0.1875rem;
 }
+
+#tree li.no-children > .quadro-t {
+  cursor: default;
+}
+
 #tree .children:last-child {
   background-color: transparent;
   margin-left: -1.5rem;
