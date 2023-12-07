@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, jsonify
 from src.decision_tree import DecisionTree
 from src.input_parser import parse_file
 
@@ -15,7 +15,7 @@ def home():
 
 @app.route('/get-tree', methods=['GET'])
 def getTree():
-    return tree.to_dict() 
+    return jsonify(tree.to_dict())
 
 # Run the app
 if __name__ == '__main__':
