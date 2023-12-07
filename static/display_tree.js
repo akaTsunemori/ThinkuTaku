@@ -48,7 +48,6 @@ document.addEventListener('DOMContentLoaded', function() {
     fetch('/get-tree')
         .then(response => response.json())
         .then(data => {
-            console.log(data);
             createTree(data);
         })
         .catch(error => {

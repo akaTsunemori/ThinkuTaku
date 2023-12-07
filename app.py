@@ -11,7 +11,7 @@ tree = DecisionTree(rules=rules)
 # Routes
 @app.route('/')
 def home():
-    return render_template('edit_tree.html')
+    return render_template('display_tree.html')
 
 @app.route('/get-tree', methods=['GET'])
 def getTree():
