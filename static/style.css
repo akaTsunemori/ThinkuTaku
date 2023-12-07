@@ -183,7 +183,7 @@ ul.list {
     justify-content: center;
     align-items: center;
     overflow: hidden;
-    height: 42%;
+    height: 45%;
     width: 100%;
     justify-content: center;
     align-items: center;
@@ -192,7 +192,8 @@ ul.list {
     background-position: center center;
     background-size: 100% auto;
     position: absolute;
-    top: 27.5%;
+    top: 25%;
+    box-shadow: 0rem 1rem 1rem 0rem rgba(0, 0, 0, 0.2);
     filter: brightness(40%) contrast(150%);
 }
 
@@ -200,9 +201,7 @@ ul.list {
     display: block;
     margin: 0 auto;
     position: relative;
-    height: 65%;
-    max-height: 65%;
-    min-height: 65%;
+    height: 70%;
     margin-top: 2%;
     position: absolute;
     left: 50%;
