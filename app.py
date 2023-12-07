@@ -1,5 +1,4 @@
 from flask import Flask, render_template
-from random import choice
 from src.decision_tree import DecisionTree
 from src.input_parser import parse_file
 from src.img_selector import ImgSelector
