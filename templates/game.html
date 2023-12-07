@@ -18,12 +18,12 @@
     <!-- <img src="/static/Resources/Akihabara/bg13a1.jpg" alt="Image" class="background"> -->
     {% include 'background.html' %}
     <img src="{{ character }}" alt="Image" class="character">
-    <div class="character-name">Lust, a lasciva</div>
+    <div class="character-name">{{ character_name }}</div>
     <div class="dialog">Seu personagem tem olhos azuis?</div>
     <div class="options">
         <nav>
             <ul>
-                <li><a href="/">Sim, estou certo disso.</a></li>
+                <li><a href="/game">Sim, estou certo disso.</a></li>
             </ul>
         </nav>
         <nav>

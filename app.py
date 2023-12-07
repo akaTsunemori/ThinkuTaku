@@ -1,8 +1,8 @@
 from flask import Flask, render_template
-from os import listdir
 from random import choice
 from src.decision_tree import DecisionTree
 from src.input_parser import parse_file
+from src.img_selector import ImgSelector
 
 
 # Initialize the Flask app and the Decision Tree
@@ -11,26 +11,28 @@ PATH = 'static/input.csv'
 rules = parse_file(path=PATH)
 tree = DecisionTree(rules=rules)
 
-# Initialize images
-BACKGROUND_PATH = 'static/img/akihabara'
-backgrounds = listdir(BACKGROUND_PATH)
-CHARACTER_PATH = 'static/img/characters'
-characters = listdir(CHARACTER_PATH)
+# Initialize the image selector
+img_selector = ImgSelector()
+
+
+def render_template_util(page):
+    return render_template(page,
+        image_url=img_selector.get_background(),
+        character=img_selector.get_character(),
+        character_name=img_selector.get_character_name())
 
 
 # Routes
 @app.route('/')
 def home():
-    return render_template('home.html',
-        image_url=f'{BACKGROUND_PATH}/{choice(backgrounds)}',
-        character=f'{CHARACTER_PATH}/{choice(characters)}')
+    img_selector.new_character()
+    return render_template_util('home.html')
+
 
 
 @app.route('/game')
 def game():
-    return render_template('game.html',
-        image_url=f'{BACKGROUND_PATH}/{choice(backgrounds)}',
-        character=f'{CHARACTER_PATH}/{choice(characters)}')
+    return render_template_util('game.html')
 
 
 # Run the app
