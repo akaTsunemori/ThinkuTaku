@@ -3,7 +3,7 @@ from os import listdir
 from json import load
 
 
-class ImgSelector:
+class AssetManager:
     def __init__(self) -> None:
         self.__BACKGROUND_PATH = 'static/img/akihabara/'
         self.__CHARACTERS_PATH = 'static/img/characters/'
