@@ -15,6 +15,7 @@ class AssetManager:
             self.character_names = load(file)
         with open('static/json/symptoms.json', 'r') as file:
             self.comments = load(file)
+        self.new_character()
 
     def new_character(self):
         self.__SELECTED_CHARACTER = choice(self.__CHARACTERS_OPTIONS)
