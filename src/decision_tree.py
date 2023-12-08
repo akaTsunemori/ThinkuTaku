@@ -523,8 +523,27 @@ class DecisionTree:
         return options[::-1]
 
     def decide(self, answer: str = None):
+        '''
+        Decide function for the DecisionTree.
+
+        Args:
+            answer [str]: can be None, 'yes', 'no', or 'doubt'.
+            None: setup the tree for decision. Should be called only before
+                the decision process;
+            'yes': the answer is "yes" for the
+                DecisionTree.decision;
+            'no': the answer is "no" for the
+                DecisionTree.decision;
+            'doubt': the answer is "doubt" for the
+                DecisionTree.decision.
+
+        Returns:
+            None
+        '''
         if answer is None:
             self.__decision_queue = self.__decide_aux()
+        if answer not in ['yes', 'no', 'doubt']:
+            raise Exception('Answer needs to be "yes", "no" or "doubt"!')
         elif answer == 'yes':
             self.__decision_queue = self.__decide_aux(self.__decision_queue[-1][0])
         elif answer == 'no':
