@@ -231,19 +231,18 @@ ul.list {
 }
 
 .dialog {
-    color: #8a0f15;
+    display: block;
     text-align: center;
-    margin-top: 2.5rem;
-    font-size: 2.5rem;
+    color: #8a0f15;
+    font-size: 3.5vh;
     font-family: 'Times New Roman', Times, serif;
     position: absolute;
     left: 50%;
-    top: 78%;
+    bottom: 5.5%;
     transform: translateX(-50%) translateY(-50%);
-    overflow: hidden;
-    white-space: nowrap;
-    width: 100%;
-    animation: reveal 6s ease-in forwards;
+    width: 90%;
+    height: 12%;
+    overflow: auto;
 }
 
 @keyframes reveal {
@@ -260,10 +259,9 @@ ul.list {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 1.5rem;
     position: absolute;
     left: 50%;
-    top: 90%;
+    bottom: 5%;
     transform: translateX(-50%) translateY(-50%);
     min-width: fit-content;
 }

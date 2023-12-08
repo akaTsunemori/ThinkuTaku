@@ -14,24 +14,26 @@ tree = DecisionTree(rules=rules)
 asset_manager = AssetManager()
 
 
-def render_template_util(page):
+def render_template_assets(page, **kwargs):
     return render_template(page,
         image_url=asset_manager.get_background(),
         character=asset_manager.get_character(),
-        character_name=asset_manager.get_character_name())
+        character_name=asset_manager.get_character_name(),
+        **kwargs)
 
 
 # Routes
 @app.route('/')
 def home():
     asset_manager.new_character()
-    return render_template_util('home.html')
+    return render_template_assets('home.html')
 
 
 
 @app.route('/game')
 def game():
-    return render_template_util('game.html')
+    return render_template_assets('game.html',
+        comment=asset_manager.get_comment())
 
 
 # Run the app

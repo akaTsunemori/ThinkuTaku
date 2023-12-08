@@ -9,7 +9,7 @@
     {% include 'background.html' %}
     <img src="{{ character }}" alt="Image" class="character">
     <div class="character-name">{{ character_name }}</div>
-    <div class="dialog">Está pronto para jogar?</div>
+    <div class="dialog" id="dialog"></div>
     <div class="options">
         <nav>
             <ul>
@@ -18,4 +18,6 @@
         </nav>
     </div>
 </body>
+<script type="text/javascript" src="static/typewriter.js"></script>
+<script>printLetterByLetter("dialog", "Está pronto para jogar?");</script>
 </html>

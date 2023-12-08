@@ -1,4 +1,4 @@
-from random import choice
+from random import choice, randrange
 from os import listdir
 from json import load
 
@@ -13,6 +13,8 @@ class AssetManager:
         self.__characters = []
         with open('static/json/characters.json', 'r') as file:
             self.character_names = load(file)
+        with open('static/json/symptoms.json', 'r') as file:
+            self.comments = load(file)
 
     def new_character(self):
         self.__SELECTED_CHARACTER = choice(self.__CHARACTERS_OPTIONS)
@@ -26,3 +28,9 @@ class AssetManager:
 
     def get_background(self):
         return self.__BACKGROUND_PATH + choice(self.__backgrounds)
+
+    def get_comment(self):
+        probability = randrange(100)
+        if probability > 20:
+            return ''
+        return choice(self.comments) + ' '

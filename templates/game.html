@@ -9,7 +9,7 @@
     {% include 'background.html' %}
     <img src="{{ character }}" alt="Image" class="character">
     <div class="character-name">{{ character_name }}</div>
-    <div class="dialog">Seu personagem tem olhos azuis?</div>
+    <div class="dialog" id="dialog"></div>
     <div class="options">
         <nav>
             <ul>
@@ -28,4 +28,6 @@
         </nav>
     </div>
 </body>
+<script type="text/javascript" src="static/typewriter.js"></script>
+<script>printLetterByLetter("dialog", "{{comment}}Seu personagem tem olhos azuis?");</script>
 </html>
