@@ -58,8 +58,7 @@ def game():
         question = f'Seu personagem é o(a) {rule[2:]}? (Confiança: {(probability*100):.0f}%)'
     return render_template_assets('game.html',
         comment=comment,
-        question=question,
-        rule=rule)
+        question=question)
 
 
 # Run the app
