@@ -10,23 +10,11 @@
     <img src="{{ character }}" alt="Image" class="character">
     <div class="character-name">{{ character_name }}</div>
     <div class="dialog" id="dialog"></div>
-    <div class="options">
-        <nav>
-            <ul>
-                <li><a href="/game">Sim, estou certo disso.</a></li>
-            </ul>
-        </nav>
-        <nav>
-            <ul>
-                <li><a href="/">A resposta é não.</a></li>
-            </ul>
-        </nav>
-        <nav>
-            <ul>
-                <li><a href="/">Estou em dúvida.</a></li>
-            </ul>
-        </nav>
-    </div>
+    <form class="options" method="POST">
+        <button href="/game" name="button_yes" type="submit">Sim, estou certo disso.</button>
+        <button href="/game" name="button_no" type="submit">A resposta é não.</button>
+        <button href="/game" name="button_doubt" type="submit">Estou em dúvida.</button>
+    </form>
 </body>
 <script type="text/javascript" src="static/typewriter.js"></script>
 <script>printLetterByLetter("dialog", "{{comment}}Seu personagem tem olhos azuis?");</script>

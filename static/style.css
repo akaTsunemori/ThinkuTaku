@@ -266,24 +266,8 @@ ul.list {
     min-width: fit-content;
 }
 
-.options nav {
-    min-width: fit-content;
-    margin: 0;
-    padding: 0;
-    list-style: none;
-}
-
-.options nav ul {
-    min-width: fit-content;
-    display: flex;
-}
-
-.options nav ul li {
-    min-width: fit-content;
-    margin: 0 10px;
-}
-
-.options nav ul li a {
+.options button {
+    margin: 0 0.625rem;
     min-width: fit-content;
     font-family: monospace;
     font-size: 1rem;
@@ -292,9 +276,10 @@ ul.list {
     transition: all 0.3s ease;
     padding: 0.6rem;
     text-transform: none;
+    color: #fff;
 }
 
-.options nav ul li a:hover {
+.options button:hover {
     color: #333;
     background-color: #222222;
 }

@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 from src.decision_tree import DecisionTree
 from src.input_parser import parse_file
 from src.asset_manager import AssetManager
@@ -26,9 +26,15 @@ def home():
     return render_template_assets('home.html')
 
 
-
-@app.route('/game')
+@app.route('/game', methods=['GET', 'POST'])
 def game():
+    if request.method == 'POST':
+        if 'button_yes' in request.form:
+            print('yes')
+        elif 'button_no' in request.form:
+            print('no')
+        elif 'button_doubt' in request.form:
+            print('doubt')
     return render_template_assets('game.html',
         comment=asset_manager.get_comment())
 
