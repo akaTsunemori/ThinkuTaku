@@ -37,6 +37,8 @@ class DecisionTree:
                 DecisionTree.__symptoms.append((rule, symptoms, probability))
         self.__build_tree()
         self.__selected_node = None
+        self.__decision_queue = []
+        self.__decision = None
 
     def __compute_frequencies(self):
         '''
@@ -479,7 +481,7 @@ class DecisionTree:
             root = root.next
         return tree_dict
 
-    def decide(self, decision: str = None):
+    def __decide_aux(self, decision: str = None):
         '''
         Traverses the tree based on questions and answers.
 
@@ -519,6 +521,25 @@ class DecisionTree:
             options = [
                 (i.data, i.probability) for i in self.__selected_node.children]
         return options[::-1]
+
+    def decide(self, answer: str = None):
+        if answer is None:
+            self.__decision_queue = self.__decide_aux()
+        elif answer == 'yes':
+            self.__decision_queue = self.__decide_aux(self.__decision_queue[-1][0])
+        elif answer == 'no':
+            self.__decision_queue.pop()
+        elif answer == 'doubt':
+            while self.__decision_queue and not self.__decision_queue[-1][0].startswith('C '):
+                self.__decision_queue.pop()
+        if self.__decision_queue:
+            self.__decision = self.__decision_queue[-1]
+        else:
+            self.__decision = None
+
+    @property
+    def decision(self):
+        return self.__decision
 
     def display(self, root, indent=0):
         '''

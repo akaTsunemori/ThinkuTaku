@@ -9,7 +9,6 @@ app = Flask(__name__)
 PATH = 'static/input.csv'
 rules = parse_file(path=PATH)
 tree = DecisionTree(rules=rules)
-decision = []
 asset_manager = AssetManager()
 dialogue_manager = DialogueManager()
 
@@ -25,43 +24,32 @@ def render_template_assets(page, **kwargs):
 # Routes
 @app.route('/')
 def home():
-    global decision
-    decision = tree.decide()
+    tree.decide() # Setup the tree for decision
     asset_manager.new_character()
     return render_template_assets('home.html')
 
 
 @app.route('/game', methods=['GET', 'POST'])
 def game():
-    global decision
-    if decision:
-        rule, probability = decision[-1]
-    else:
-        result = dialogue_manager.get_failure()
-        return render_template_assets('result.html', result=result)
     if request.method == 'POST':
         if 'button_yes' in request.form:
-            if not rule.startswith('C '):
-                decision = tree.decide(rule)
-                rule, probability = decision[-1]
-            else:
+            if tree.decision[0].startswith('C '):
+                rule, probability = tree.decision
                 result = dialogue_manager.get_success(rule)
                 return render_template_assets('result.html', result=result)
+            else:
+                tree.decide('yes')
         elif 'button_no' in request.form:
-            decision.pop()
-            if decision:
-                rule, probability = decision[-1]
-            else:
-                result = dialogue_manager.get_failure()
-                return render_template_assets('result.html', result=result)
+            tree.decide('no')
         elif 'button_doubt' in request.form:
-            while decision and not decision[-1][0].startswith('C '):
-                decision.pop()
-            if decision:
-                rule, probability = decision[-1]
+            if tree.decision[0].startswith('C '):
+                tree.decide('no')
             else:
-                result = dialogue_manager.get_failure()
-                return render_template_assets('result.html', result=result)
+                tree.decide('doubt')
+    if not tree.decision:
+        result = dialogue_manager.get_failure()
+        return render_template_assets('result.html', result=result)
+    rule, probability = tree.decision
     if not rule.startswith('C '):
         comment = dialogue_manager.get_comment()
         question = dialogue_manager.get_dialogue(rule)
