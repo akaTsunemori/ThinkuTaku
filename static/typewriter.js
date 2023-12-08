@@ -1,11 +1,11 @@
 function printLetterByLetter(destination, message) {
     var i = 0;
-    var speed = 70;
+    var speed = 60;
     function type() {
         document.getElementById(destination).innerHTML += message.charAt(i);
-        if (speed > 70) {
+        if (speed > 60) {
             clearInterval(interval);
-            speed = 70;
+            speed = 60;
             interval = setInterval(type, speed);
         }
         if (",?!:;".includes(message.charAt(i))) {
