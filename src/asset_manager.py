@@ -1,4 +1,4 @@
-from random import choice, randrange
+from random import choice
 from os import listdir
 from json import load
 
@@ -18,8 +18,6 @@ class AssetManager:
         self.__characters = []
         with open('static/json/characters.json', 'r') as file:
             self.character_names = load(file)
-        with open('static/json/symptoms.json', 'r') as file:
-            self.comments = load(file)
         self.new_character()
 
     def new_character(self):
@@ -70,19 +68,3 @@ class AssetManager:
             str: the path for the image.
         '''
         return self.__BACKGROUND_PATH + choice(self.__backgrounds)
-
-    def get_comment(self):
-        '''
-        Rolls for a random comment based on a probability of 20%.
-
-        Args:
-            None
-
-        Returns:
-            Empty string: if the roll fails.
-            Random comment + ' ': if the roll succeeds.
-        '''
-        probability = randrange(100)
-        if probability > 20:
-            return ''
-        return choice(self.comments) + ' '

@@ -489,10 +489,10 @@ class DecisionTree:
                 the search is at its beginning.
 
         Returns:
-            options [tuple]: the options for the user to chose. Once the
+            options [list]: the options for the user to chose. Once the
                 user has selected "YES" for any of these options, then this
                 option becomes the next decision.
-                The options tuple is ordered by the priority of the symptoms,
+                The options tuple is ordered by the priority of the symptoms (ascending order),
                 then by the priority of the causes. Symptoms have priority over causes.
                 Each element of the tuple consists of (str, float), which is the
                 symptom and its probability.
@@ -518,7 +518,7 @@ class DecisionTree:
                     self.__selected_node = child
             options = [
                 (i.data, i.probability) for i in self.__selected_node.children]
-        return tuple(options)
+        return options[::-1]
 
     def display(self, root, indent=0):
         '''

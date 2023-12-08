@@ -10,12 +10,12 @@
     <img src="{{ character }}" alt="Image" class="character">
     <div class="character-name">{{ character_name }}</div>
     <div class="dialog" id="dialog"></div>
-    <form class="options" method="POST">
-        <button href="/game" name="button_yes" type="submit">Sim, estou certo disso.</button>
-        <button href="/game" name="button_no" type="submit">A resposta é não.</button>
-        <button href="/game" name="button_doubt" type="submit">Estou em dúvida.</button>
-    </form>
+    <div class="options">
+        <form action="/">
+            <button>Início.</button>
+        </form>
+    </div>
 </body>
 <script type="text/javascript" src="static/typewriter.js"></script>
-<script>printLetterByLetter("dialog", "{{comment}}{{question}}");</script>
+<script>printLetterByLetter("dialog", "{{result}}");</script>
 </html>
