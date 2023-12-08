@@ -542,8 +542,8 @@ class DecisionTree:
         '''
         if answer is None:
             self.__decision_queue = self.__decide_aux()
-        if answer not in ['yes', 'no', 'doubt']:
-            raise Exception('Answer needs to be "yes", "no" or "doubt"!')
+        if answer not in ['yes', 'no', 'doubt', None]:
+            raise Exception('Answer needs to be None, "yes", "no" or "doubt"!')
         elif answer == 'yes':
             self.__decision_queue = self.__decide_aux(self.__decision_queue[-1][0])
         elif answer == 'no':
