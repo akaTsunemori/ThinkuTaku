@@ -4,13 +4,10 @@ from src.input_parser import parse_file
 from src.asset_manager import AssetManager
 
 
-# Initialize the Flask app and the Decision Tree
 app = Flask(__name__)
 PATH = 'static/input.csv'
 rules = parse_file(path=PATH)
 tree = DecisionTree(rules=rules)
-
-# Initialize the image selector
 asset_manager = AssetManager()
 
 
