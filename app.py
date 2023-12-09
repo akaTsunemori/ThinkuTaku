@@ -5,7 +5,6 @@ from src.asset_manager import AssetManager
 from src.dialogue_manager import DialogueManager
 
 
-# Initialize the Flask app and the Decision Tree
 app = Flask(__name__)
 PATH = 'static/input.csv'
 rules = parse_file(path=PATH)
@@ -21,10 +20,9 @@ def render_template_assets(page, **kwargs):
         character_name=asset_manager.get_character_name(),
         **kwargs)
 
-# Routes
 @app.route('/')
 def home():
-    tree.decide() # Setup the tree for decision
+    tree.decide()
     asset_manager.new_character()
     return render_template_assets('home.html')
 
@@ -71,6 +69,5 @@ def display_tree():
     return render_template('display_tree.html')
 
 
-# Run the app
 if __name__ == '__main__':
     app.run(debug=True)

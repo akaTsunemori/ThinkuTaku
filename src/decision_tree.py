@@ -110,7 +110,6 @@ class DecisionTree:
         Returns:
             None
         '''
-
         pq = PriorityQueue()
         for symptom in DecisionTree.__priorities:
             pq.put((-1 * DecisionTree.__priorities[symptom], symptom))
