@@ -60,12 +60,17 @@ def game():
         comment=comment,
         question=question)
 
- 
+
 @app.route('/get-tree', methods=['GET'])
 def getTree():
     return jsonify(tree.to_dict())
 
-  
+
+@app.route('/display-tree')
+def display_tree():
+    return render_template('display_tree.html')
+
+
 # Run the app
 if __name__ == '__main__':
     app.run(debug=True)

@@ -1,7 +1,9 @@
-
 .container{
   margin: 1.25rem auto;
+  margin-left: 2rem;
+  margin-top: 2rem;
 }
+
 .btn-primary {
   background-color: rgba(206, 6, 6, 0.5);
   color: #fff;
@@ -13,6 +15,10 @@
   box-shadow: none;
 }
 
+.bottom {
+  height: 2rem;
+}
+
 .open {
   background:#333;
 }
@@ -21,12 +27,6 @@
   display: flex;
   white-space: nowrap;
   width: 100%;
-}
-
-.body {
-  font-family: 'Noto Sans', Arial, sans-serif;
-  background-color: #1a1a1a;
-  color: #fff;
 }
 
 #tree{
