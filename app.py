@@ -20,6 +20,7 @@ def render_template_assets(page, **kwargs):
         character_name=asset_manager.get_character_name(),
         **kwargs)
 
+
 @app.route('/')
 def home():
     tree.decide()
