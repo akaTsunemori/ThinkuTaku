@@ -46,8 +46,15 @@ class DialogueManager:
         if rule.startswith('C '):
             raise Exception('Cause passed to symptom function.')
         question = choice(self.questions)
-        question = question.replace('####', f'\“{rule.lower()}\”')
+        if 'NOT' in rule:
+            rule = rule.replace('NOT ', '')
+            rule = f'\“ausência de {rule}\”'
+        else:
+            rule = f'\“{rule}\”'
+        question = question.replace('####', rule)
         question = question.capitalize()
+        if not question[0].isalpha():
+            question = question[0] + question[1].upper() + question[2:]
         return question
 
     def get_success(self, rule):
