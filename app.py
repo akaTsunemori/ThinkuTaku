@@ -1,10 +1,11 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, jsonify
 from src.decision_tree import DecisionTree
 from src.input_parser import parse_file
 from src.asset_manager import AssetManager
 from src.dialogue_manager import DialogueManager
 
 
+# Initialize the Flask app and the Decision Tree
 app = Flask(__name__)
 PATH = 'static/input.csv'
 rules = parse_file(path=PATH)
@@ -19,7 +20,6 @@ def render_template_assets(page, **kwargs):
         character=asset_manager.get_character(),
         character_name=asset_manager.get_character_name(),
         **kwargs)
-
 
 # Routes
 @app.route('/')
@@ -60,7 +60,12 @@ def game():
         comment=comment,
         question=question)
 
+ 
+@app.route('/get-tree', methods=['GET'])
+def getTree():
+    return jsonify(tree.to_dict())
 
+  
 # Run the app
 if __name__ == '__main__':
     app.run(debug=True)

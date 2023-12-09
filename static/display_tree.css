@@ -1,0 +1,92 @@
+
+.container{
+  margin: 1.25rem auto;
+}
+.btn-primary {
+  background-color: rgba(206, 6, 6, 0.5);
+  color: #fff;
+  border-radius: 0.75rem;
+  padding: 0.25rem 0.5rem;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  box-shadow: none;
+}
+
+.open {
+  background:#333;
+}
+
+.node-text {
+  display: flex;
+  white-space: nowrap;
+  width: 100%;
+}
+
+.body {
+  font-family: 'Noto Sans', Arial, sans-serif;
+  background-color: #1a1a1a;
+  color: #fff;
+}
+
+#tree{
+  display: block
+}
+#tree, .children, .node ul {
+  list-style: none;
+}
+#tree ul{
+  display: none;
+}
+
+#tree .quadro-t p{
+  min-width: 8.125rem;
+  display: inline-block;
+  margin-bottom: 0;
+}
+#tree ul:not(#tree){
+  padding-left: 1.375rem;
+  border-left: 0.125rem solid rgba(206, 6, 6, 0.5);
+  border-bottom-left-radius: 9rem 2.625rem;
+  margin-left: 1.25rem;
+  margin-top: -1.25rem;
+  padding-top: 1.25rem;
+}
+
+#tree li.children > .quadro-t {
+  min-width: 8.125rem;
+  width: min-content;
+  padding: 0.9375rem;
+  margin: 1.25rem 0rem;
+  z-index: 3;
+  background-color: #333;
+  cursor: pointer;
+  box-shadow: 0rem 0rem 0.3125rem -0.0625rem rgba(206, 6, 6, 0.5);
+  border-radius: 0.75rem;
+}
+
+#tree li.children > .quadro-t:not(.pai)::before {
+  content: '';
+  display: inline-block;
+  position: absolute;
+  z-index: -1;
+  border-left: 0rem solid rgba(206, 6, 6, 0.5);
+  border-bottom: 0.125rem solid rgba(206, 6, 6, 0.5);
+  width: 1.4375rem;
+  height: 4.25rem;
+  margin: -3.4375rem 0rem 0rem -2.5rem;
+  border-top-right-radius: 0rem;
+  border-bottom-right-radius: 0rem;
+  border-bottom-left-radius: 1.5625rem;
+  border-top-left-radius: 0.1875rem;
+}
+
+#tree li.no-children > .quadro-t {
+  cursor: default;
+}
+
+#tree .children:last-child {
+  background-color: transparent;
+  margin-left: -1.5rem;
+  padding-left: 1.5rem;
+}
