@@ -1,0 +1,10 @@
+<div class="background"></div>
+
+<script>
+    const backgroundElement = document.querySelector('.background');
+    const imageUrl = "{{ image_url }}";
+    backgroundElement.style.background = `linear-gradient(to top, rgba(97, 5, 5, 0.729), rgba(224, 26, 12, 0.8)), url('${imageUrl}')`;
+    backgroundElement.style.backgroundRepeat = 'no-repeat';
+    backgroundElement.style.backgroundPosition = 'center center';
+    backgroundElement.style.backgroundSize = '100% auto';
+</script>

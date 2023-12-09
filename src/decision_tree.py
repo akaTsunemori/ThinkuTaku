@@ -37,6 +37,8 @@ class DecisionTree:
                 DecisionTree.__symptoms.append((rule, symptoms, probability))
         self.__build_tree()
         self.__selected_node = None
+        self.__decision_queue = []
+        self.__decision = None
 
     def __compute_frequencies(self):
         '''
@@ -486,7 +488,7 @@ class DecisionTree:
             root = root.next
         return tree_dict
 
-    def decide(self, decision: str = None):
+    def __decide_aux(self, decision: str = None):
         '''
         Traverses the tree based on questions and answers.
 
@@ -496,10 +498,10 @@ class DecisionTree:
                 the search is at its beginning.
 
         Returns:
-            options [tuple]: the options for the user to chose. Once the
+            options [list]: the options for the user to chose. Once the
                 user has selected "YES" for any of these options, then this
                 option becomes the next decision.
-                The options tuple is ordered by the priority of the symptoms,
+                The options tuple is ordered by the priority of the symptoms (ascending order),
                 then by the priority of the causes. Symptoms have priority over causes.
                 Each element of the tuple consists of (str, float), which is the
                 symptom and its probability.
@@ -525,7 +527,45 @@ class DecisionTree:
                     self.__selected_node = child
             options = [
                 (i.data, i.probability) for i in self.__selected_node.children]
-        return tuple(options)
+        return options[::-1]
+
+    def decide(self, answer: str = None):
+        '''
+        Decide function for the DecisionTree.
+
+        Args:
+            answer [str]: can be None, 'yes', 'no', or 'doubt'.
+            None: setup the tree for decision. Should be called only before
+                the decision process;
+            'yes': the answer is "yes" for the
+                DecisionTree.decision;
+            'no': the answer is "no" for the
+                DecisionTree.decision;
+            'doubt': the answer is "doubt" for the
+                DecisionTree.decision.
+
+        Returns:
+            None
+        '''
+        if answer is None:
+            self.__decision_queue = self.__decide_aux()
+        if answer not in ['yes', 'no', 'doubt', None]:
+            raise Exception('Answer needs to be None, "yes", "no" or "doubt"!')
+        elif answer == 'yes':
+            self.__decision_queue = self.__decide_aux(self.__decision_queue[-1][0])
+        elif answer == 'no':
+            self.__decision_queue.pop()
+        elif answer == 'doubt':
+            while self.__decision_queue and not self.__decision_queue[-1][0].startswith('C '):
+                self.__decision_queue.pop()
+        if self.__decision_queue:
+            self.__decision = self.__decision_queue[-1]
+        else:
+            self.__decision = None
+
+    @property
+    def decision(self):
+        return self.__decision
 
     def display(self, root, indent=0):
         '''
@@ -543,92 +583,3 @@ class DecisionTree:
             for child in root.children:
                 self.display(child, indent+1)
             self.display(root.next)
-
-
-def main():
-    rules_expanded = [
-        ('C Naruto Uzumaki', {'Olhos azuis', 'Roupa laranja', 'Sapato azul', 'NOT Dor'}, 0.5),
-        ('C Hinata Shouyou', {'Roupa laranja', 'Sapato branco', 'NOT Olhos azuis'}, 0.6),
-        ('C Goku', {'Cabelo preto', 'Kimono laranja', 'Sapato azul'}, 0.7),
-        ('C Monkey D. Luffy', {'Chapéu de palha', 'Camisa vermelha', 'Sapato azul'}, 0.6),
-        ('C Ichigo Kurosaki', {'Cabelo laranja', 'Uniforme preto', 'Sapato marrom'}, 0.4),
-        ('C Saitama', {'Careca', 'Roupa amarela', 'Sem expressão facial'}, 0.3),
-        ('C Gon Freecss', {'Cabelo preto', 'Colete verde', 'Shorts pretos'}, 0.5),
-        ('C Edward Elric', {'Cabelo loiro', 'Olhos azuis', 'Casaco vermelho', 'Automail'}, 0.6),
-        ('C Sasuke Uchiha', {'Cabelo preto', 'Roupa preta', 'Sharingan'}, 0.7),
-        ('C Vegeta', {'Cabelo preto', 'Armadura azul', 'Botas brancas'}, 0.6),
-        ('C Light Yagami', {'Cabelo castanho', 'Camisa branca', 'Death Note'}, 0.4),
-        ('C Makise Kurisu', {'Cabelo ruivo', 'Olhos azuis', 'Roupa branca', 'Sapato marrom'}, 0.2),
-        ('C Nagisa Furukawa', {'Olhos azuis', 'Roupa marrom'}, 0.8),
-        ('C Rei Ayanami', {'Olhos azuis', 'Roupa branca'}, 0.1),
-        ('C Levi Ackerman', {'Olhos azuis', 'Roupa verde', 'Sapato preto'}, 0.2),
-        ('C Haachama', {'CHAMACHAMA'}, 1.0),
-        ('S Sapato marrom', {'Olhos azuis', 'Roupa branca'}, 0.8),
-        ('S Cabelo ruivo', {'Roupa branca'}, 0.91),
-        ('S Armadura azul', {'Cabelo preto'}, 0.67),
-        ('S Botas brancas', {'Cabelo preto'}, 0.84)
-    ]
-
-    tree = DecisionTree(rules=rules_expanded)
-
-    print('*************************')
-    print('* Estrutura da árvore:  *')
-    print('*************************\n')
-    tree.display(tree.root)
-
-    '''
-    O exemplo abaixo explica a lógica para decisão e travessia pela árvore.
-
-    Os outros exemplos não estão explicados, mas seguem a mesma lógica.
-    '''
-    print('\n')
-    print('*************************')
-    print('* Exemplo de decisão 1: *')
-    print('*************************\n')
-    print('Sintomas a partir da raiz:')
-    from_root = tree.decide() # Chamar a função sem argumentos para receber as opções inciais
-    for c, _ in from_root:
-        print(c)
-    print('Esses são os sintomas que devemos começar perguntando, nessa ordem, ao usuário.')
-    print('')
-    symptom = 'Roupa laranja'
-    options = tree.decide(symptom) # Chamar a função com o sintoma selecionado, para efetuar a travessia
-    print(f'Caso personagem tenha apenas o sintoma *{symptom}*, as opções serão:')
-    for c, p in options:
-        print(f'Regra: {c:<30}', f'Probabilidade: {(p*100):.2f}%')
-    print('')
-    max_probability = max(i[1] for i in options if i[0].startswith('C '))
-    decision = [i for i in options if i[0].startswith('C ') and i[1] == max_probability]
-    cause = decision[0][0]
-    cause = cause[2:]
-    probability = (decision[0][1]*100)
-    print(f'E a decisão será a *causa* com maior probabilidade, ou seja:', cause)
-    print(f'com a confiança de {probability:.2f}%.')
-
-    '''
-    Esses exemplos mostram como funciona a função de decisão, etapa por etapa.
-
-    Caso o usuário responda com "Não sei", basta selecionar a causa com maior probabilidade,
-    que foi a lógica usada no exemplo anterior.
-    '''
-    print('\n')
-    print('*************************')
-    print('* Exemplo de decisão 2: *')
-    print('*************************\n')
-    print(*tree.decide(), '\n')
-    print(*tree.decide('Olhos azuis'), '\n')
-    print(*tree.decide('Roupa branca'), '\n')
-    print(*tree.decide('Sapato marrom'), '\n')
-    print(*tree.decide('Cabelo ruivo'))
-    print('\n')
-    print('*************************')
-    print('* Exemplo de decisão 3: *')
-    print('*************************\n')
-    print(*tree.decide(), '\n')
-    print(*tree.decide('Cabelo preto'), '\n')
-    print(*tree.decide('Armadura azul'), '\n')
-    print(*tree.decide('Botas brancas'))
-
-
-if __name__ == '__main__':
-    main()
