@@ -438,28 +438,29 @@ class DecisionTree:
         self.__compute_probabilities()
         self.__normalize_probabilities()
 
-    def __to_dict_aux(self, root: Node, tree_dict: dict = None):
+    def __to_dict_aux(self, root: Node, tree_dict: dict = None, i = 0):
         '''
         Recursively traverses a subtree, storing its children and probabilities in dictionaries.
 
         Args:
             root [Node]: the root for the subtree.
-            tree_dict [dict]: the dictionary to-be update with the tree structure.
+            tree_dict [dict]: the dictionary to-be updated with the tree structure.
+            i [int]: the priority for the current node.
 
         Returns:
             None
         '''
         if not root:
             return
-        root_node = (root.data, root.probability)
+        root_node = f'{i:06}, {root.data}, {(root.probability*100):.0f}%'
         if root_node not in tree_dict:
-            tree_dict[root_node] = []
+            tree_dict[root_node] = dict()
         for child in root.children:
+            i+=1
             new_dict = dict()
-            new_node = (child.data, child.probability)
-            new_dict[new_node] = []
-            tree_dict[root_node].append(new_dict)
-            self.__to_dict_aux(child, new_dict)
+            new_node = f'{i:06}, {child.data}, {(child.probability*100):.0f}%'
+            tree_dict[root_node][new_node] = new_dict
+            self.__to_dict_aux(child, tree_dict[root_node], i)
 
     def to_dict(self):
         '''
@@ -470,12 +471,18 @@ class DecisionTree:
 
         Returns:
             tree_dict [dict]: a dictionary containing the entire tree structure, following the pattern:
-                (symptom/cause, probability): [children]
+                {"Number, Data, Probability%": children[dict]}
+
+                The "Number" in each node is useful for sorting reasons, since the priority is
+                fundamental for displaying the tree. This function supports trees with up to
+                10e6 nodes.
         '''
         tree_dict = dict()
         root = self.root
+        i = 0
         while root:
-            self.__to_dict_aux(root, tree_dict)
+            self.__to_dict_aux(root, tree_dict, i)
+            i+=1
             root = root.next
         return tree_dict
 
