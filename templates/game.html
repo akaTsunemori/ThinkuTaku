@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Jogar aqui</h1>
+<div class="container" style="margin-top: 2rem;">
+    <div class="form">
+        <p style="margin-bottom: 1rem;">Seu personagem possui {{ decision[0][0] }}?</p>
+        <form method="post" id="myForm">
+            <input type="hidden" id="next" name="next" value="{{ decision }}" />
+            <input type="hidden" id="answer" name="answer" value="no" />
+            <button type="button" onclick="setHiddenValue('no')">Não</button>
+            <button type="button" onclick="setHiddenValue('no')">Não sei</button> 
+            <button type="button" onclick="setHiddenValue('yes')">Sim</button>
+        </form>
+    </div>
+</div>
+
+<script>
+    // JavaScript function to set the value of the hidden input field
+    function setHiddenValue(value) {
+      document.getElementById('answer').value = value;
+      document.getElementById('myForm').submit(); // Submit the form after setting the value
+    }
+</script>
+{% endblock %}
+
