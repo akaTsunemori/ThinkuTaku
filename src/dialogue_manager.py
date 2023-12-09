@@ -54,7 +54,7 @@ class DialogueManager:
         question = question.replace('####', rule)
         question = question.capitalize()
         if not question[0].isalpha():
-            question = question[0] + question[1].upper() + question[2:]
+            question = question[:2] + question[2].upper() + question[3:]
         return question
 
     def get_success(self, rule):
