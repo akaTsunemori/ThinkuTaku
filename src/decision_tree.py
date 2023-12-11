@@ -563,8 +563,9 @@ class DecisionTree:
         elif answer == 'no':
             self.__decision_queue.pop()
         elif answer == 'doubt':
-            while self.__decision_queue and not self.__decision_queue[-1][0].startswith('C '):
-                self.__decision_queue.pop()
+            self.__decision_queue.pop() # Make the "doubt" work the same as the "no" option.
+            # while self.__decision_queue and not self.__decision_queue[-1][0].startswith('C '):
+            #     self.__decision_queue.pop()
         if self.__decision_queue:
             self.__decision = self.__decision_queue[-1]
         else:
