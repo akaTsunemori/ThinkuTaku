@@ -7,7 +7,7 @@
   <br>
 </h1>
 
-<h4 align="center">Afinal, por que não colocar dêmonias para adivinhar o personagem de anime em que você está pensando?</h4>
+<h4 align="center">Afinal, por que não colocar demônias para adivinhar o personagem de anime em que você está pensando?</h4>
 
 <p align="center">
   <a href="#funcionalidades">Funcionalidades</a> •
