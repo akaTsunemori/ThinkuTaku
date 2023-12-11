@@ -2,14 +2,23 @@ import pandas as pd
 from random import randrange, choice, choices, shuffle
 
 
+# SUBSET = [
+#     'Cor do cabelo',
+#     'Cor dos olhos',
+#     'Roupa superior',
+#     'Roupa inferior',
+#     'Cor dos sapatos',
+#     'Acessório 1',
+#     'Acessório 2']
+
+
 SUBSET = [
-    'Cor do cabelo',
-    'Cor dos olhos',
-    'Roupa superior',
-    'Roupa inferior',
-    'Cor dos sapatos',
-    'Acessório 1',
-    'Acessório 2']
+          'Comprimento do cabelo',
+          'Cor do cabelo',
+          'Cor dos olhos',
+          'Roupa superior',
+          'Acessório 1',
+          'Acessório 2']
 
 
 def get_empty(df: pd.DataFrame) -> dict:
@@ -127,7 +136,7 @@ def gen_csv(causes, symptoms_random, symptoms_deterministic):
 
 
 def main():
-    df = pd.read_excel('data/ThinkuTaku_Dataset.xlsx')
+    df = pd.read_excel('data/dataset_minimal.xlsx')
     # empty = get_empty(df)
     # print(sum(len(empty[i]) for i in empty))
     df = df.dropna(subset=SUBSET, how='all')

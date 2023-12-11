@@ -387,6 +387,9 @@ class DecisionTree:
         min_range = min(min_range, 1.0)
         max_range = max(abs(i) for i in probabilities)
         max_range = min(max_range, 1.0)
+        if min_range == max_range:
+            min_range -= 0.1
+            max_range += 0.1
         probabilities = probabilities.reshape(-1, 1)
         probabilities_scaled = preprocessing.minmax_scale(probabilities, feature_range=(min_range, max_range))
         probabilities_scaled = probabilities_scaled.flatten()
@@ -428,16 +431,21 @@ class DecisionTree:
         Returns:
             None
         '''
+        print('Initializing Linked List')
         self.__compute_frequencies()
         self.__gen_priorities()
         self.__ll_initialize()
         self.__causes_priorities()
+        print('Building children')
         self.__build_children()
+        print('Defining causes')
         self.__define_causes()
         self.__define_inconsistent_causes()
+        print('Processing probabilities')
         self.__process_probabilities()
         self.__compute_probabilities()
         self.__normalize_probabilities()
+        print('DecisionTree successfully loaded!')
 
     def __to_dict_aux(self, root: Node, tree_dict: dict = None, i = 0):
         '''

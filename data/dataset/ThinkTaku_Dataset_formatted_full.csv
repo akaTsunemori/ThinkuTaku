@@ -1,0 +1,491 @@
+"C Osamu Dazai", ("Idade aparente: Adulto"; "Sexo masculino"; "Cabelo até o pescoço"; "Cabelo castanho"; "Olhos castanhos"), 0.97
+"C Izuku Midoriya", ("Idade aparente: Adolescente"; "Sexo masculino"; "Cabelo até as orelhas"; "Cabelo verde"; "Olhos verdes"; "Uniforme escolar"; "One for all"; "Traje de super-herói"), 0.86
+"C Shinka Nibutani", ("Idade aparente: Adolescente"; "Sexo feminino"; "Cabelo até a cintura"; "Cabelo castanho"; "Olhos laranja"), 0.82
+"C Miko Iino", ("Idade aparente: Adolescente"; "Sexo feminino"; "Cabelo até as costas"; "Cabelo castanho"; "Olhos castanhos"), 0.71
+"S Olhos pretos", ("Sexo masculino"), 0.38
+"C Arata Kaizaki", ("Idade aparente: Adolescente"; "Sexo masculino"; "Cabelo até as orelhas"; "Cabelo preto"; "Olhos azuis"), 0.93
+"C Kagura", ("Idade aparente: Adolescente"; "Sexo feminino"; "Cabelo até o pescoço"; "Cabelo laranja"; "Olhos azuis"), 0.93
+"C Shinichi Izumi", ("Cabelo castanho"; "Olhos castanhos"; "Uniforme escolar"; "Calça preta"; "Sapatos pretos"), 0.90
+"C Light Yagami", ("Idade aparente: Adolescente"; "Sexo masculino"; "Cabelo até as orelhas"; "Cabelo marrom"; "Olhos castanhos"; "Terno"; "Calça de terno"; "Sapatos pretos"; "Death Note"; "Óculos"), 0.83
+"C Mikado Ryuugamine", ("Idade aparente: Adolescente"; "Sexo masculino"; "Cabelo até as orelhas"; "Cabelo preto"; "Olhos azuis"), 0.97
+"C Hiroomi Nase", ("Idade aparente: Adolescente"; "Sexo masculino"; "Cabelo até as orelhas"; "Cabelo preto"; "Olhos verdes"; "Camisa preta"; "Calça cinza"; "Sapatos pretos"; "Colete azul"; "Cachecol"), 0.88
+"C Sorata Kanda", ("Idade aparente: Adolescente"; "Sexo masculino"; "Cabelo até as orelhas"; "Cabelo castanho"; "Olhos castanhos"), 0.71
+"C Ichigo", ("Cabelo azul"; "Olhos verdes"; "Uniforme escolar"; "Saia Cinza"; "Botas marrons"; "Presilha"), 0.91
+"C Migi", ("Parasita"; "Alienígena"), 0.86
+"S Botas marrons", ("Saia Cinza"; "Olhos verdes"), 0.26
+"S Cabelo castanho", ("Idade aparente: Adulto"; "Sexo masculino"), 0.29
+"S Vestido preto", ("Botas pretas"; "Idade aparente: Adulto"; "Cabelo roxo"), 0.33
+"C Shidou Itsuka", ("Idade aparente: Adolescente"; "Sexo masculino"; "Cabelo até as orelhas"; "Cabelo azul"; "Olhos castanhos"), 0.86
+"C Asta", ("Idade aparente: Adolescente"; "Sexo masculino"; "Cabelo até o pescoço"; "Cabelo cinza"; "Olhos verdes"; "Manto Touro"; "Calça jeans"; "Sapatos pretos"; "Trevo preto"), 0.88
+"C Ciel Phantomhive", ("Idade aparente: Criança"; "Sexo masculino"; "Cabelo até as orelhas"; "Cabelo preto"; "Olhos azuis"), 0.80
+"C Hideki Hinata", ("Cabelo azul"; "Olhos azuis"; "Jaqueta bege"; "Calça preta"; "Sapatos marrons"; "Armas de fogo"), 0.79
+"C Senkuu Ishigami", ("Idade aparente: Adolescente"; "Sexo masculino"; "Cabelo até as orelhas"; "Cabelo branco"; "Olhos vermelhos"; "Macacão branco"; "Sandálias"; "Cicatriz no olho"), 0.77
+"C Mei Misaki", ("Idade aparente: Adolescente"; "Sexo feminino"; "Cabelo até o pescoço"; "Cabelo preto"; "Olhos vermelho/verde"; "Uniforme escolar"; "Saia"; "Sapatos pretos"; "Olho artificial"), 0.76
+"C Touka Kirishima", ("Idade aparente: Adolescente"; "Sexo feminino"; "Cabelo até o pescoço"; "Cabelo roxo"; "Olhos roxos"; "Roupa roxa"; "Short roxo"; "Botas pretas"; "Máscara"; "Transformação Ghoul"), 0.94
+"C Madoka Kaname", ("Idade aparente: Adolescente"; "Sexo feminino"; "Cabelo até o pescoço"; "Cabelo rosa"; "Olhos rosa"), 0.86
+"C Hikaru Hitachiin", ("Idade aparente: Adolescente"; "Sexo masculino"; "Cabelo até as orelhas"; "Cabelo ruivo"; "Olhos castanhos"; "Roupa azul"; "Calça preta"; "Sapatos pretos"; "Gravata"; "Broche"), 0.94
+"C Yuno", ("Idade aparente: Adolescente"; "Sexo masculino"; "Cabelo até o pescoço"; "Cabelo preto"; "Olhos amarelos"; "Manto bege"; "Calça bege"; "Botas pretas"), 0.81
+"C Hestia", ("Idade aparente: Adolescente"; "Sexo feminino"; "Cabelo até a cintura ou abaixo"; "Cabelo preto"; "Olhos azuis"), 0.97
+"C Mami Tomoe", ("Idade aparente: Adolescente"; "Sexo feminino"; "Cabelo até as costas"; "Cabelo loiro/amarelo"; "Olhos amarelos"), 0.89
+"C Jin Mitaka", ("Idade aparente: Adolescente"; "Sexo masculino"; "Cabelo até as orelhas"; "Cabelo grisalho"; "Olhos roxos"), 0.70
+"S Descalço", ("Sapatos brancos"; "Za warudo"; "Olhos amarelos"; "Camisa bege"), 0.36
+"C Ryouta Suzui", ("Cabelo castanho"; "Olhos castanhos"; "Roupa vermelha"; "Calça preta"; "Sapatos marrons"; "Compulsão por apostas"), 0.99
+"C Miyuki Shiba", ("Idade aparente: Adolescente"; "Sexo feminino"; "Cabelo até as costas"; "Cabelo preto"; "Olhos azuis"), 0.78
+"C Tamaki Suou", ("Idade aparente: Adolescente"; "Sexo masculino"; "Cabelo até as orelhas"; "Cabelo loiro/amarelo"; "Olhos roxos"), 0.83
+"C Minori Kushieda", ("Idade aparente: Adolescente"; "Sexo feminino"; "Cabelo até os ombros"; "Cabelo rosa"; "Olhos rosas"; "Uniforme escolar"; "Saia"; "Sapatos marrons"; "Prisilha de cabelo"), 0.82
+"C Asia Argento", ("Idade aparente: Adolescente"; "Sexo feminino"; "Cabelo até a cintura ou abaixo"; "Cabelo loiro/amarelo"; "Olhos verdes"), 0.71
+"C Lelouch Lamperouge", ("Idade aparente: Adolescente"; "Sexo masculino"; "Cabelo até o pescoço"; "Cabelo preto"; "Olhos roxos"; "Roupa preta"; "Calça preta"; "Sapatos pretos"; "Geass"), 0.84
+"C Kenjirou Shibazaki", ("Idade aparente: Adulto"; "Sexo masculino"; "Cabelo até o pescoço"; "Cabelo preto"; "Olhos pretos"; "Camisa branca"; "Calça preta"; "Sapatos pretos"; "Gravata"), 0.74
+"C Zenitsu Agatsuma", ("Cabelo loiro"; "Olhos amarelos"; "Casaco amarelo"; "Calça preta"; "Sandálias"; "Katana"), 0.91
+"C Yasutora Sado", ("Idade aparente: Adulto"; "Sexo masculino"; "Cabelo até as orelhas"; "Cabelo castanho"; "Olhos castanhos"; "Camisa azul"; "Calça bege"; "Sapatos brancos"; "Escudo"), 0.74
+"C Tomoya Okazaki", ("Idade aparente: Adolescente"; "Sexo masculino"; "Cabelo até as orelhas"; "Cabelo azul"; "Olhos azuis"), 0.89
+"C Will A. Zeppeli", ("Idade aparente: Adulto"; "Sexo masculino"; "Cabelo até as orelhas"; "Cabelo preto"; "Olhos azuis"; "Terno branco"; "Calça preta"; "Sapatos pretos"; "Cachecol listrado"; "Top hat listrado"), 0.78
+"C Joujirou Takajou", ("Idade aparente: Adolescente"; "Sexo masculino"; "Cabelo até as orelhas"; "Cabelo preto"; "Olhos azuis"), 0.91
+"C Akira Fudou", ("Cabelo preto"; "Olhos castanhos"; "Camisa preta"; "Calça preta"; "Sapatos pretos"; "Gravata"), 0.99
+"S Cachecol", ("Olhos pretos"; "Pulseiras"; "Roupa preta"), 0.43
+"C Sanji", ("Idade aparente: Adulto"; "Sexo masculino"; "Cabelo até as orelhas"; "Cabelo loiro"; "Olhos pretos"; "Camisa preta"; "Calça preta"; "Sapatos pretos"; "Gravata"; "Cigarro"), 0.96
+"S Cabelo vermelho", ("Olhos vermelhos"; "Idade aparente: Adolescente"), 0.28
+"S Sexo feminino", ("Idade aparente: Adolescente"), 0.42
+"C Rei Ayanami", ("Idade aparente: Adolescente"; "Sexo feminino"; "Cabelo até o pescoço"; "Cabelo azul"; "Olhos vermelhos"; "Uniforme escolar"; "Saia"; "Sapatos brancos"; "Pilota uma Eva-Unit"), 0.85
+"S Sexo masculino", ("Cachecol listrado"), 0.16
+"C Rikka Takanashi", ("Idade aparente: Adolescente"; "Sexo feminino"; "Cabelo até o pescoço"; "Cabelo azul"; "Olhos azuis"), 0.98
+"C Kouko Kaga", ("Idade aparente: Adolescente"; "Sexo feminino"; "Cabelo até a cintura"; "Cabelo laranja"; "Olhos castanhos"), 0.95
+"C Nobara Kugisaki", ("Idade aparente: Adolescente"; "Sexo feminino"; "Cabelo até o pescoço"; "Cabelo castanho"; "Olhos castanhos"; "Uniforme escolar"; "Saia"; "Sapatos pretos"; "Brincos de argola"), 0.74
+"C Mary Saotome", ("Cabelo loiro"; "Olhos amarelos"; "Roupa vermelha"; "Saia preta"; "Sapatos marrons"; "Compulsão por apostas"), 0.94
+"S Poderes de gravidade", ("Brincos de argola"; "Sapatos azuis"; "Careca"; "Kunais"; "Roupa de coelho"), 0.23
+"C Ken Kaneki", ("Idade aparente: Adolescente"; "Sexo masculino"; "Cabelo até o pescoço"; "Cabelo branco"; "Olhos pretos"; "Roupa preta"; "Calça preta"; "Botas pretas"; "Máscara de couro"; "Transformação Ghoul"), 0.90
+"C An Onoya", ("Idade aparente: Adolescente"; "Sexo feminino"; "Cabelo até o pescoço"; "Cabelo loiro/amarelo"; "Olhos rosa"), 0.75
+"C Anri Sonohara", ("Idade aparente: Adolescente"; "Sexo feminino"; "Cabelo até o pescoço"; "Cabelo preto"; "Olhos castanhos"), 0.71
+"S Idade aparente: Adulto", ("Olhos amarelos"), 0.07
+"C Alibaba Saluja", ("Idade aparente: Adolescente"; "Sexo masculino"; "Cabelo até o pescoço"; "Cabelo loiro/amarelo"; "Olhos amarelos"), 0.81
+"S Cabelo até as orelhas", ("Idade aparente: Adolescente"; "Short preto"; "Olhos amarelos"; "Cabelo vermelho"; "Top branco"), 0.22
+"C Usopp", ("Idade aparente: Adolescente"; "Sexo masculino"; "Cabelo até o pescoço"; "Cabelo preto"; "Olhos pretos"; "Macacão marrom"; "Botas marrons"; "Bolsa marrom"; "Touca marrom"), 0.97
+"S Uniforme escolar", ("Cabelo rosa claro"; "Sexo feminino"; "Olhos castanhos"; "Idade aparente: Adolescente"; "Saia"; "Cabelo até as costas"), 0.25
+"C Diane", ("Idade aparente: Adolescente"; "Sexo feminino"; "Cabelo até os ombros"; "Cabelo castanho"; "Olhos roxos"; "Roupa laranja"; "Botas laranja"), 0.80
+"C Ashitaka", ("Idade aparente: Adolescente"; "Sexo masculino"; "Cabelo até o pescoço"; "Cabelo castanho"; "Olhos cinzentos"), 0.85
+"S Olhos cinza", ("Poderes de alquimia"; "Roupa azul"), 0.35
+"C Yuuto Kiba", ("Idade aparente: Adolescente"; "Sexo masculino"; "Cabelo até as orelhas"; "Cabelo loiro/amarelo"; "Olhos azuis"), 0.74
+"C Nami", ("Cabelo ruivo"; "Olhos castanhos"; "Camisa branca"; "Saia"; "Botas marrons"; "Bastão"), 0.90
+"C Satoru Fujinuma", ("Cabelo preto"; "Olhos pretos"; "Uniforme escolar"; "Calça preta"; "Sapatos pretos"; "Óculos"), 0.89
+"C Bulma", ("Idade aparente: Adulto"; "Sexo feminino"; "Cabelo até as orelhas"; "Cabelo azul"; "Olhos azuis"; "Camisa branca"; "Calça azul"; "Botas amarelas"; "Lenço"; "Corrente"), 0.72
+"C Asuna Yuuki", ("Idade aparente: Adolescente"; "Sexo feminino"; "Cabelo até a cintura ou abaixo"; "Cabelo castanho"; "Olhos castanhos"; "Uniforme branco e vermelho"; "Saia"; "Botas brancas"; "Florete"), 0.77
+"S Sexo masculino", ("Olhos vermelhos"; "Cicatriz no olho"), 0.26
+"C Sayaka Miki", ("Idade aparente: Adolescente"; "Sexo feminino"; "Cabelo até o pescoço"; "Cabelo azul"; "Olhos azuis"), 0.72
+"C Megumin", ("Idade aparente: Adolescente"; "Sexo feminino"; "Cabelo até os ombros"; "Cabelo castanho"; "Olhos vermelhos"; "Vestido vermelho"; "Botas marrons"; "Explosão"; "Chapéu de feiticeiro"), 0.93
+"S Olhos azuis", ("Cabelo preto"), 0.46
+"C Manjirou Sano", ("Idade aparente: Adolescente"; "Sexo masculino"; "Cabelo até o pescoço"; "Cabelo loiro/amarelo"; "Olhos pretos"), 0.71
+"S Broche", ("Calça verde"; "Botas de metal"), 0.22
+"S Cabelo azul", ("Sexo masculino"), 0.30
+"C Faye Valentine", ("Idade aparente: Adulto"; "Sexo feminino"; "Cabelo até o pescoço"; "Cabelo preto"; "Olhos verdes"; "Top amarelo"; "Short amarelo"; "Botas brancas"), 0.91
+"S Olhos castanhos", ("Cabelo castanho"; "Cabelo até os ombros"; "Sexo feminino"), 0.39
+"C Joseph Joestar", ("Idade aparente: Senhor"; "Sexo masculino"; "Cabelo até as orelhas"; "Cabelo castanho"; "Olhos verdes"; "Camisa roxo"; "Calça jeans"; "Botas pretas"; "Cachecol listrado"; "Marca Joestar"), 0.98
+"C Suzaku Kururugi", ("Idade aparente: Adolescente"; "Sexo masculino"; "Cabelo até as orelhas"; "Cabelo marrom"; "Olhos verdes"; "Roupa branca"; "Calça branca"; "Botas pretas"; "Capa azul"; "Luvas pretas"), 0.86
+"C Ryou Yoake", ("Idade aparente: Adolescente"; "Sexo masculino"; "Cabelo até as orelhas"; "Cabelo castanho"; "Olhos castanhos"), 0.78
+"C Taiju Ooki", ("Idade aparente: Adolescente"; "Sexo masculino"; "Cabelo até as orelhas"; "Cabelo castanho"; "Olhos castanhos"; "Macacão bege"; "Sandálias"; "Cicatriz no olho"), 0.77
+"C Saitama", ("Idade aparente: Adulto"; "Sexo masculino"; "Careca"; "Careca"; "Olhos pretos"; "Roupa amarela"; "Caça amarela"; "Botas vermelhas"), 0.89
+"C Kakashi Hatake", ("Idade aparente: Adulto"; "Sexo masculino"; "Cabelo até as orelhas"; "Cabelo branco"; "Olhos pretos"; "Roupa verde"; "Calça azul"; "Sandálias"; "Sharingan"; "Bandana"), 0.83
+"C Fuuko Ibuki", ("Idade aparente: Adolescente"; "Sexo feminino"; "Cabelo até a cintura"; "Cabelo grisalho"; "Olhos amarelos"), 0.79
+"C Shougo Makishima", ("Idade aparente: Adulto"; "Sexo masculino"; "Cabelo até as costas"; "Cabelo branco"; "Olhos amarelos"; "Camisa branca"; "Calça preta"; "Humanista"), 0.77
+"C Mikasa Ackerman", ("Idade aparente: Adolescente"; "Sexo feminino"; "Cabelo até o pescoço"; "Cabelo preto"; "Olhos cinzas"; "Jaqueta militar"; "Calça preta"; "Botas pretas"; "Lenço"; "Distintivo da Tropa de Exploração"), 0.84
+"C Orihime Inoue", ("Idade aparente: Adolescente"; "Sexo feminino"; "Cabelo até a cintura"; "Cabelo ruivo"; "Olhos castanhos"; "Roupa branca"; "Sapatos pretos"; "Capa"), 0.81
+"C Shouyou Hinata", ("Idade aparente: Adolescente"; "Sexo masculino"; "Cabelo até as orelhas"; "Cabelo ruivo"; "Olhos castanhos"; "Unifome de time"; "Short de time"; "Sapatos brancos"), 0.94
+"C Kayo Hinazuki", ("Cabelo preto"; "Olhos castanhos"; "Uniforme escolar"; "Saia"; "Botas marrons"; "Cachecol amarelo"), 0.98
+"S Médico", ("Olhos pretos"; "Calça bege"; "Colete cinza"; "Cabelo preto"), 0.35
+"C Ryuuko Matoi", ("Idade aparente: Adolescente"; "Sexo feminino"; "Cabelo até os ombros"; "Cabelo preto"; "Olhos roxos"; "Camisa preta"; "Saia preta"; "Sapatos brancos"; "Lenço"; "Luvas"), 0.94
+"C Zorome", ("Cabelo loiro "; "Olhos roxos"; "Uniforme escolar"; "Calça cinza"; "Botas marrons"), 0.74
+"C Dororo", ("Idade aparente: Criança"; "Sexo feminino"; "Cabelo até o pescoço"; "Cabelo preto"; "Olhos castanhos"), 0.91
+"C Hiyori Iki", ("Idade aparente: Adolescente"; "Sexo feminino"; "Cabelo até as costas"; "Cabelo preto"; "Olhos roxos"; "Uniforme escolar"; "Saia"; "Botas pretas"; "Cachecol vermelho"), 0.81
+"C Taki Tachibana", ("Idade aparente: Adolescente"; "Sexo masculino"; "Cabelo até as orelhas"; "Cabelo castanho"; "Olhos azuis"; "Uniforme escolar"; "Calça cinza"; "Sapatos pretos"), 0.91
+"S Calça azul", ("Venda nos olhos"; "Roupa azul"; "Idade aparente: Adulto"; "Olhos azuis"; "Sapatos pretos"; "Cabelo até as orelhas"), 0.35
+"C Ami Kawashima", ("Idade aparente: Adolescente"; "Sexo feminino"; "Cabelo até a cintura"; "Cabelo azul"; "Olhos azuis"; "Uniforme escolar"; "Saia"; "Sapatos marrons"), 0.92
+"C Kouta", ("Idade aparente: Adolescente"; "Sexo masculino"; "Cabelo até o pescoço"; "Cabelo preto"; "Olhos azuis"), 0.84
+"S Idade aparente: Adolescente", ("Sexo masculino"; "Olhos azuis"), 0.08
+"C Ryou Asuka", ("Cabelo loiro"; "Olhos azuis"; "Camisa branca"; "Calça bege"; "Sapatos marrons"; "Colete bege"), 0.89
+"S Cabelo castanho", ("Cabelo até as orelhas"), 0.22
+"S Jaqueta marrom", ("Sapatos pretos"; "Olhos azuis"; "Short preto"; "Jaleco"), 0.33
+"C Gray Fullbuster", ("Idade aparente: Adolescente"; "Sexo masculino"; "Cabelo até as orelhas"; "Cabelo preto"; "Olhos pretos"; "Sem camisa"; "Short preto"; "Sapatos pretos"; "Corrente"; "Cinto"), 0.93
+"C Iggy", ("Sexo masculino"; "Cabelo preto"; "Olhos azuis"), 0.91
+"C Tanjirou Kamado", ("Cabelo preto"; "Olhos vermelhos"; "Roupa preta"; "Calça preta"; "Sandálias"; "Jaqueta verde e preta"; "Katana"), 0.85
+"S Sexo feminino", ("Cabelo preto"), 0.43
+"S Olhos cinzentos", ("Sexo masculino"), 0.18
+"C Ban", ("Idade aparente: Adulto"; "Sexo masculino"; "Cabelo até as orelhas"; "Cabelo azul"; "Olhos vermelhos"; "Camisa vermelha"; "Calça vermelha"; "Sapatos vermelhos"), 0.78
+"C Ken Ryuuguuji", ("Idade aparente: Adolescente"; "Sexo masculino"; "Cabelo até os ombros"; "Cabelo loiro/amarelo"; "Olhos castanhos"), 0.73
+"C Noelle Silva", ("Idade aparente: Adolescente"; "Sexo feminino"; "Cabelo até os ombros"; "Cabelo cinza"; "Olhos roxos"; "Manto Touro"; "Saia"; "Sandálias"), 1.00
+"C Akeno Himejima", ("Idade aparente: Adolescente"; "Sexo feminino"; "Cabelo até a cintura ou abaixo"; "Cabelo preto"; "Olhos rosa"), 0.96
+"C Lisa Lisa", ("Idade aparente: Adulto"; "Sexo feminino"; "Cabelo até a cintura ou abaixo"; "Cabelo preto"; "Olhos azuis"; "Vestido preto"; "Botas pretas"; "Cachecol vermelho"), 0.98
+"C Rintarou Okabe", ("Cabelo preto"; "Olhos castanhos"; "Camisa branca"; "Calça marrom"; "Sapatos pretos"; "Jaleco"; "Flip phone"), 1.00
+"S Cabelo castanho", ("Cabelo até a cintura"), 0.22
+"C Irisviel von Einzbern", ("Idade aparente: Adulto"; "Sexo feminino"; "Cabelo até a cintura ou abaixo"; "Cabelo branco"; "Olhos vermelhos"), 0.87
+"C Kouta Hirano", ("Idade aparente: Adolescente"; "Sexo masculino"; "Cabelo até o pescoço"; "Cabelo preto"; "Olhos castanhos"), 0.74
+"C Souma Yukihira", ("Cabelo vermelho"; "Olhos amarelos"; "Dólmã"; "Sapatos pretos"; "Faca"; "Chapéu de Chef"), 1.00
+"C Decim", ("Idade aparente: Adulto"; "Sexo masculino"; "Cabelo até as orelhas"; "Cabelo branco"; "Olhos azuis"; "Uniforme bartender"; "Calça preta"; "Sapatos pretos"), 0.81
+"S Botas marrons", ("Calça cinza"; "Cabelo verde"), 0.43
+"C Emilia", ("Idade aparente: Adolescente"; "Sexo feminino"; "Cabelo até a cintura ou abaixo"; "Cabelo branco"; "Olhos roxos"; "Roupa branca"; "Saia"; "Botas brancas"; "Prisilha de cabelo"), 0.89
+"C Chrome", ("Idade aparente: Adolescente"; "Sexo masculino"; "Cabelo até as orelhas"; "Cabelo castanho"; "Olhos castanhos"; "Macacão verde"; "Sandálias"; "Headband"), 0.93
+"C Kokoro", ("Cabelo cinza"; "Olhos azuis"; "Uniforme escolar"; "Saia Cinza"; "Botas marrons"), 0.71
+"C Edward Wong Hau Pepelu Tivrusky IV", ("Idade aparente: Adolescente"; "Sexo feminino"; "Cabelo até as orelhas"; "Cabelo vermelho"; "Olhos amarelos"; "Top branco"; "Short preto"; "Computador"), 0.92
+"S Calça verde", ("Sapatos brancos"; "Sexo masculino"; "Idade aparente: Adolescente"), 0.22
+"C Gai Tsutsugami", ("Idade aparente: Adolescente"; "Sexo masculino"; "Cabelo até os ombros"; "Cabelo loiro/amarelo"; "Olhos cinzentos"), 0.73
+"C Momonga", ("Sexo masculino"; "Careca"; "Cabelo desconhecido"; "Olhos vermelhos"), 0.92
+"C Shiro", ("Cabelo branco"; "Olhos vermelhos"; "Roupa roxa"; "Meias azuis"; "Sapatos azuis"; "Coroa"), 0.76
+"S Olhos verdes", ("Idade aparente: Adolescente"; "Camisa branca"; "Cabelo até as orelhas"; "Calça preta"; "Botas marrons"; "Cabelo castanho"), 0.21
+"C Krista Lenz", ("Cabelo loiro"; "Olhos azuis"; "Camisa branca"; "Calça branca"; "Botas marrons"; "Jaqueta marrom"), 0.99
+"C Takashi Komuro", ("Idade aparente: Adolescente"; "Sexo masculino"; "Cabelo até as orelhas"; "Cabelo castanho"; "Olhos castanhos"), 0.98
+"S Venda nos olhos", ("Meias pretas"; "Colete marrom"; "Botas com propulsores"; "Vice-presidente do Conselho Estudantil"), 0.38
+"C Emi Yusa", ("Idade aparente: Adolescente"; "Sexo feminino"; "Cabelo até a cintura ou abaixo"; "Cabelo vermelho"; "Olhos verdes"), 0.72
+"C Kurokami no Onna", ("Cabelo preto"; "Olhos roxos"; "Roupa preta"; "Minissaia"; "Saltos altos"; "Mecha branca no cabelo"), 0.88
+"C Subaru Natsuki", ("Idade aparente: Adolescente"; "Sexo masculino"; "Cabelo até as orelhas"; "Cabelo preto"; "Olhos pretos"; "Macacão preto"; "Sapatos pretos"), 0.71
+"C Rei Miyamoto", ("Idade aparente: Adolescente"; "Sexo feminino"; "Cabelo até a cintura"; "Cabelo castanho"; "Olhos castanhos"), 0.94
+"C Sasuke Uchiha", ("Idade aparente: Adolescente"; "Sexo masculino"; "Cabelo até o pescoço"; "Cabelo preto"; "Olhos pretos"; "Camisa azul"; "Bermuda branca"; "Sandálias"; "Sharingan"; "Bandana"), 0.90
+"C Gon Freecss", ("Idade aparente: Criança"; "Sexo masculino"; "Cabelo até as orelhas"; "Cabelo preto"; "Olhos pretos"; "Roupa verde"; "Short verde"; "Botas pretas"), 0.93
+"C Erina Nakiri", ("Cabelo loiro "; "Olhos roxos"; "Dólmã"; "Sapatos pretos"; "Faca"; "Chapéu de Chef"), 0.81
+"C Zero Two", ("Cabelo rosa"; "Olhos azuis"; "Macacão vermelho"; "Botas brancas"; "Chifre"), 0.74
+"C Mirai Kuriyama", ("Idade aparente: Adolescente"; "Sexo feminino"; "Cabelo até o pescoço"; "Cabelo rosa"; "Olhos castanhos"; "Camisa azul"; "Meias pretas"; "Sapatos marrons"; "Colete rosa"; "Óculos"), 0.93
+"C Mayoi Hachikuji", ("Idade aparente: Criança"; "Sexo feminino"; "Cabelo até as costas"; "Cabelo preto"; "Olhos vermelhos"), 0.74
+"S Cabelo preto", ("Idade aparente: Adolescente"), 0.36
+"C Rias Gremory", ("Idade aparente: Adolescente"; "Sexo feminino"; "Cabelo até a cintura ou abaixo"; "Cabelo vermelho"; "Olhos azuis"), 0.73
+"S Olhos azuis", ("Idade aparente: Adolescente"; "Cabelo preto"), 0.32
+"C Sadao Maou", ("Idade aparente: Adolescente"; "Sexo masculino"; "Cabelo até as orelhas"; "Cabelo preto"; "Olhos vermelhos"), 0.72
+"C Devilman", ("Sexo masculino"; "Careca"; "Cabelo preto"; "Olhos pretos"), 0.72
+"S Olhos azuis", ("Sexo masculino"; "Gravata "; "Idade aparente: Adolescente"; "Cabelo até as orelhas"), 0.23
+"C Hitagi Senjougahara", ("Idade aparente: Adolescente"; "Sexo feminino"; "Cabelo até a cintura"; "Cabelo roxo"; "Olhos azuis"), 0.78
+"S Cabelo preto", ("Sapatos pretos"), 0.29
+"C Alice Zuberg", ("Idade aparente: Adolescente"; "Sexo feminino"; "Cabelo até a cintura ou abaixo"; "Cabelo loiro/amarelo"; "Olhos azuis"), 0.78
+"C C.C.", ("Idade aparente: Adolescente"; "Sexo feminino"; "Cabelo até a cintura"; "Cabelo verde"; "Olhos dourados"; "Roupa branca"; "Calça branca"; "Sapatos brancos"), 1.00
+"C Ganta Igarashi", ("Idade aparente: Adolescente"; "Sexo masculino"; "Cabelo até as orelhas"; "Cabelo preto"; "Olhos cinzentos"), 0.74
+"C Shouto Todoroki", ("Cabelo vermelho/branco"; "Olhos cinza/vermelho"; "Uniforme escolar"; "Fogo e gelo"; "Traje de super-herói"), 0.96
+"S Saia Cinza", ("Uniforme escolar"; "Cabelo azul"; "Presilha"), 0.49
+"C Miyuki Shirogane", ("Idade aparente: Adolescente"; "Sexo masculino"; "Cabelo até as orelhas"; "Cabelo loiro "; "Olhos azuis"; "Uniforme escolar"; "Calça preta"; "Sapatos brancos"; "Presidente do Conselho Estudantil"; "Olheiras"), 0.75
+"C Albedo", ("Idade aparente: Adulto"; "Sexo feminino"; "Cabelo até a cintura ou abaixo"; "Cabelo preto"; "Olhos amarelos"), 0.98
+"C Wendy Marvell", ("Idade aparente: Adolescente"; "Sexo feminino"; "Cabelo até as costas"; "Cabelo azul"; "Olhos castanhos"; "Roupa verde"; "Sandálias"; "Orelhas"), 0.78
+"C Hachiman Hikigaya", ("Idade aparente: Adolescente"; "Sexo masculino"; "Cabelo até as orelhas"; "Cabelo preto"; "Olhos pretos"), 0.92
+"C Yuri Nakamura", ("Idade aparente: Adolescente"; "Sexo feminino"; "Cabelo até os ombros"; "Cabelo roxo"; "Olhos azuis"; "Uniforme escolar"; "Saia Azul"; "Sapatos pretos"; "Armas de fogo"), 0.76
+"S Cabelo branco", ("Idade aparente: Adolescente"), 0.43
+"C Denji", ("Idade aparente: Adolescente"; "Sexo masculino"; "Cabelo até as orelhas"; "Cabelo loiro"; "Olhos castanhos"; "Camisa branca"; "Calça preta"; "Tênis"; "Pochita"; "Gravata"), 0.80
+"S Sexo masculino", ("Idade aparente: Adolescente"), 0.44
+"C Satsuki Kiryuuin", ("Cabelo preto"; "Olhos azuis"; "Roupa branca"; "Meia branca"; "Sapatos brancos"; "Espada"; "Lenço"), 0.89
+"C Yuuji Itadori", ("Idade aparente: Adolescente"; "Sexo masculino"; "Cabelo até as orelhas"; "Cabelo rosa"; "Olhos castanhos"; "Roupa azul"; "Calça azul"; "Sapato vermelho"; "Dedos de Sukuna"), 0.70
+"C Kaoru Hitachiin", ("Idade aparente: Adolescente"; "Sexo masculino"; "Cabelo até as orelhas"; "Cabelo ruivo"; "Olhos castanhos"; "Roupa azul"; "Calça preta"; "Sapatos pretos"; "Gravata"; "Broche"), 0.77
+"C Origami Tobiichi", ("Idade aparente: Adolescente"; "Sexo feminino"; "Cabelo até o pescoço"; "Cabelo branco"; "Olhos azuis"), 1.00
+"C Yato", ("Cabelo preto"; "Olhos azuis"; "Jaqueta preta"; "Calça preta"; "Sapatos pretos"; "Cachecol branco"), 0.77
+"C Saiko Yonebayashi", ("Idade aparente: Adolescente"; "Sexo feminino"; "Cabelo até a cintura"; "Cabelo azul"; "Olhos azuis"; "Roupa branca"; "Botas pretas"), 0.85
+"C Koyomi Araragi", ("Idade aparente: Adolescente"; "Sexo masculino"; "Cabelo até o pescoço"; "Cabelo preto"; "Olhos azuis"), 0.86
+"S Idade aparente: Adolescente", ("Cabelo até as orelhas"; "Sexo masculino"; "Calça azul"; "Sapato vermelho"), 0.31
+"C Piccolo", ("Idade aparente: Adulto"; "Sexo masculino"; "Careca"; "Cabelo não visível"; "Olhos pretos"), 0.84
+"C Kurisu Makise", ("Cabelo ruivo"; "Olhos azuis"; "Jaqueta marrom"; "Short preto"; "Sapatos pretos"; "Jaleco"; "Flip phone"), 0.78
+"C Mako Mankanshoku", ("Idade aparente: Adolescente"; "Sexo feminino"; "Cabelo até as orelhas"; "Cabelo castanho"; "Olhos castanhos"; "Camisa branca"; "Saia azul"; "Sapatos marrons"; "Lenço"; "Meia branca"), 0.83
+"C Misato Katsuragi", ("Idade aparente: Adulto"; "Sexo feminino"; "Cabelo até as costas"; "Cabelo roxo"; "Olhos castanhos"; "Vestido preto"; "Botas pretas"; "Jaqueta vermelha"), 0.78
+"C Saeko Busujima", ("Idade aparente: Adolescente"; "Sexo feminino"; "Cabelo até a cintura ou abaixo"; "Cabelo roxo"; "Olhos azuis"), 0.81
+"C Mitsuru", ("Cabelo verde"; "Olhos verdes"; "Uniforme escolar"; "Calça cinza"; "Botas marrons"), 0.99
+"C Yamcha", ("Idade aparente: Adolescente"; "Sexo masculino"; "Cabelo até as costas"; "Cabelo preto"; "Olhos pretos"; "Roupa laranja"; "Sapatos azuis"; "Pulseiras"), 0.86
+"S Colete bege", ("Calça bege"), 0.05
+"C Mitsukuni Haninozuka", ("Idade aparente: Criança"; "Sexo masculino"; "Cabelo até as orelhas"; "Cabelo loiro"; "Olhos castanhos"; "Roupa azul"; "Calça preta"; "Sapatos pretos"; "Gravata"; "Coelho de pelúcia"), 0.88
+"C Shinra Kusakabe", ("Idade aparente: Adolescente"; "Sexo masculino"; "Cabelo até as orelhas"; "Cabelo castanho"; "Olhos laranja"), 0.92
+"C Kazuomi Ooga", ("Idade aparente: Adolescente"; "Sexo masculino"; "Cabelo até as orelhas"; "Cabelo loiro/amarelo"; "Olhos cinzentos"), 0.81
+"C Kohaku", ("Idade aparente: Adolescente"; "Sexo feminino"; "Cabelo loiro "; "Olhos azuis"; "Macacão azul"; "Sandálias"), 0.82
+"C Yuzuru Otonashi", ("Idade aparente: Adolescente"; "Sexo masculino"; "Cabelo até as orelhas"; "Cabelo castanho"; "Olhos castanhos"; "Jaqueta bege"; "Calça preta"; "Sapatos marrons"; "Armas de fogo"), 0.80
+"C Rohan Kishibe", ("Idade aparente: Adulto"; "Sexo masculino"; "Cabelo até as orelhas"; "Cabelo verde"; "Olhos verdes"; "Roupa roxa"; "Calça branca"; "Sapatos verdes"; "Colete verde"; "Bandana"), 0.92
+"C Shizuku Mizutani", ("Idade aparente: Adolescente"; "Sexo feminino"; "Cabelo até as costas"; "Cabelo ruivo"; "Olhos castanhos"; "Camisa branca"; "Saia verde"; "Sapatos marrons"; "Colete vermelho"; "Corrente"), 0.78
+"C Eren Yeager", ("Idade aparente: Adolescente"; "Sexo masculino"; "Cabelo até as orelhas"; "Cabelo marrom"; "Olhos verdes"; "Jaqueta militar"; "Calça preta"; "Botas pretas"; "Capa verde"; "Distintivo da Tropa de Exploração"), 0.86
+"C Itaru Hashida", ("Cabelo castanho"; "Olhos castanhos"; "Camisa verde"; "Calça azul"; "Sandálias"; "Óculos"; "Super hacker"), 0.90
+"C Totoro", ("Sexo masculino"; "Cabelo grisalho"; "Olhos pretos"), 0.84
+"C Jinbe", ("Idade aparente: Adulto"; "Sexo masculino"; "Cabelo até os ombros"; "Cabelo preto"; "Olhos pretos"; "Roupa laranja"; "Sandálias"; "Faixa azul"), 0.88
+"S Sexo feminino", ("Cabelo loiro/amarelo"), 0.21
+"C Asuka Langley Souryuu", ("Cabelo ruivo"; "Olhos azuis"; "Uniforme escolar"; "Saia"; "Sapatos pretos"; "Pilota uma Eva-Unit"), 0.99
+"C Robin Nico", ("Cabelo preto"; "Olhos azuis"; "Roupa azul"; "Saia"; "Sapatos rosa"; "Chapéu"; "Óculos"), 0.86
+"C Akane Tsunemori", ("Idade aparente: Adulto"; "Sexo feminino"; "Cabelo até as orelhas"; "Cabelo castanho"; "Olhos castanhos"; "Jaqueta azul"; "Saia azul"; "Sapatos marrons"; "Dominator"; "Uniforme policial"), 0.99
+"C Kyuubey", ("Sexo masculino"; "Cabelo branco"; "Olhos vermelhos"), 0.94
+"S Olhos azuis", ("Cabelo até as orelhas"), 0.06
+"C Elizabeth Liones", ("Idade aparente: Adolescente"; "Sexo feminino"; "Cabelo até a cintura"; "Cabelo cinza"; "Olhos azuis"; "Camisa rosa"; "Saia"; "Sapatos pretos"; "Lenço"), 0.82
+"C Renji Abarai", ("Idade aparente: Adulto"; "Sexo masculino"; "Cabelo até o pescoço"; "Cabelo ruivo"; "Olhos castanhos"; "Roupa preta"; "Sandálias"; "Espada"; "Bandana"), 0.75
+"C Twelve", ("Cabelo castanho"; "Olhos castanhos"; "Camisa branca"; "Calça preta"; "Sapatos marrons"; "Relógio"; "Pulseiras"), 0.97
+"C Arthur Boyle", ("Idade aparente: Adolescente"; "Sexo masculino"; "Cabelo até o pescoço"; "Cabelo loiro/amarelo"; "Olhos azuis"), 0.71
+"C Bell Cranel", ("Idade aparente: Adolescente"; "Sexo masculino"; "Cabelo até as orelhas"; "Cabelo branco"; "Olhos vermelhos"), 0.73
+"S Olhos amarelos", ("Calça amarela"; "Roupa amarela"; "Za warudo"), 0.18
+"C Kazuma Satou", ("Idade aparente: Adolescente"; "Sexo masculino"; "Cabelo até as orelhas"; "Cabelo castanho"; "Olhos verdes"; "Camisa branca"; "Calça preta"; "Botas marrons"; "Capa verde"), 0.70
+"C Miki Makimura", ("Idade aparente: Adolescente"; "Sexo feminino"; "Cabelo até o pescoço"; "Cabelo preto"; "Olhos pretos"; "Camisa branca"; "Calça cinza"; "Sapatos pretos"; "Touca"; "Bandana"), 0.74
+"C Raphtalia", ("Idade aparente: Adolescente"; "Sexo feminino"; "Cabelo até a cintura"; "Cabelo laranja"; "Olhos vermelhos"), 0.95
+"C Saya Takagi", ("Idade aparente: Adolescente"; "Sexo feminino"; "Cabelo até as costas"; "Cabelo rosa"; "Olhos laranja"), 0.73
+"C Tatsumi", ("Idade aparente: Adolescente"; "Sexo masculino"; "Cabelo até as orelhas"; "Cabelo marrom"; "Olhos verdes"; "Roupa marrom"; "Calça preta"; "Botas marrons"; "Espada"), 0.83
+"S Olhos azuis", ("Jaqueta militar"; "Florete"; "Mecha branca no cabelo"; "Short rosa"; "Gravata"), 0.29
+"S Cigarro", ("Cabelo cinza"; "Olhos rosa"; "Cabelo até os ombros"; "Vestido vermelho"), 0.36
+"C Akame", ("Idade aparente: Adolescente"; "Sexo feminino"; "Cabelo até a cintura ou abaixo"; "Cabelo preto"; "Olhos vermelhos"; "Camisa preta"; "Saia preta"; "Sapatos pretos"; "Katana"), 0.76
+"C Yuno Gasai", ("Idade aparente: Adolescente"; "Sexo feminino"; "Cabelo até a cintura ou abaixo"; "Cabelo rosa"; "Olhos rosa"; "Uniforme escolar"; "Saia"; "Yandere"), 0.75
+"C Kotomi Ichinose", ("Idade aparente: Adolescente"; "Sexo feminino"; "Cabelo até as costas"; "Cabelo roxo"; "Olhos roxos"), 0.96
+"C Maki Oze", ("Idade aparente: Adolescente"; "Sexo feminino"; "Cabelo até os ombros"; "Cabelo preto"; "Olhos roxos"), 0.80
+"C Kusuo Saiki", ("Idade aparente: Adolescente"; "Sexo masculino"; "Cabelo até as orelhas"; "Cabelo rosa"; "Olhos roxos"; "Camisa branca"; "Calça verde"; "Sapatos azuis"; "Colete verde"; "Óculos"), 0.90
+"S Cabelo até as orelhas", ("Camisa marrom"; "Calça marrom"), 0.14
+"C Shizuo Heiwajima", ("Idade aparente: Adulto"; "Sexo masculino"; "Cabelo até as orelhas"; "Cabelo loiro/amarelo"; "Olhos amarelos"), 0.71
+"C Mugen", ("Idade aparente: Adulto"; "Sexo masculino"; "Cabelo até as orelhas"; "Cabelo preto"; "Olhos pretos"), 0.76
+"S Idade aparente: Adulto", ("Uniforme bartender"; "Cabelo até as orelhas"; "Cabelo branco"), 0.13
+"C Mai Sakurajima", ("Idade aparente: Adolescente"; "Sexo feminino"; "Cabelo até a cintura"; "Cabelo cinza"; "Olhos roxos"; "Camisa branca"; "Saia azul"; "Sapatos marrons"; "Roupa de coelho"; "Jaqueta marrom"), 0.98
+"C Mine", ("Cabelo rosa"; "Olhos rosas"; "Uniforme escolar"; "Saia Branca"; "Sapatos brancos"; "Prisilha de cabelo"; "Rifle de assalto"), 0.88
+"C Takashi Morinozuka", ("Idade aparente: Adolescente"; "Sexo masculino"; "Cabelo até as orelhas"; "Cabelo preto"; "Olhos pretos"; "Roupa azul"; "Calça preta"; "Sapatos pretos"; "Gravata"; "Broche"), 0.78
+"C Yui Yuigahama", ("Idade aparente: Adolescente"; "Sexo feminino"; "Cabelo até o pescoço"; "Cabelo rosa"; "Olhos rosa"), 0.91
+"S Cabelo preto", ("Cabelo até as orelhas"), 0.16
+"C Gorou", ("Cabelo loiro "; "Olhos castanhos"; "Uniforme escolar"; "Calça cinza"; "Botas marrons"; "Óculos"), 0.86
+"C Luffy Monkey D.", ("Cabelo preto"; "Olhos pretos"; "Camisa vermelha"; "Short azul"; "Sandálias"; "Chapéu"), 0.74
+"C Satoru Gojou", ("Idade aparente: Adulto"; "Sexo masculino"; "Cabelo até as orelhas"; "Cabelo branco"; "Olhos azuis"; "Roupa azul"; "Calça azul"; "Sapatos pretos"; "Venda nos olhos"), 0.74
+"C Leorio Paladiknight", ("Cabelo preto"; "Olhos castanhos"; "Roupa azul"; "Calça azul"; "Sapatos pretos"; "Óculos"; "Maleta"), 0.86
+"C Jonathan Joestar", ("Idade aparente: Adulto"; "Sexo masculino"; "Cabelo até o pescoço"; "Cabelo azul"; "Olhos azuis"; "Camisa azul"; "Shorts cinza"; "Botas marrons"; "Cachecol roxo"; "Marca Joestar"), 0.80
+"C Shinji Ikari", ("Idade aparente: Adolescente"; "Sexo masculino"; "Cabelo até as orelhas"; "Cabelo castanho"; "Olhos azuis"; "Camisa branca"; "Calça preta"; "Tênis"; "Pilota uma Eva-Unit"; "Walkman"), 0.80
+"C Shino Asada", ("Idade aparente: Adolescente"; "Sexo feminino"; "Cabelo até o pescoço"; "Cabelo preto"; "Olhos pretos"; "Uniforme escolar"; "Calça preta"; "Sapatos pretos"; "Óculos"), 0.98
+"C Chika Fujiwara", ("Idade aparente: Adolescente"; "Sexo feminino"; "Cabelo até os ombros"; "Cabelo rosa"; "Olhos azuis"; "Uniforme escolar"; "Sapatos brancos"; "Clube dos jogos de mesa"; "Secretária do Conselho Estudantil"), 0.77
+"C Ginshi Shirazu", ("Idade aparente: Adolescente"; "Sexo masculino"; "Cabelo até o pescoço"; "Cabelo ruivo"; "Olhos pretos"; "Roupa preta"; "Calça preta"; "Sapatos pretos"; "Espada"; "Colete marrom"), 0.81
+"C Ichigo Kurosaki", ("Idade aparente: Adolescente"; "Sexo masculino"; "Cabelo até as orelhas"; "Cabelo ruivo"; "Olhos castanhos"; "Roupa preta"; "Sapatos brancos"; "Espada"; "Lenço"), 0.95
+"C Ekubo", ("Carísma implacável"), 0.90
+"C Nao Tomori", ("Idade aparente: Adolescente"; "Sexo feminino"; "Cabelo até as costas"; "Cabelo grisalho"; "Olhos azuis"), 0.90
+"C Shigeo Kageyama", ("Idade aparente: Adolescente"; "Sexo masculino"; "Cabelo até as orelhas"; "Cabelo preto"; "Olhos pretos"; "Uniforme escolar"; "Calça preta"; "Sapatos brancos"), 0.79
+"C Yoshino", ("Idade aparente: Criança"; "Sexo feminino"; "Cabelo até a cintura"; "Cabelo azul"; "Olhos azuis"), 0.80
+"S Sexo masculino", ("Sapatos pretos"), 0.21
+"S Idade aparente: Criança", ("Cabelo preto"; "Roupa verde"; "Short verde"; "Olhos pretos"), 0.13
+"C Jet Black", ("Idade aparente: Adulto"; "Sexo masculino"; "Cabelo até o pescoço"; "Olhos pretos"; "Macacão azul"; "Botas de metal"; "Braço robótico"), 0.87
+"S Traje de super-herói", ("Olhos castanhos"; "Sexo feminino"; "Cabelo castanho"; "Cabelo até os ombros"), 0.42
+"S Cabelo preto", ("Bolsa marrom"; "Botas marrons"), 0.11
+"C Yukine", ("Idade aparente: Adolescente"; "Sexo masculino"; "Cabelo até as orelhas"; "Cabelo loiro"; "Olhos vermelhos"; "Jaqueta verde"; "Calça preta"; "Sapatos pretos"; "Gorro verde"), 0.70
+"C Haise Sasaki", ("Idade aparente: Adolescente"; "Sexo masculino"; "Cabelo até as orelhas"; "Cabelo branco"; "Olhos cinzas"; "Roupa branca"; "Calça preta"; "Sapatos marrons"; "Espada"; "Gravata"), 0.84
+"S Idade aparente: Adolescente", ("Sexo masculino"; "Olhos azuis"; "Calça bege"; "Cabelo até as orelhas"), 0.25
+"C Chihiro Ogino", ("Idade aparente: Criança"; "Sexo feminino"; "Cabelo até os ombros"; "Cabelo castanho"; "Olhos castanhos"; "Macacão vermelho"; "Sandálias"), 0.71
+"C Ryuuji Takasu", ("Idade aparente: Adolescente"; "Sexo masculino"; "Cabelo até as orelhas"; "Cabelo azul"; "Olhos pretos"; "Uniforme escolar"; "Calça preta"; "Sapatos marrons"; "Cachecol vermelho"), 0.94
+"C Lalatina Dustiness Ford", ("Idade aparente: Adolescente"; "Sexo feminino"; "Cabelo até a cintura"; "Cabelo loiro"; "Olhos azuis"; "Armadura"; "Saia"; "Botas brancas"; "Espada"), 0.85
+"S Cabelo até a cintura ou abaixo", ("Olhos vermelhos"), 0.29
+"C Filo", ("Idade aparente: Criança"; "Sexo feminino"; "Cabelo até a cintura"; "Cabelo loiro/amarelo"; "Olhos azuis"), 0.77
+"C Mitsuha Miyamizu", ("Idade aparente: Adolescente"; "Sexo feminino"; "Cabelo até o pescoço"; "Cabelo preto"; "Olhos castanhos"; "Uniforme escolar"; "Saia"; "Sapatos marrons"; "Laço nos cabelos"), 0.80
+"C Tsubasa Hanekawa", ("Idade aparente: Adolescente"; "Sexo feminino"; "Cabelo até as costas"; "Cabelo preto"; "Olhos roxos"), 0.74
+"C Anna Liebert", ("Idade aparente: Adulto"; "Sexo feminino"; "Cabelo até as costas"; "Cabelo loiro"; "Olhos azuis"; "Roupa branca"), 0.78
+"C Sebastian Michaelis", ("Idade aparente: Adulto"; "Sexo masculino"; "Cabelo até o pescoço"; "Cabelo preto"; "Olhos vermelhos"), 1.00
+"C Tobio Kageyama", ("Idade aparente: Adolescente"; "Sexo masculino"; "Cabelo até as orelhas"; "Cabelo preto"; "Olhos azuis"; "Unifome de time"; "Short de time"; "Sapatos brancos"), 0.99
+"C Shinpachi Shimura", ("Idade aparente: Adolescente"; "Sexo masculino"; "Cabelo até as orelhas"; "Cabelo preto"; "Olhos castanhos"), 0.99
+"C Chopper Tony Tony", ("Olhos pretos"; "Camisa listrada"; "Short laranja"; "Capacete azul"; "Mochila azul"), 0.81
+"C Ryuk", ("Idade aparente: Adulto"; "Sexo masculino"; "Cabelo até as orelhas"; "Cabelo preto"; "Olhos amarelos"; "Roupa preta"; "Death Note"), 0.89
+"C Futoshi", ("Cabelo castanho"; "Olhos verdes"; "Uniforme escolar"; "Calça cinza"; "Botas marrons"; "Gordo"), 0.99
+"C Nezuko Kamado", ("Cabelo preto"; "Olhos rosa"; "Kimono rosa"; "Sandálias"; "Fita rosa"; "Bambu na boca"), 0.83
+"C Suguha Kirigaya", ("Idade aparente: Adolescente"; "Sexo feminino"; "Cabelo até o pescoço"; "Cabelo preto"; "Olhos pretos"; "Uniforme escolar"; "Saia"; "Sapatos marrons"; "Avatar em ALfheim Online"), 0.75
+"C Armin Arlert", ("Idade aparente: Adolescente"; "Sexo masculino"; "Cabelo até o pescoço"; "Cabelo loiro"; "Olhos azuis"; "Jaqueta militar"; "Calça preta"; "Botas pretas"; "Lenço"; "Distintivo da Tropa de Exploração"), 0.76
+"C Caesar Anthonio Zeppeli", ("Idade aparente: Adolescente"; "Sexo masculino"; "Cabelo até as orelhas"; "Cabelo loiro "; "Olhos verdes"; "Jaqueta azul"; "Calça branca"; "Sapatos pretos"; "Cachecol rosa"), 0.85
+"C Karma Akabane", ("Idade aparente: Adolescente"; "Sexo masculino"; "Cabelo até as orelhas"; "Cabelo vermelho"; "Olhos amarelos"; "Terno preto"; "Calça cinza"; "Sapatos pretos"; "Revólver"), 0.85
+"S Idade aparente: Adolescente", ("Cabelo preto"), 0.25
+"S Ligeiramente masoquista", ("Cabelo até as costas"; "Idade aparente: Adolescente"; "Cabelo marrom"; "Sexo feminino"; "Uniforme escolar"), 0.07
+"C Kouichi Sakakibara", ("Idade aparente: Adolescente"; "Sexo masculino"; "Cabelo até as orelhas"; "Cabelo castanho"; "Olhos castanhos"; "Uniforme escolar"; "Calça preta"; "Sapatos pretos"), 0.70
+"C Yukiteru Amano", ("Idade aparente: Adolescente"; "Sexo masculino"; "Cabelo até as orelhas"; "Cabelo preto"; "Olhos azuis"; "Jaqueta marrom"; "Calça bege"; "Sapatos pretos"), 0.77
+"C Kyouko Sakura", ("Idade aparente: Adolescente"; "Sexo feminino"; "Cabelo até a cintura ou abaixo"; "Cabelo vermelho"; "Olhos vermelhos"), 0.97
+"C Kouichi Hirose", ("Cabelo branco"; "Olhos azuis"; "Roupa verde"; "Calça verde"; "Sapatos bege"; "Mochila"), 0.77
+"C Emma", ("Idade aparente: Criança"; "Sexo feminino"; "Cabelo até o pescoço"; "Cabelo ruivo"; "Olhos verdes"; "Roupa branca"; "Short branco"; "Sapatos brancos"), 0.99
+"C Goblin Slayer", ("Idade aparente: Adolescente"; "Sexo masculino"; "Careca"; "Capacete"; "Armadura"; "Espada"; "Anti-goblins"), 0.76
+"C Misaki Kamiigusa", ("Idade aparente: Adolescente"; "Sexo feminino"; "Cabelo até o pescoço"; "Cabelo loiro/amarelo"; "Olhos laranja"), 0.81
+"C Kiyotaka Ayanokouji", ("Idade aparente: Adolescente"; "Sexo masculino"; "Cabelo até o pescoço"; "Cabelo castanho"; "Olhos castanhos"), 0.85
+"C Yukio Okumura", ("Idade aparente: Adolescente"; "Sexo masculino"; "Cabelo até as orelhas"; "Cabelo castanho"; "Olhos azuis"; "Macacão preto"; "Sapatos pretos"; "Óculos"; "Revólver"), 0.97
+"C Yuu Otosaka", ("Idade aparente: Adolescente"; "Sexo masculino"; "Cabelo até as orelhas"; "Cabelo castanho"; "Olhos castanhos"), 0.76
+"C Yuuta Togashi", ("Idade aparente: Adolescente"; "Sexo masculino"; "Cabelo até as orelhas"; "Cabelo castanho"; "Olhos verdes"), 0.80
+"S Vestido roxo", ("Meias pretas"; "Camisa laranja"; "Calça amarela"; "Terno cinza "), 0.12
+"C All Might", ("Idade aparente: Adulto"; "Sexo masculino"; "Cabelo até o pescoço"; "Cabelo loiro"; "Olhos azuis"; "One for all"; "Traje de super-herói"), 0.73
+"C Suzune Horikita", ("Idade aparente: Adolescente"; "Sexo feminino"; "Cabelo até a cintura ou abaixo"; "Cabelo preto"; "Olhos roxos"), 0.90
+"C Shizuka Marikawa", ("Idade aparente: Adulto"; "Sexo feminino"; "Cabelo até a cintura ou abaixo"; "Cabelo loiro/amarelo"; "Olhos amarelos"), 0.87
+"C Haku", ("Cabelo preto"; "Olhos verdes"; "Macacão branco"; "Sandálias"; "Dragão"), 0.71
+"S Cabelo castanho", ("Sexo masculino"), 0.32
+"C Akatsuki", ("Idade aparente: Adolescente"; "Sexo feminino"; "Cabelo até a cintura ou abaixo"; "Cabelo roxo"; "Olhos roxos"), 0.99
+"C Celty Sturluson", ("Idade aparente: Adulto"; "Sexo feminino"; "Cabelo desconhecido"; "Olhos desconhecidos"), 0.73
+"S Olhos azuis", ("Sexo masculino"), 0.15
+"C Haruhi Fujioka", ("Idade aparente: Adolescente"; "Sexo feminino"; "Cabelo até as orelhas"; "Cabelo castanho"; "Olhos castanhos"; "Roupa azul"; "Calça preta"; "Sapatos pretos"; "Gravata"; "Broche"), 0.86
+"C Hiro", ("Cabelo preto"; "Olhos azuis"; "Uniforme escolar"; "Calça cinza"; "Botas marrons"; "Chifre"), 0.75
+"S Idade aparente: Adolescente", ("Cabelo até os ombros"), 0.18
+"C Yukino Yukinoshita", ("Idade aparente: Adolescente"; "Sexo feminino"; "Cabelo até a cintura ou abaixo"; "Cabelo preto"; "Olhos azuis"), 0.90
+"C Kotori Itsuka", ("Idade aparente: Adolescente"; "Sexo feminino"; "Cabelo até a cintura ou abaixo"; "Cabelo vermelho"; "Olhos vermelhos"), 0.99
+"C Ryuunosuke Akasaka", ("Idade aparente: Adolescente"; "Sexo feminino"; "Cabelo até a cintura ou abaixo"; "Cabelo preto"; "Olhos roxos"), 0.81
+"C Shiroe", ("Idade aparente: Adulto"; "Sexo masculino"; "Cabelo até as orelhas"; "Cabelo preto"; "Olhos pretos"), 0.74
+"C Zoro Roronoa", ("Cabelo verde"; "Olhos verdes"; "Roupa verde"; "Botas pretas"; "Lenço"; "Espada"), 0.71
+"C Makima", ("Idade aparente: Adulto"; "Sexo feminino"; "Cabelo até as costas"; "Cabelo ruivo"; "Olhos amarelos"; "Camisa branca"; "Calça preta"; "Sapatos marrons"; "Gravata"), 0.72
+"S Olhos rosa", ("Idade aparente: Adolescente"; "Sexo feminino"), 0.38
+"C Megumi Fushiguro", ("Idade aparente: Adolescente"; "Sexo masculino"; "Cabelo até as orelhas"; "Cabelo preto"; "Olhos azuis"; "Roupa azul"; "Calça azul"; "Sapatos marrons"; "Uniforme escolar"), 0.91
+"C Edward Elric", ("Cabelo loiro"; "Olhos amarelos"; "Roupa vermelha"; "Calça preta"; "Botas pretas"; "Automail"; "Poderes de alquimia"), 0.78
+"C Kokomi Teruhashi", ("Idade aparente: Adolescente"; "Sexo feminino"; "Cabelo até as costas"; "Cabelo azul"; "Olhos azuis"; "Camisa branca"; "Saia verde"; "Sapatos marrons"; "Meias pretas"; "Laço"), 0.91
+"C Ray", ("Cabelo preto"; "Olhos pretos"; "Roupa branca"; "Short branco"; "Sapatos brancos"), 0.72
+"C Ochako Uraraka", ("Idade aparente: Adolescente"; "Sexo feminino"; "Cabelo até os ombros"; "Cabelo castanho"; "Olhos castanhos"; "Uniforme escolar"; "Poderes de gravidade"; "Traje de super-herói"), 0.88
+"C Morgiana", ("Idade aparente: Adolescente"; "Sexo feminino"; "Cabelo até os ombros"; "Cabelo rosa"; "Olhos rosa"), 0.79
+"S Saia", ("Cabelo até o pescoço"; "Brincos de argola"; "Sexo feminino"), 0.22
+"C Kosaki Onodera", ("Idade aparente: Adolescente"; "Sexo feminino"; "Cabelo até o pescoço"; "Cabelo preto"; "Olhos castanhos"; "Camisa branca"; "Saia azul"; "Sapatos marrons"; "Meias brancas"; "Fita laranja"), 0.71
+"S Cabelo preto", ("Idade aparente: Adolescente"; "Cabelo até as orelhas"; "Olhos azuis"), 0.43
+"C Howl", ("Idade aparente: Adolescente"; "Sexo masculino"; "Cabelo até os ombros"; "Cabelo loiro/amarelo"; "Olhos azuis"), 0.73
+"C Kyouya Ootori", ("Idade aparente: Adolescente"; "Sexo masculino"; "Cabelo até as orelhas"; "Cabelo preto"; "Olhos cinzentos"), 0.79
+"C Alphonse Elric", ("Armadura"; "NOT Corpo físico"; "Poderes de alquimia"), 0.94
+"C Megumi Tadokoro", ("Cabelo azul"; "Olhos amarelos"; "Dólmã"; "Sapatos pretos"; "Faca"; "Chapéu de Chef"), 0.80
+"S Saia preta", ("Calça vermelha"; "Camisa preta"), 0.39
+"S Olhos amarelos", ("Cabelo até as orelhas"; "Cabelo castanho"), 0.44
+"C Killua Zoldyck", ("Idade aparente: Criança"; "Sexo masculino"; "Cabelo até as orelhas"; "Cabelo branco"; "Olhos azuis"; "Roupa branca"; "Short azul"; "Tênis"), 0.95
+"C Nine", ("Cabelo preto"; "Olhos castanhos"; "Camisa branca"; "Calça preta"; "Sapatos pretos"; "Óculos"), 0.97
+"C Gintoki Sakata", ("Idade aparente: Adulto"; "Sexo masculino"; "Cabelo até as orelhas"; "Cabelo azul"; "Olhos vermelhos"), 0.96
+"C Naofumi Iwatani", ("Idade aparente: Adulto"; "Sexo masculino"; "Cabelo até o pescoço"; "Cabelo preto"; "Olhos verdes"), 0.83
+"C Yuka", ("Idade aparente: Adolescente"; "Sexo feminino"; "Cabelo até o pescoço"; "Cabelo castanho"; "Olhos castanhos"), 0.85
+"C King", ("Cabelo castanho"; "Olhos castanhos"; "Roupa azul"; "Botas azuis"), 0.72
+"C Tenya Iida", ("Idade aparente: Adolescente"; "Sexo masculino"; "Cabelo até as orelhas"; "Cabelo preto"; "Olhos azuis"; "Uniforme escolar"; "Botas com propulsores"; "Traje de super-herói"), 0.89
+"S Pilota uma Eva-Unit", ("Gravata "; "Sapatos rosa"; "Maleta"), 0.09
+"S Cabelo castanho", ("Sexo masculino"), 0.15
+"C Shouya Ishida", ("Idade aparente: Adolescente"; "Sexo masculino"; "Cabelo até as orelhas"; "Cabelo preto"; "Olhos pretos"; "Camisa marrom"; "Calça marrom"; "Sapatos marrons"; "Gravata"), 0.81
+"S Cabelo preto", ("Roupa preta"; "Sandálias"; "Jaqueta verde e preta"), 0.12
+"C Genos", ("Idade aparente: Adolescente"; "Sexo masculino"; "Cabelo até as orelhas"; "Cabelo loiro"; "Olhos amarelos"; "Camisa branca"; "Calça azul"; "Sapatos pretos"; "Corpo de Cyborg"), 0.82
+"S Cachecol", ("Cabelo preto"; "Maleta"; "Lenço"), 0.31
+"C Power", ("Idade aparente: Adulto"; "Sexo feminino"; "Cabelo até as costas"; "Cabelo loiro"; "Olhos amarelos"; "Camisa branca"; "Calça preta"; "Tênis"; "Jaqueta azul"; "Gravata"), 0.74
+"C Okuyasu Nijimura", ("Idade aparente: Adolescente"; "Sexo masculino"; "Cabelo até o pescoço"; "Cabelo preto"; "Olhos pretos"; "Roupa azul"; "Calça azul"; "Sapatos verdes"; "Cinto"), 0.88
+"C Chitoge Kirisaki", ("Idade aparente: Adolescente"; "Sexo feminino"; "Cabelo até a cintura ou abaixo"; "Cabelo loiro"; "Olhos azuis"; "Camisa branca"; "Saia azul"; "Sapatos marrons"; "Fita laranja"; "Orelhas"), 0.95
+"C Sakuta Azusagawa", ("Idade aparente: Adolescente"; "Sexo masculino"; "Cabelo até as orelhas"; "Cabelo castanho"; "Olhos castanhos"; "Camisa branca"; "Calça azul"; "Sapatos marrons"; "Cicatriz no peito"; "Jaqueta marrom"), 0.90
+"C Kallen Stadtfeld", ("Idade aparente: Adolescente"; "Sexo feminino"; "Cabelo até o pescoço"; "Cabelo rosa"; "Olhos azuis"; "Roupa marrom"; "Meias vermelhas"; "Sapatos pretos"; "Bandana"), 0.79
+"C Iris", ("Idade aparente: Adolescente"; "Sexo feminino"; "Cabelo até o pescoço"; "Cabelo loiro/amarelo"; "Olhos azuis"), 0.70
+"S Pulseiras", ("Calça preta"; "Dominator"; "Secretária do Conselho Estudantil"; "Camisa marrom"), 0.29
+"C Rena Kariu", ("Idade aparente: Adolescente"; "Sexo feminino"; "Cabelo até os ombros"; "Cabelo vermelho"; "Olhos cinzentos"), 0.97
+"S Olhos laranja", ("Cabelo vermelho"; "Idade aparente: Adulto"), 0.41
+"C Shirou Emiya", ("Cabelo ruivo"; "Olhos castanhos"; "Camisa branca"; "Calça azul"; "Sapatos pretos"; "Espada"), 0.91
+"C Tooru Mutsuki", ("Idade aparente: Adolescente"; "Sexo feminino"; "Cabelo até o pescoço"; "Cabelo verde"; "Olhos verdes"; "Roupa branca"; "Calça preta"; "Sapatos pretos"; "Faca"; "Tapa olhos"), 0.97
+"C Koro-sensei", ("Sexo masculino"; "Olhos brancos"; "Uniforme escolar"; "Chapéu de formatura"), 0.91
+"C Rin Okumura", ("Idade aparente: Adolescente"; "Sexo masculino"; "Cabelo até as orelhas"; "Cabelo preto"; "Olhos azuis"; "Camisa branca"; "Calça preta"; "Sapatos pretos"; "Katana"; "Chifre"), 0.74
+"C Ushio Okazaki", ("Idade aparente: Criança"; "Sexo feminino"; "Cabelo até o pescoço"; "Cabelo castanho"; "Olhos castanhos"), 0.73
+"C Raku Ichijou", ("Cabelo roxo"; "Olhos roxos"; "Camisa branca"; "Calça preta"; "Sapatos brancos"; "Colete preto"; "Corrente"), 0.74
+"C Mayu", ("Idade aparente: Criança"; "Sexo feminino"; "Cabelo até o pescoço"; "Cabelo castanho"; "Olhos vermelhos"), 0.96
+"C Yuusaku Kitamura", ("Idade aparente: Adolescente"; "Sexo masculino"; "Cabelo até as orelhas"; "Cabelo azul"; "Olhos azuis"; "Uniforme escolar"; "Calça preta"; "Sapatos pretos"), 0.72
+"C Youhei Sunohara", ("Idade aparente: Adolescente"; "Sexo masculino"; "Cabelo até as orelhas"; "Cabelo loiro/amarelo"; "Olhos azuis"), 0.74
+"C Kurapika", ("Idade aparente: Adolescente"; "Sexo masculino"; "Cabelo até o pescoço"; "Cabelo loiro"; "Olhos castanhos"; "Roupa azul"; "Calça branca"; "Sapatos azuis"; "Correntes"), 1.00
+"S Chapéu de feiticeiro", ("Idade aparente: Adolescente"; "Cabelo castanho"; "Sexo feminino"; "Olhos vermelhos"), 0.31
+"C Kanna Kamui", ("Idade aparente: Criança"; "Sexo feminino"; "Cabelo até a cintura ou abaixo"; "Cabelo branco"; "Olhos azuis"), 0.71
+"S Idade aparente: Adulto", ("Sapatos marrons"; "Jaqueta preta"; "Bengala"; "Cabelo preto"), 0.05
+"C Kobayashi", ("Idade aparente: Adulto"; "Sexo feminino"; "Cabelo até os ombros"; "Cabelo vermelho"; "Olhos laranja"), 0.96
+"C Tomoyo Sakagami", ("Idade aparente: Adolescente"; "Sexo feminino"; "Cabelo até a cintura ou abaixo"; "Cabelo grisalho"; "Olhos azuis"), 0.95
+"C Lisa Mishima", ("Idade aparente: Adolescente"; "Sexo feminino"; "Cabelo até o pescoço"; "Cabelo preto"; "Olhos castanhos"; "Camisa amarela"; "Saia branca"; "Sapatos azuis"; "Meias azuis"), 0.76
+"C Katsuki Bakugou", ("Cabelo loiro"; "Olhos vermelhos"; "Uniforme escolar"; "Manoplas em formato de granada"; "Traje de super-herói"), 0.74
+"S Compulsão por apostas", ("Cabelo rosa claro"; "Gravata "), 0.07
+"S Olhos pretos", ("Short branco"; "Roupa branca"), 0.33
+"S Camisa listrada", ("Capacete azul"), 0.49
+"C Tatsuya Shiba", ("Idade aparente: Adolescente"; "Sexo masculino"; "Cabelo até as orelhas"; "Cabelo preto"; "Olhos azuis"), 0.89
+"C Johan Liebert", ("Idade aparente: Adolescente"; "Sexo masculino"; "Cabelo até as orelhas"; "Cabelo loiro"; "Olhos azuis"; "Camisa preta"; "Calça marrom"; "Sapatos pretos"; "Colete marrom"), 0.82
+"C Yoshikage Kira", ("Idade aparente: Adulto"; "Sexo masculino"; "Cabelo até as orelhas"; "Cabelo loiro"; "Olhos roxos"; "Camisa verde"; "Calça roxa"; "Sapatos marrons"; "Colete roxo"; "Gravata"), 0.84
+"C Violet Evergarden", ("Idade aparente: Adolescente"; "Sexo feminino"; "Cabelo até o pescoço"; "Cabelo loiro"; "Olhos azuis"; "Vestido branco"; "Botas marrons"; "Jaqueta azul"; "Braços protéticos"), 0.83
+"C Takehisa Hinawa", ("Idade aparente: Adulto"; "Sexo masculino"; "Cabelo até o pescoço"; "Cabelo castanho"; "Olhos castanhos"), 0.70
+"C Nagisa Furukawa", ("Idade aparente: Adolescente"; "Sexo feminino"; "Cabelo até os ombros"; "Cabelo castanho"; "Olhos castanhos"), 0.91
+"C Nona", ("Idade aparente: Adolescente"; "Sexo feminino"; "Cabelo até as costas"; "Cabelo branco"; "Olhos roxos"; "Camisa branca"; "Calça preta"; "Sandálias"; "Habilidades em sinuca"), 0.83
+"S Cabelo até o pescoço", ("Sexo feminino"; "Idade aparente: Adolescente"; "Bandana"; "Sapatos pretos"; "Meias vermelhas"), 0.14
+"C Izaya Orihara", ("Idade aparente: Adulto"; "Sexo masculino"; "Cabelo até as orelhas"; "Cabelo preto"; "Olhos castanhos"), 0.70
+"C Ritsu Kageyama", ("Idade aparente: Adolescente"; "Sexo masculino"; "Cabelo até as orelhas"; "Cabelo azul"; "Olhos pretos"; "Uniforme escolar"; "Calça preta"; "Sapatos brancos"; "Maleta azul"), 0.83
+"S Sapatos azuis", ("Gravata "; "Minissaia"), 0.49
+"C Gen Asagiri", ("Idade aparente: Adolescente"; "Sexo masculino"; "Cabelo até os ombros"; "Cabelo preto/branco"; "Olhos pretos"; "Macacão roxo"; "Sandálias"; "Cicatriz no olho"), 0.83
+"C Jousuke Higashikata", ("Cabelo roxo"; "Olhos azuis"; "Roupa preta"; "Calça preta"; "Sapatos roxos"; "Brincos"; "Bolsa"), 0.88
+"C Robert E. O. Speedwagon", ("Idade aparente: Senhor"; "Sexo masculino"; "Cabelo até as orelhas"; "Cabelo loiro "; "Olhos amarelos"; "Terno preto"; "Calça preta"; "Sapatos pretos"; "Cachecol listrado"; "Top hat listrado"), 0.95
+"S Chapéu de Chef", ("Olhos roxos"), 0.24
+"C Rimuru Tempest", ("Idade aparente: Adolescente"; "Sexo masculino"; "Cabelo até a cintura"; "Cabelo azul"; "Olhos amarelos"), 0.80
+"C Yumeko Jabami", ("Cabelo preto"; "Olhos vermelhos"; "Roupa vermelha"; "Saia preta"; "Sapatos marrons"; "Compulsão por apostas"), 0.92
+"S Olhos castanhos", ("Cabelo até o pescoço"), 0.37
+"C Masaomi Kida", ("Idade aparente: Adolescente"; "Sexo masculino"; "Cabelo até as orelhas"; "Cabelo loiro/amarelo"; "Olhos castanhos"), 0.92
+"S Idade aparente: Adolescente", ("Cabelo até as orelhas"), 0.10
+"C Lucy Heartfilia", ("Idade aparente: Adolescente"; "Sexo feminino"; "Cabelo até as costas"; "Cabelo loiro"; "Olhos castanhos"; "Camisa azul"; "Saia azul"; "Botas marrons"; "Bolsa"; "Chicote"), 0.84
+"C Rukia Kuchiki", ("Idade aparente: Adolescente"; "Sexo feminino"; "Cabelo até os ombros"; "Cabelo preto"; "Olhos roxos"; "Roupa preta"; "Sapatos brancos"; "Espada"; "Lenço"), 0.85
+"C Shinya Kougami", ("Idade aparente: Adulto"; "Sexo masculino"; "Cabelo até as orelhas"; "Cabelo preto"; "Olhos cinza"; "Terno"; "Calça de terno"; "Sapatos pretos"; "Gravata preta"; "Dominator"), 0.94
+"C Kaori Miyazono", ("Idade aparente: Adolescente"; "Sexo feminino"; "Cabelo até as costas"; "Cabelo loiro"; "Olhos azuis"; "Uniforme escolar"; "Saia"; "Sapatos marrons"; "Violinista"), 0.97
+"C Natsu Dragneel", ("Idade aparente: Adolescente"; "Sexo masculino"; "Cabelo até as orelhas"; "Cabelo rosa"; "Olhos pretos"; "Roupa preta"; "Calça branca"; "Sandálias"; "Pulseiras"; "Cachecol"), 0.89
+"C Yuu Ishigami", ("Idade aparente: Adolescente"; "Sexo masculino"; "Cabelo até o pescoço"; "Cabelo preto"; "Olhos pretos"; "Uniforme escolar"; "Calça preta"; "Sapatos brancos"; "Tesoureiro do Conselho Estudantil"), 0.97
+"C Banri Tada", ("Idade aparente: Adolescente"; "Sexo masculino"; "Cabelo até as orelhas"; "Cabelo castanho"; "Olhos castanhos"), 0.74
+"C Dio Brando", ("Idade aparente: Adulto"; "Sexo masculino"; "Cabelo até o pescoço"; "Cabelo loiro "; "Olhos amarelos"; "Roupa amarela"; "Calça amarela"; "Sapatos amarelos"; "Za warudo"), 0.99
+"S Sexo feminino", ("Idade aparente: Adolescente"; "Sapatos pretos"; "Cabelo até a cintura"; "Olhos castanhos"), 0.44
+"C Aqua", ("Idade aparente: Adolescente"; "Sexo feminino"; "Cabelo até a cintura ou abaixo"; "Cabelo azul"; "Olhos azuis"; "Roupa azul"; "Saia azul"; "Botas azuis"; "Deusa"), 0.99
+"C Kyou Fujibayashi", ("Idade aparente: Adolescente"; "Sexo feminino"; "Cabelo até a cintura ou abaixo"; "Cabelo roxo"; "Olhos roxos"), 0.74
+"C Tetsuya Kuroko", ("Idade aparente: Adolescente"; "Sexo masculino"; "Cabelo até as orelhas"; "Cabelo azul"; "Olhos azuis"), 0.81
+"S Cabelo cinza", ("Uniforme escolar"; "Botas marrons"; "Saia Cinza"), 0.35
+"C Chizuru Hishiro", ("Idade aparente: Adolescente"; "Sexo feminino"; "Cabelo até as costas"; "Cabelo preto"; "Olhos verdes"), 0.81
+"C Kumin Tsuyuri", ("Idade aparente: Adolescente"; "Sexo feminino"; "Cabelo até o pescoço"; "Cabelo preto"; "Olhos rosa"), 0.73
+"C Ryou Fujibayashi", ("Idade aparente: Adolescente"; "Sexo feminino"; "Cabelo até o pescoço"; "Cabelo roxo"; "Olhos azuis"), 0.82
+"S Mochila azul", ("Olhos cinzas"; "Sapato vermelho"), 0.27
+"C Taiga Aisaka", ("Idade aparente: Adolescente"; "Sexo feminino"; "Cabelo até a cintura"; "Cabelo castanho"; "Olhos castanhos"; "Uniforme escolar"; "Saia"; "Sapatos marrons"; "Lenço"), 0.85
+"C Miku", ("Cabelo vermelho"; "Olhos verdes"; "Uniforme escolar"; "Saia Cinza"; "Botas marrons"), 1.00
+"C Aren Kuboyasu", ("Idade aparente: Adolescente"; "Sexo masculino"; "Cabelo até as orelhas"; "Cabelo roxo"; "Olhos pretos"; "Camisa verde"; "Calça verde"; "Sapatos pretos"; "Óculos"), 0.73
+"C Leone", ("Idade aparente: Adulto"; "Sexo feminino"; "Cabelo até as costas"; "Cabelo loiro"; "Olhos amarelos"; "Top preto"; "Botas marrons"; "Garras de leão"), 0.76
+"C Mitsuki Nase", ("Idade aparente: Adolescente"; "Sexo feminino"; "Cabelo até as costas"; "Cabelo preto"; "Olhos vermelhos"; "Camisa azul"; "Saia cinza"; "Sapatos pretos"; "Meias pretas"), 0.92
+"C Tsubaki Sawabe", ("Idade aparente: Adolescente"; "Sexo feminino"; "Cabelo até o pescoço"; "Cabelo marrom"; "Olhos castanhos"; "Uniforme escolar"; "Saia"; "Sapatos marrons"), 0.90
+"C Takemichi Hanagaki", ("Idade aparente: Adolescente"; "Sexo masculino"; "Cabelo até as orelhas"; "Cabelo loiro/amarelo"; "Olhos cinzentos"), 0.78
+"C Suruga Kanbaru", ("Idade aparente: Adolescente"; "Sexo feminino"; "Cabelo até as orelhas"; "Cabelo roxo"; "Olhos laranja"), 0.88
+"S Saia", ("Cabelo marrom"; "Olhos castanhos"; "Sapatos marrons"), 0.08
+"S Botas pretas", ("Tuturu"), 0.32
+"C Eugeo", ("Idade aparente: Adolescente"; "Sexo masculino"; "Cabelo até o pescoço"; "Cabelo loiro/amarelo"; "Olhos azuis"), 0.80
+"C Naruto Uzumaki", ("Idade aparente: Criança"; "Sexo masculino"; "Cabelo até as orelhas"; "Cabelo loiro"; "Olhos azuis"; "Roupa laranja"; "Calça laranja"; "Sandálias"; "Modo sábio"; "Bandana"), 0.98
+"C Izumi Miyamura", ("Idade aparente: Adolescente"; "Sexo masculino"; "Cabelo até o pescoço"; "Cabelo preto"; "Olhos azuis"; "Uniforme escolar"; "Calça preta"; "Tênis"; "Piercings"), 0.86
+"C Naotsugu", ("Idade aparente: Adulto"; "Sexo masculino"; "Cabelo até as orelhas"; "Cabelo grisalho"; "Olhos pretos"), 0.72
+"S Idade aparente: Adolescente", ("Luvas"; "Olhos pretos"; "Sapatos pretos"; "Calça preta"), 0.13
+"S Olhos desconhecidos", ("Idade aparente: Adulto"), 0.36
+"S Botas amarelas", ("Cabelo até as orelhas"; "Idade aparente: Adulto"; "Camisa branca"), 0.36
+"C Issei Hyoudou", ("Idade aparente: Adolescente"; "Sexo masculino"; "Cabelo até as orelhas"; "Cabelo castanho"; "Olhos castanhos"), 0.94
+"C Sophie Hatter", ("Idade aparente: Adolescente"; "Sexo feminino"; "Cabelo até a cintura"; "Cabelo castanho"; "Olhos castanhos"), 0.85
+"C Kuki Urie", ("Idade aparente: Adolescente"; "Sexo masculino"; "Cabelo até as orelhas"; "Cabelo preto"; "Olhos pretos"; "Roupa branca"; "Calça preta"; "Sapatos pretos"; "Espada"; "Luvas"), 0.74
+"S Chapéu de feiticeiro", ("One for all"; "Sexo feminino"; "Short branco"; "Vestido vermelho"; "Olhos vermelhos"), 0.13
+"C Homura Akemi", ("Idade aparente: Adolescente"; "Sexo feminino"; "Cabelo até a cintura ou abaixo"; "Cabelo preto"; "Olhos roxos"), 0.77
+"C Haru Yoshida", ("Idade aparente: Adolescente"; "Sexo masculino"; "Cabelo até as orelhas"; "Cabelo preto"; "Olhos pretos"; "Camisa bege"; "Calça preta"; "Sapatos bege"; "Gravata"; "Colete vermelho"), 0.82
+"S Idade aparente: Adolescente", ("Olhos azuis"), 0.50
+"S Olhos pretos", ("Cabelo preto"), 0.31
+"S Sexo feminino", ("Cabelo até o pescoço"), 0.19
+"C Ayumi Otosaka", ("Idade aparente: Adolescente"; "Sexo feminino"; "Cabelo até a cintura"; "Cabelo preto"; "Olhos roxos"), 0.90
+"C Atsushi Nakajima", ("Idade aparente: Adolescente"; "Sexo masculino"; "Cabelo até as orelhas"; "Cabelo grisalho"; "Olhos amarelos"), 0.94
+"C Kenzou Tenma", ("Cabelo preto"; "Olhos pretos"; "Camisa branca"; "Calça bege"; "Sapatos pretos"; "Colete cinza"; "Médico"), 0.90
+"C Charlés", ("Cabelo rosa"; "Olhos castanhos"; "Camisa preta"; "Calça preta"; "Sapatos pretos"; "Gravata"; "Presilha"), 0.86
+"C Kineshi Hairo", ("Idade aparente: Adolescente"; "Sexo masculino"; "Cabelo até as orelhas"; "Cabelo ruivo"; "Olhos laranja"; "Camisa verde"; "Calça verde"; "Sapatos brancos"; "Pulseiras"), 0.83
+"C Nadeko Sengoku", ("Idade aparente: Adolescente"; "Sexo feminino"; "Cabelo até os ombros"; "Cabelo castanho"; "Olhos castanhos"), 0.76
+"S Camisa azul", ("Olhos castanhos"), 0.47
+"S Cabelo azul", ("Cabelo até o pescoço"; "Sexo masculino"), 0.16
+"C Ikuno", ("Cabelo roxo"; "Olhos verdes"; "Uniforme escolar"; "Saia Cinza"; "Botas marrons"), 0.86
+"S Sexo feminino", ("Idade aparente: Adolescente"; "Cabelo preto"), 0.17
+"S Botas azuis", ("Cabelo castanho"), 0.47
+"C Tamaki Kotatsu", ("Idade aparente: Adolescente"; "Sexo feminino"; "Cabelo até as costas"; "Cabelo preto"; "Olhos amarelos"), 0.80
+"S Calça preta", ("Katana"; "Olhos amarelos"), 0.07
+"C Shun Kaidou", ("Idade aparente: Adolescente"; "Sexo masculino"; "Cabelo até as orelhas"; "Cabelo branco"; "Olhos vermelhos"; "Camisa branca"; "Calça verde"; "Sapatos pretos"; "Colete verde"; "Luvas"), 0.91
+"C Inosuke Hashibira", ("Cabelo preto"; "Olhos azuis"; "Sem camisa"; "Calça azul"; "Sandálias"; "Katana"; "Cabeça de javali"), 0.83
+"C Erza Scarlet", ("Idade aparente: Adolescente"; "Sexo feminino"; "Cabelo até a cintura"; "Cabelo ruivo"; "Olhos castanhos"; "Roupa branca"; "Saia preta"; "Botas pretas"; "Espada"; "Cinto"), 0.86
+"C Satsuki Kusakabe", ("Idade aparente: Criança"; "Sexo feminino"; "Cabelo até as orelhas"; "Cabelo castanho"; "Olhos pretos"), 0.92
+"S Olhos azuis", ("Cabelo até o pescoço"), 0.26
+"S Uniforme escolar", ("Calça cinza"; "Olhos castanhos"; "Cabelo marrom"), 0.25
+"C Mitsuo Yanagisawa", ("Idade aparente: Adolescente"; "Sexo masculino"; "Cabelo até o pescoço"; "Cabelo azul"; "Olhos cinzentos"), 0.70
+"C Alice Maresato", ("Idade aparente: Criança"; "Sexo feminino"; "Cabelo até o pescoço"; "Cabelo rosa"; "Olhos roxos"), 0.78
+"C Meliodas", ("Idade aparente: Adolescente"; "Sexo masculino"; "Cabelo até as orelhas"; "Cabelo loiro"; "Olhos azuis"; "Roupa branca"; "Botas pretas"; "Gravata "; "Colete preto"), 0.96
+"C Vegeta", ("Idade aparente: Adulto"; "Sexo masculino"; "Cabelo até as costas"; "Cabelo preto"; "Olhos pretos"), 0.97
+"S Cabelo até o pescoço", ("Braço robótico"; "Idade aparente: Adulto"), 0.22
+"C Kazuto Kirigaya", ("Cabelo preto"; "Olhos pretos"; "Roupa preta"; "Calça preta"; "Botas pretas"; "Capa preta"; "Duas espadas"), 0.94
+"C Gowther", ("Idade aparente: Adulto"; "Sexo masculino"; "Cabelo até o pescoço"; "Cabelo rosa"; "Olhos castanhos"; "Camisa rosa"; "Short rosa"; "Botas vermelhas"; "Corrente"), 0.88
+"C Kyouko Hori", ("Idade aparente: Adolescente"; "Sexo feminino"; "Cabelo até as costas"; "Cabelo marrom"; "Olhos dourados"; "Uniforme escolar"; "Saia"; "Sapatos marrons"; "Ligeiramente masoquista"), 0.93
+"S Olhos pretos", ("Cabelo preto"; "Sandálias"; "Camisa vermelha"; "Chapéu"), 0.45
+"C L Lawliet", ("Idade aparente: Adulto"; "Sexo masculino"; "Cabelo até o pescoço"; "Cabelo preto"; "Olhos pretos"; "Camisa branca"; "Calça azul"; "Descalço"; "Muitos doces"), 0.86
+"C Aladdin", ("Idade aparente: Criança"; "Sexo masculino"; "Cabelo até a cintura ou abaixo"; "Cabelo azul"; "Olhos azuis"), 0.86
+"C Muten-Roushi", ("Careca"; "Camisa amarela"; "Calça azul"; "Sapatos azuis"; "Bastão"; "Óculos"), 0.73
+"C Nana Hayashida", ("Idade aparente: Adolescente"; "Sexo feminino"; "Cabelo até o pescoço"; "Cabelo castanho"; "Olhos azuis"), 0.84
+"C Arataka Reigen", ("Idade aparente: Adulto"; "Sexo masculino"; "Cabelo até as orelhas"; "Cabelo loiro"; "Olhos castanhos"; "Terno cinza "; "Calça cinza"; "Sapatos pretos"; "Gravata rosa"), 1.00
+"S Olhos azuis", ("Cabelo até as orelhas"; "Cabelo loiro/amarelo"), 0.13
+"C Norman", ("Idade aparente: Criança"; "Sexo masculino"; "Cabelo até as orelhas"; "Cabelo branco"; "Olhos azuis"; "Roupa branca"; "Short branco"; "Sapatos brancos"), 0.91
+"C Aki Hayakawa", ("Idade aparente: Adulto"; "Sexo masculino"; "Cabelo até as orelhas"; "Cabelo preto"; "Olhos azuis"; "Terno"; "Calça de terno"; "Tênis"; "Kon"; "Gravata"), 0.77
+"C Mayuri Shiina", ("Cabelo preto"; "Olhos azuis"; "Vestido azul"; "Leggings"; "Botas pretas"; "Tuturu"), 0.83
+"C Nanami Aoyama", ("Idade aparente: Adolescente"; "Sexo feminino"; "Cabelo até as costas"; "Cabelo castanho"; "Olhos amarelos"), 0.82
+"S Olhos azuis", ("Idade aparente: Adolescente"; "Cabelo até o pescoço"; "Sexo masculino"), 0.08
+"C Taiga Kagami", ("Idade aparente: Adolescente"; "Sexo masculino"; "Cabelo até as orelhas"; "Cabelo vermelho"; "Olhos vermelhos"), 0.74
+"C Lucy", ("Idade aparente: Adolescente"; "Sexo feminino"; "Cabelo até a cintura"; "Cabelo rosa"; "Olhos vermelhos"), 0.90
+"C Ryouta Watari", ("Idade aparente: Adolescente"; "Sexo masculino"; "Cabelo até as orelhas"; "Cabelo marrom"; "Olhos castanhos"; "Uniforme escolar"; "Calça cinza"; "Sapatos marrons"; "Gravata vermelha"), 0.93
+"S Idade aparente: Adolescente", ("Cabelo azul"; "Cabelo até as orelhas"; "Sapatos pretos"), 0.43
+"C Reg", ("Idade aparente: Criança"; "Sexo masculino"; "Cabelo até as orelhas"; "Cabelo castanho"; "Olhos amarelos"), 0.75
+"C Kanade Tachibana", ("Idade aparente: Adolescente"; "Sexo feminino"; "Cabelo até a cintura"; "Cabelo branco"; "Olhos amarelos"; "Uniforme escolar"; "Saia preta"; "Sapatos pretos"), 0.89
+"C Shouko Nishimiya", ("Idade aparente: Adolescente"; "Sexo feminino"; "Cabelo até as costas"; "Cabelo rosa claro"; "Olhos castanhos"; "Uniforme escolar"; "Saia"; "Sapatos marrons"; "Deficiência auditiva"), 0.76
+"C Spike Spiegel", ("Idade aparente: Adulto"; "Sexo masculino"; "Cabelo até as orelhas"; "Cabelo preto"; "Olhos castanhos"; "Terno preto"; "Calça cinza"; "Sapatos pretos"), 0.97
+"C Merlin", ("Cabelo preto"; "Olhos castanhos"; "Camisa azul"; "Calcinha azul"), 0.92
+"C Sora", ("Idade aparente: Adolescente"; "Sexo masculino"; "Cabelo até o pescoço"; "Cabelo ruivo"; "Olhos vermelhos"; "Camisa amarela"; "Calça roxa"; "Sapatos vermelhos"), 0.87
+"C Mei Kusakabe", ("Idade aparente: Criança"; "Sexo feminino"; "Cabelo até as orelhas"; "Cabelo castanho"; "Olhos pretos"), 0.99
+"C Koneko Toujou", ("Idade aparente: Adolescente"; "Sexo feminino"; "Cabelo até as costas"; "Cabelo branco"; "Olhos amarelos"), 0.84
+"C Kousei Arima", ("Idade aparente: Adolescente"; "Sexo masculino"; "Cabelo até as orelhas"; "Cabelo preto"; "Olhos azuis"; "Uniforme escolar"; "Calça cinza"; "Tênis"; "Pianista"; "Óculos"), 0.96
+"C Sanae Dekomori", ("Idade aparente: Adolescente"; "Sexo feminino"; "Cabelo até a cintura ou abaixo"; "Cabelo loiro/amarelo"; "Olhos azuis"), 0.79
+"C Inori Yuzuriha", ("Idade aparente: Adolescente"; "Sexo feminino"; "Cabelo até as costas"; "Cabelo rosa"; "Olhos vermelhos"), 0.83
+"C Riki Nendou", ("Idade aparente: Adolescente"; "Sexo masculino"; "Cabelo até as orelhas"; "Cabelo preto"; "Olhos pretos"; "Camisa laranja"; "Calça verde"; "Sapatos verdes"; "Colete verde"), 0.78
+"S Sexo feminino", ("Saia azul"), 0.35
+"S Roupa preta", ("Sexo masculino"), 0.09
+"C Akihito Kanbara", ("Idade aparente: Adolescente"; "Sexo masculino"; "Cabelo até as orelhas"; "Cabelo loiro"; "Olhos castanhos"; "Camisa branca"; "Calça cinza"; "Sapatos brancos"; "Gravata"; "Colete azul"), 0.87
+"S Cabelo até a cintura ou abaixo", ("Idade aparente: Adolescente"; "Cabelo preto"), 0.20
+"C Hyakkimaru", ("Idade aparente: Adolescente"; "Sexo masculino"; "Cabelo até as costas"; "Cabelo preto"; "Olhos pretos"), 0.88
+"C Nagisa Shiota", ("Idade aparente: Adolescente"; "Sexo masculino"; "Cabelo até as orelhas"; "Cabelo azul"; "Olhos azuis"; "Uniforme escolar"; "Calça preta"; "Sapatos pretos"; "Faca"), 0.83
+"C Stephanie Dola", ("Idade aparente: Adolescente"; "Sexo feminino"; "Cabelo até os ombros"; "Cabelo ruivo"; "Olhos azuis"; "Vestido branco"; "Botas marrons"; "Flor azul no cabelo"), 0.96
+"S Olhos azuis", ("Cabelo azul"; "Calça branca"; "Espada"; "Idade aparente: Adolescente"; "Óculos"; "Camisa branca"), 0.40
+"C Kaguya Shinomiya", ("Idade aparente: Adolescente"; "Sexo feminino"; "Cabelo até os ombros"; "Cabelo preto"; "Olhos vermelhos"; "Uniforme escolar"; "Sapatos brancos"; "Vice-presidente do Conselho Estudantil"; "Fita vermelha no cabelo"), 0.72
+"S Lenço", ("Olhos castanhos"), 0.41
+"S Sapatos marrons", ("Idade aparente: Adolescente"; "Cabelo loiro"; "Orelhas"; "Cabelo até a cintura ou abaixo"; "Fita laranja"; "Sexo feminino"; "Camisa branca"), 0.11
+"C Yuuki Konno", ("Idade aparente: Adolescente"; "Sexo feminino"; "Cabelo até a cintura"; "Cabelo roxo"; "Olhos roxos"; "Vestido roxo"; "Botas roxas"), 0.99
+"C Mashiro Shiina", ("Idade aparente: Adolescente"; "Sexo feminino"; "Cabelo até a cintura"; "Cabelo loiro/amarelo"; "Olhos laranja"), 0.75
+"C Uryuu Ishida", ("Idade aparente: Adolescente"; "Sexo masculino"; "Cabelo até o pescoço"; "Cabelo azul"; "Olhos azuis"; "Camisa branca"; "Calça branca"; "Sapatos brancos"; "Espada"; "Óculos"), 0.85
+"C Franky", ("Idade aparente: Adulto"; "Sexo masculino"; "Cabelo até as orelhas"; "Cabelo azul"; "Olhos pretos"; "Camisa vermelha"; "Corrente"; "Óculos"), 0.70
+"C Brook", ("Idade aparente: Adulto"; "Sexo masculino"; "Cabelo até o pescoço"; "Cabelo preto"; "Calça preta"; "Sapatos marrons"; "Jaqueta preta"; "Bengala"), 0.94
+"C Levi", ("Cabelo preto"; "Olhos verdes"; "Camisa cinza"; "Calça cinza"; "Botas marrons"; "Capa verde"), 0.93
+"C Sakura Haruno", ("Idade aparente: Adolescente"; "Sexo feminino"; "Cabelo até as costas"; "Cabelo rosa"; "Olhos verdes"; "Roupa rosa"; "Sandálias"; "Kunais"; "Bandana"), 0.99
