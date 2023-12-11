@@ -56,7 +56,7 @@ def gen_causes_dataset(df: pd.DataFrame):
         symptoms = row[2:]
         symptoms = [f'"{i}"' for i in symptoms if type(i) == str]
         probability = randrange(70, 101) / 100
-        line = f'"C {char_name}", ({'; '.join(symptoms)}), {probability:.2f}'
+        line = f'"C {char_name}", ({"; ".join(symptoms)}), {probability:.2f}'
         lines.append(line)
     return lines
 
@@ -67,7 +67,7 @@ def gen_symptoms_dataset_random(causes: list, relative_size: int):
     for _, s, __ in causes:
         s = s.strip('(')
         s = s.strip(')')
-        s = s.split('; ')
+        s = s.split("; ")
         symptoms.extend(s)
     symptoms = set(symptoms)
     symptoms = list(symptoms)
@@ -84,7 +84,7 @@ def gen_symptoms_dataset_random(causes: list, relative_size: int):
         probability = randrange(5, 51) / 100
         sample = list(sample)
         shuffle(sample)
-        symptoms_relationship = f'"S {symptom.strip('"')}", ({'; '.join(sample)}), {probability:.2f}'
+        symptoms_relationship = f'"S {symptom.strip(chr(34))}", ({"; ".join(sample)}), {probability:.2f}'
         symptoms_dataset.append(symptoms_relationship)
     shuffle(symptoms_dataset)
     return symptoms_dataset
@@ -95,7 +95,7 @@ def gen_symptoms_dataset_deterministic(causes: list, relative_size: int):
     for i in range(len(causes)):
         cause, symptoms, probability = causes[i][0], causes[i][1], causes[i][2]
         symptoms = symptoms.strip('(').strip(')')
-        symptoms = symptoms.split('; ')
+        symptoms = symptoms.split("; ")
         causes[i] = [cause, symptoms, probability]
     size = (relative_size / 100) * len(causes)
     size = int(size)
@@ -118,7 +118,7 @@ def gen_symptoms_dataset_deterministic(causes: list, relative_size: int):
         sample = list(sample)
         shuffle(sample)
         probability = randrange(5, 51) / 100
-        symptoms_relationship = f'"S {symptom.strip('"')}", ({'; '.join(sample)}), {probability:.2f}'
+        symptoms_relationship = f'"S {symptom.strip(chr(34))}", ({"; ".join(sample)}), {probability:.2f}'
         symptoms_dataset.append(symptoms_relationship)
         size -= 1
     return symptoms_dataset
@@ -136,7 +136,7 @@ def gen_csv(causes, symptoms_random, symptoms_deterministic):
 
 
 def main():
-    df = pd.read_excel('data/dataset_minimal.xlsx')
+    df = pd.read_excel('data/4_dataset_polished.xlsx')
     # empty = get_empty(df)
     # print(sum(len(empty[i]) for i in empty))
     df = df.dropna(subset=SUBSET, how='all')
