@@ -44,7 +44,7 @@ Lista com o progresso do software
 - [x] Implementação de módulos adicionais para gerenciar diálogos e assets
 - [x] Estilização da interface
 - [x] Polimento e detalhes finais
-- [-] Otimizações para a DecisionTree
+- [ ] Otimizações para a DecisionTree
 
 ## Instalação
 
@@ -78,7 +78,7 @@ python3 app.py
 ## Como usar
 
 Para acessar o website, basta abrir um browser qualquer (Firefox ou Chrome, por exemplo) e se direcionar ao site *localhost:5000*.
-O uso do sistema é intuitivo, contendo apenas três botões na tela inicial: *O jogo*, *A Árvore* e *Vamos jogar.* que, respectivamente,
+O uso do sistema é intuitivo, contendo apenas três botões na tela inicial: *"O jogo"*, *"A Árvore"* e *"Vamos jogar."* que, respectivamente,
 direcionam para a tela inicial, a tela com a estrutura da árvore e a tela para começar um novo jogo.
 
 ## Créditos
@@ -106,8 +106,8 @@ ministrada pelo professor Jan Medonça Correa, na Universidade de Brasília.
 
 ---
 
-> GitHub [@akaTsunemori](https://github.com/akaTsunemori)
-> GitHub [@victorandre957](https://github.com/victorandre957)
-> GitHub [@tlamen](https://github.com/tlamen)
-> GitHub [@enz03](https://github.com/enz03)
-> GitHub [@allmeidaapedro](https://github.com/allmeidaapedro)
+> GitHub [@akaTsunemori](https://github.com/akaTsunemori)<br>
+> GitHub [@victorandre957](https://github.com/victorandre957)<br>
+> GitHub [@tlamen](https://github.com/tlamen)<br>
+> GitHub [@enz03](https://github.com/enz03)<br>
+> GitHub [@allmeidaapedro](https://github.com/allmeidaapedro)<br>
