@@ -1,3 +1,4 @@
+import pickle
 from flask import Flask, render_template, request, jsonify
 from src.decision_tree import DecisionTree
 from src.input_parser import parse_file
@@ -6,11 +7,21 @@ from src.dialogue_manager import DialogueManager
 
 
 app = Flask(__name__)
-PATH = 'static/input.csv'
-rules = parse_file(path=PATH)
-tree = DecisionTree(rules=rules)
 asset_manager = AssetManager()
 dialogue_manager = DialogueManager()
+DATASET_PATH = 'static/input.csv'
+CHECKPOINT_PATH = 'static/tree_checkpoint.pkl'
+try:
+    with open(CHECKPOINT_PATH, 'rb') as file:
+        tree = pickle.load(file)
+        print('Tree successfully loaded from checkpoint:', CHECKPOINT_PATH)
+except FileNotFoundError:
+    print('Tree checkpoint not found. Initializing a new tree.')
+    rules = parse_file(path=DATASET_PATH)
+    tree = DecisionTree(rules=rules)
+    with open(CHECKPOINT_PATH, 'wb') as file:
+        pickle.dump(tree, file)
+    print('New tree checkpoint saved to:', CHECKPOINT_PATH)
 
 
 def render_template_assets(page, **kwargs):
