@@ -91,8 +91,9 @@ Esse software usa os seguintes módulos de código aberto:
 - [NumPy](https://numpy.org/)
 - [scikit-learn](https://scikit-learn.org/stable/index.html)
 
-Esse software usou sprites do jogo Helltaker:
+Esse software usou sprites do jogo Helltaker e backgrounds do jogo Steins;Gate:
 - [Helltaker](https://store.steampowered.com/app/1289310/Helltaker/)
+- [Steins;Gate](https://store.steampowered.com/app/412830/STEINSGATE/)
 
 ## Licença
 
