@@ -1,6 +1,7 @@
 import numpy as np
 from queue import PriorityQueue
 from sklearn import preprocessing
+from concurrent.futures import ThreadPoolExecutor, wait
 
 
 class Node:
@@ -166,7 +167,7 @@ class DecisionTree:
                     continue
                 child = Node(symptom)
                 root.children.add(child)
-                new_path = {i for i in path}
+                new_path = path.copy()
                 new_path.add(symptom)
                 if symptom != symptoms[-1]:
                     self.__build_children_aux(child, visited, new_path)
@@ -185,12 +186,16 @@ class DecisionTree:
         Returns:
             None
         '''
-        root = self.root
-        visited = set()
-        while root:
-            visited.add(root.data)
-            self.__build_children_aux(root, visited)
-            root = root.next
+        with ThreadPoolExecutor() as executor:
+            root = self.root
+            visited = set()
+            futures = []
+            while root:
+                visited.add(root.data)
+                future = executor.submit(self.__build_children_aux, root, visited.copy())
+                futures.append(future)
+                root = root.next
+            wait(futures)
 
     def __get_ll_node_by_symptoms(self, symptoms, root):
         '''
@@ -256,7 +261,7 @@ class DecisionTree:
                 new_probability = probability_fraction * probability
                 root.children.add(Node(cause, probability=new_probability))
             for child in root.children:
-                path_copy = {i for i in path}
+                path_copy = path.copy()
                 self.__define_inconsistent_causes_aux(child, path_copy)
 
     def __define_inconsistent_causes(self):
@@ -271,9 +276,12 @@ class DecisionTree:
             None
         '''
         root = self.root
+        subtrees = []
         while root:
-            self.__define_inconsistent_causes_aux(root)
+            subtrees.append(root)
             root = root.next
+        with ThreadPoolExecutor() as executor:
+            executor.map(self.__define_inconsistent_causes_aux, subtrees)
 
     def __process_probabilities_aux(self, root: Node, stack: list, probability):
         '''
@@ -357,9 +365,12 @@ class DecisionTree:
             None
         '''
         root = self.root
+        subtrees = []
         while root:
-            self.__compute_probabilities_aux(root)
+            subtrees.append(root)
             root = root.next
+        with ThreadPoolExecutor() as executor:
+            executor.map(self.__compute_probabilities_aux, subtrees)
 
     def __normalize_probabilities_aux(self, root: Node):
         '''
@@ -410,9 +421,12 @@ class DecisionTree:
             None
         '''
         root = self.root
+        subtrees = []
         while root:
-            self.__normalize_probabilities_aux(root)
+            subtrees.append(root)
             root = root.next
+        with ThreadPoolExecutor() as executor:
+            executor.map(self.__normalize_probabilities_aux, subtrees)
 
     def __build_tree(self):
         '''
@@ -458,13 +472,13 @@ class DecisionTree:
         '''
         if not root:
             return
-        root_node = f'{i:06}, {root.data}, {(root.probability*100):.4f}%'
+        root_node = f'{i:06}, {root.data}, {(root.probability*100):.8f}%'
         if root_node not in tree_dict:
             tree_dict[root_node] = dict()
         for child in root.children:
             i+=1
             new_dict = dict()
-            new_node = f'{i:06}, {child.data}, {(child.probability*100):.4f}%'
+            new_node = f'{i:06}, {child.data}, {(child.probability*100):.8f}%'
             tree_dict[root_node][new_node] = new_dict
             self.__to_dict_aux(child, tree_dict[root_node], i)
 
