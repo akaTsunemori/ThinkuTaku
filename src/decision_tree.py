@@ -1,6 +1,7 @@
 import numpy as np
 from queue import PriorityQueue
 from sklearn import preprocessing
+from concurrent.futures import ThreadPoolExecutor, wait
 
 
 class Node:
@@ -166,7 +167,7 @@ class DecisionTree:
                     continue
                 child = Node(symptom)
                 root.children.add(child)
-                new_path = {i for i in path}
+                new_path = path.copy()
                 new_path.add(symptom)
                 if symptom != symptoms[-1]:
                     self.__build_children_aux(child, visited, new_path)
@@ -185,12 +186,16 @@ class DecisionTree:
         Returns:
             None
         '''
-        root = self.root
-        visited = set()
-        while root:
-            visited.add(root.data)
-            self.__build_children_aux(root, visited)
-            root = root.next
+        with ThreadPoolExecutor() as executor:
+            root = self.root
+            visited = set()
+            futures = []
+            while root:
+                visited.add(root.data)
+                future = executor.submit(self.__build_children_aux, root, visited.copy())
+                futures.append(future)
+                root = root.next
+            wait(futures)
 
     def __get_ll_node_by_symptoms(self, symptoms, root):
         '''
@@ -220,19 +225,15 @@ class DecisionTree:
             None
         '''
         for rule, symptoms, probability in DecisionTree.__causes:
-            node = self.__get_ll_node_by_symptoms(symptoms, self.root)
-            symptoms_tmp = {i for i in symptoms if i != node.data}
-            while symptoms_tmp:
-                for child in node.children:
-                    search = self.__get_ll_node_by_symptoms(symptoms_tmp, child)
-                    if not search:
-                        continue
-                    if len(symptoms_tmp) > 1 and not search.children:
-                        continue
-                    node = search
-                    symptoms_tmp.remove(node.data)
-                    break
-            node.children.add(Node(rule, probability=probability))
+            symptoms_sorted = sorted(symptoms, key=lambda a: (self.__priorities[a], a), reverse=True)
+            subtree = self.__get_ll_node_by_symptoms(symptoms_sorted[0], self.root)
+            symptoms_sorted = symptoms_sorted[1:]
+            for symptom in symptoms_sorted:
+                for child in subtree.children:
+                    if child.data == symptom:
+                        subtree = child
+                        break
+            subtree.children.add(Node(rule, probability=probability))
 
     def __define_inconsistent_causes_aux(self, root: Node, path: set = None):
         '''
@@ -260,7 +261,7 @@ class DecisionTree:
                 new_probability = probability_fraction * probability
                 root.children.add(Node(cause, probability=new_probability))
             for child in root.children:
-                path_copy = {i for i in path}
+                path_copy = path.copy()
                 self.__define_inconsistent_causes_aux(child, path_copy)
 
     def __define_inconsistent_causes(self):
@@ -275,9 +276,12 @@ class DecisionTree:
             None
         '''
         root = self.root
+        subtrees = []
         while root:
-            self.__define_inconsistent_causes_aux(root)
+            subtrees.append(root)
             root = root.next
+        with ThreadPoolExecutor() as executor:
+            executor.map(self.__define_inconsistent_causes_aux, subtrees)
 
     def __process_probabilities_aux(self, root: Node, stack: list, probability):
         '''
@@ -361,9 +365,12 @@ class DecisionTree:
             None
         '''
         root = self.root
+        subtrees = []
         while root:
-            self.__compute_probabilities_aux(root)
+            subtrees.append(root)
             root = root.next
+        with ThreadPoolExecutor() as executor:
+            executor.map(self.__compute_probabilities_aux, subtrees)
 
     def __normalize_probabilities_aux(self, root: Node):
         '''
@@ -414,9 +421,12 @@ class DecisionTree:
             None
         '''
         root = self.root
+        subtrees = []
         while root:
-            self.__normalize_probabilities_aux(root)
+            subtrees.append(root)
             root = root.next
+        with ThreadPoolExecutor() as executor:
+            executor.map(self.__normalize_probabilities_aux, subtrees)
 
     def __build_tree(self):
         '''
@@ -440,6 +450,7 @@ class DecisionTree:
         self.__build_children()
         print('Defining causes')
         self.__define_causes()
+        print('Defining causes with partial symptoms')
         self.__define_inconsistent_causes()
         print('Processing probabilities')
         self.__process_probabilities()
