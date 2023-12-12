@@ -472,13 +472,13 @@ class DecisionTree:
         '''
         if not root:
             return
-        root_node = f'{i:06}, {root.data}, {(root.probability*100):.8f}%'
+        root_node = f'{i:06}, {root.data}, {(root.probability*100):.2f}%'
         if root_node not in tree_dict:
             tree_dict[root_node] = dict()
         for child in root.children:
             i+=1
             new_dict = dict()
-            new_node = f'{i:06}, {child.data}, {(child.probability*100):.8f}%'
+            new_node = f'{i:06}, {child.data}, {(child.probability*100):.2f}%'
             tree_dict[root_node][new_node] = new_dict
             self.__to_dict_aux(child, tree_dict[root_node], i)
 
