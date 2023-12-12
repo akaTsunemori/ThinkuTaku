@@ -136,13 +136,13 @@ def gen_csv(causes, symptoms_random, symptoms_deterministic):
     dataset.extend(symptoms_random)
     dataset.extend(symptoms_deterministic)
     shuffle(dataset)
-    with open('ThinkTaku_Dataset_formatted.csv', 'a') as file:
+    with open('data/ThinkTaku_Dataset.csv', 'a') as file:
         for line in dataset:
             print(line, file=file)
 
 
 def main():
-    df = pd.read_excel('data/natural_dataset_final.xlsx')
+    df = pd.read_excel('data/minimal_dataset.xlsx')
     # empty = get_empty(df)
     # print(sum(len(empty[i]) for i in empty))
     df = df.dropna(subset=SUBSET, how='all')
