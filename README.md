@@ -35,7 +35,7 @@
 
 ## Roadmap
 
-Lista com o progresso do software
+Progresso do software:
 
 - [x] Elaboração do dataset
 - [x] Arquitetura da DecisionTree
@@ -78,6 +78,7 @@ python3 app.py
 
 > **Notas:**<br>
 > - As instruções acima foram direcionadas a um ambiente Linux;<br>
+> - Utilizou-se **Python 3.12.0** durante o desenvolvimento deste software;<br>
 > - Para desativar o ambiente virtual criado, apenas digite **deactivate** em seu terminal;<br>
 > - Refira-se a https://docs.python.org/3/library/venv.html para mais informações sobre ambientes virtuais em Python.
 
@@ -93,9 +94,11 @@ Esse software usa os seguintes módulos de código aberto:
 
 - [Flask](https://flask.palletsprojects.com/en/2.3.x/)
 - [pandas](https://pandas.pydata.org/)
+- [openpyxl](https://pypi.org/project/openpyxl/)
 - [deep-translator](https://pypi.org/project/deep-translator/)
 - [NumPy](https://numpy.org/)
 - [scikit-learn](https://scikit-learn.org/stable/index.html)
+- [Selenium](https://selenium-python.readthedocs.io/)
 
 Esse software usou sprites do jogo Helltaker e backgrounds do jogo Steins;Gate:
 - [Helltaker](https://store.steampowered.com/app/1289310/Helltaker/)
