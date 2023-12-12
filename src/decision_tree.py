@@ -220,19 +220,15 @@ class DecisionTree:
             None
         '''
         for rule, symptoms, probability in DecisionTree.__causes:
-            node = self.__get_ll_node_by_symptoms(symptoms, self.root)
-            symptoms_tmp = {i for i in symptoms if i != node.data}
-            while symptoms_tmp:
-                for child in node.children:
-                    search = self.__get_ll_node_by_symptoms(symptoms_tmp, child)
-                    if not search:
-                        continue
-                    if len(symptoms_tmp) > 1 and not search.children:
-                        continue
-                    node = search
-                    symptoms_tmp.remove(node.data)
-                    break
-            node.children.add(Node(rule, probability=probability))
+            symptoms_sorted = sorted(symptoms, key=lambda a: (self.__priorities[a], a), reverse=True)
+            subtree = self.__get_ll_node_by_symptoms(symptoms_sorted[0], self.root)
+            symptoms_sorted = symptoms_sorted[1:]
+            for symptom in symptoms_sorted:
+                for child in subtree.children:
+                    if child.data == symptom:
+                        subtree = child
+                        break
+            subtree.children.add(Node(rule, probability=probability))
 
     def __define_inconsistent_causes_aux(self, root: Node, path: set = None):
         '''
@@ -440,6 +436,7 @@ class DecisionTree:
         self.__build_children()
         print('Defining causes')
         self.__define_causes()
+        print('Defining causes with partial symptoms')
         self.__define_inconsistent_causes()
         print('Processing probabilities')
         self.__process_probabilities()
@@ -461,13 +458,13 @@ class DecisionTree:
         '''
         if not root:
             return
-        root_node = f'{i:06}, {root.data}, {(root.probability*100):.2f}%'
+        root_node = f'{i:06}, {root.data}, {(root.probability*100):.4f}%'
         if root_node not in tree_dict:
             tree_dict[root_node] = dict()
         for child in root.children:
             i+=1
             new_dict = dict()
-            new_node = f'{i:06}, {child.data}, {(child.probability*100):.2f}%'
+            new_node = f'{i:06}, {child.data}, {(child.probability*100):.4f}%'
             tree_dict[root_node][new_node] = new_dict
             self.__to_dict_aux(child, tree_dict[root_node], i)
 
