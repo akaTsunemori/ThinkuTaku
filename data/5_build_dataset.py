@@ -146,6 +146,7 @@ def main():
     # empty = get_empty(df)
     # print(sum(len(empty[i]) for i in empty))
     df = df.dropna(subset=SUBSET, how='all')
+    df = df.map(lambda x: x.strip() if isinstance(x, str) else x)
     causes = gen_causes_dataset(df)
     # print(*causes, sep='\n')
     # print('')
