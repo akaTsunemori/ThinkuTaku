@@ -44,7 +44,13 @@ Lista com o progresso do software
 - [x] Implementação de módulos adicionais para gerenciar diálogos e assets
 - [x] Estilização da interface
 - [x] Polimento e detalhes finais
-- [ ] Otimizações para a DecisionTree
+- [x] Otimizações para a DecisionTree
+- [x] Testes superficiais
+- [ ] Expandir dataset
+- [ ] Mais otimizações para a DecisionTree
+- [ ] Otimizar front-end para telas de baixa resolução
+- [ ] Otimizar front-end para telas móveis
+- [ ] Testes aprofundados
 
 ## Instalação
 
